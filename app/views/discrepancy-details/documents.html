@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Obliged Entity PSC Discrepancy
+{% endblock %}
+{% block beforeContent %}
+
+  {{ govukBackLink({
+  href: "#",
+  text: "Back"
+}) }}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Add documents to support your discrepancy
+      </h1>
+
+      {% if Err %}
+        <p class="govuk-body-l">
+          Documents are supported in a number of formats
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Text (doc, docx, pdf, txt)</li>
+          <li>Images (jpg, gif, tiff)</li>
+          <li>Video (mpeg,avi, mov, mp4, wmv)</li>
+        </ul>
+      {% endif %}
+
+      {% set uploadText %}
+      {% if evidence.length > 0 %}
+        Add another document
+      {% else %}
+        Add a document
+      {% endif %}
+      {% endset -%}
+      <div class='file-upload'>
+        {{ govukFileUpload({
+            id: "file-upload",
+            name: "fileUpload",
+            errorMessage: Err,
+            label: {
+              text: uploadText
+            },
+            value: ""
+          }) }}
+      </div>
+      <div class="upload-status-heading">
+        <h2 class="govuk-heading-s">Uploading document</h2>
+      </div>
+      <div class="upload-status">
+        <h2 class="govuk-heading-m upload-status__title">document.docx</h2>
+        <p class="govuk-body upload-status__status">
+          <span class='upload-status__value'>0</span>% uploaded</p>
+        <a href='#' class="govuk-link upload-status__link">Cancel</a>
+        <div class="progress-bar">
+          <div class="indicator"></div>
+        </div>
+      </div>
+
+      {% if reasonObject.documents.length > 0 %}
+        <dl class="govuk-upload-list">
+          {% for document in reasonObject.documents | reverse %}
+            <div class="ch-upload-list__row uploaded-file-{{loop.index0}}">
+              <dt class="ch-upload-list__key govuk-visually-hidden">
+                Uploaded file
+              </dt>
+              <dd class="ch-upload-list__value">
+                <a href="#" class="govuk-link">{{ document }}</a>
+              </dd>
+              <dd class="ch-upload-list__actions">
+                <a class="govuk-link" href="remove-document?documentID={{loop.revindex0}}&reasonID={{ id }}">
+                  Remove
+                </a>
+              </dd>
+            </div>
+          {% endfor %}
+        </dl>
+      {% endif %}
+      {{ govukInput({
+        id: "id",
+        name: "id",
+        type: "hidden",
+        value: id
+      }) }}
+    </form>
+    {{ govukButton({
+      text: "Continue",
+      href: "add-discrepancy.html"
+    }) }}
+  </div>
+</div>
+
+{% endblock %}

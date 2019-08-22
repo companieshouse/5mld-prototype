@@ -14,17 +14,18 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Company name</h1>
+      <h1 class="govuk-heading-xl">Your telephone number</h1>
       {{ govukInput({
         label: {
-          text: "Company name"
+          text: "Direct telephone number"
         },
+          classes: "govuk-input--width-10",
         id: "event-name",
         name: "event-name"
       }) }}
       {{ govukButton({
 text: "Continue",
-href: "fourth-report.html"
+href: "email.html"
 }) }}
 
     </div>

@@ -3,7 +3,21 @@
 {% block pageTitle %}
   Obliged Entity PSC Discrepancy
 {% endblock %}
-
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/business">Business and self-employed</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/browse/business/limited-company">Running a limited company</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
 {% block content %}
 
   <div class="govuk-grid-row">
@@ -19,10 +33,12 @@
 
       {{ govukButton({
   text: "Start now",
-  href: "first.html",
+  href: "resolving.html",
   isStartButton: true
 }) }}
       <h2 class="govuk-heading-m">Before you start</h2>
+      <p>You should read the guidance on
+        <a href="#">reporting PSC discrepancy</a>.</p>
       <h3 class="govuk-heading-s">You'll need:</h3>
       <ul class="govuk-list govuk-list--bullet">
         <li>the company number(s)</li>
@@ -30,6 +46,33 @@
         <li>information about the discrepancy</li>
         <li>any documents that support your claim</li>
       </ul>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Subsection
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-body-s">
+            <li>
+              <a href="https://www.gov.uk/file-an-annual-return-with-companies-house">
+                File your confirmation statement (annual return) with Companies House
+              </a>
+            </li>
+            <li>
+              <a href="https://www.gov.uk/running-a-limited-company">
+                Running a limited company
+              </a>
+            </li>
+            <li>
+              <a href="https://www.gov.uk/browse/business/limited-company" class="govuk-!-w-bold">
+                More
+                <span class="visuallyhidden">Running a limited company</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
     </div>
   </div>
 

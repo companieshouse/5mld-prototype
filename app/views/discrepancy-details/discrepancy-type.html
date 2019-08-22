@@ -30,7 +30,7 @@
   name: "where-do-you-live",
   fieldset: {
     legend: {
-      text: "What type of entity are you?",
+      text: "What is the nature of the PSC discrepancy?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl"
     }
@@ -38,23 +38,43 @@
   items: [
     {
       value: "england",
-      text: "Bank or Financial Institution"
+      text: "PSC Mismatch"
     },
     {
       value: "scotland",
-      text: "Accountants, Auditors or Tax Adviser"
+      text: "PSC Exemption"
     },
     {
       value: "wales",
-      text: "Solicitors or Legal Counsel"
+      text: "Appointment"
     },
     {
       value: "northern-ireland",
-      text: "Trusted Service Providers (e.g. Formation agent)"
+      text: "Relevant Legal Entity (RLE)"
     },
     {
       value: "northern-ireland",
-      text: "Credit Reference Agencies"
+      text: "PSC Personal Details"
+    },
+    {
+      value: "northern-ireland",
+      text: "Shareholder"
+    },
+    {
+      value: "northern-ireland",
+      text: "Nature of Control"
+    },
+    {
+      value: "northern-ireland",
+      text: "Active PSC Statement"
+    },
+    {
+      value: "northern-ireland",
+      text: "Circular Ownership Structure"
+    },
+    {
+      value: "northern-ireland",
+      text: "General Integrity"
     },
     {
       value: "",
@@ -67,7 +87,7 @@
 }) }}
       {{ govukButton({
 text: "Continue",
-href: "third.html"
+href: "supporting-information.html"
 }) }}
 
     </div>
