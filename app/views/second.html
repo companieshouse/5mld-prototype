@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Obliged Entity PSC Discrepancy
+{% endblock %}
+{% block beforeContent %}
+
+  {{ govukBackLink({
+  href: "#",
+  text: "Back"
+}) }}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% set textHtml %}
+      {{ govukInput({
+  id: "contact-by-text",
+  name: "contact-by-text",
+  type: "tel",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Mobile phone number"
+  }
+}) }}
+      {% endset -%}
+      {{ govukRadios({
+  idPrefix: "where-do-you-live",
+  name: "where-do-you-live",
+  fieldset: {
+    legend: {
+      text: "What type of entity are you?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  items: [
+    {
+      value: "england",
+      text: "Bank or Financial Institution"
+    },
+    {
+      value: "scotland",
+      text: "Accountants, Auditors or Tax Adviser"
+    },
+    {
+      value: "wales",
+      text: "Solicitors or Legal Counsel"
+    },
+    {
+      value: "northern-ireland",
+      text: "Trusted Service Providers (e.g. Formation agent)"
+    },
+    {
+      value: "northern-ireland",
+      text: "Credit Reference Agencies"
+    },
+    {
+      value: "",
+      text: "Other",
+      conditional: {
+  html: textHtml
+}
+    }
+  ]
+}) }}
+      {{ govukButton({
+text: "Continue",
+href: "third.html"
+}) }}
+
+    </div>
+  </div>
+
+{% endblock %}

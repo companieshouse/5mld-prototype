@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Obliged Entity PSC Discrepancy
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Obliged Entity PSC Discrepancy
+      </h1>
+      <p class="govuk-body-l">Use this service to report any discrepancies within a company’s PSC register</p>
+
+      <p>
+        It may take up to 20 minutes to complete this application.
+      </p>
+
+      {{ govukButton({
+  text: "Start now",
+  href: "first.html",
+  isStartButton: true
+}) }}
+      <h2 class="govuk-heading-m">Before you start</h2>
+      <h3 class="govuk-heading-s">You'll need:</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the company number(s)</li>
+        <li>an email address</li>
+        <li>information about the discrepancy</li>
+        <li>any documents that support your claim</li>
+      </ul>
+    </div>
+  </div>
+
+{% endblock %}

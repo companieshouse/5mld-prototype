@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Obliged Entity PSC Discrepancy
+{% endblock %}
+{% block beforeContent %}
+
+  {{ govukBackLink({
+  href: "#",
+  text: "Back"
+}) }}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Check your details</h1>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Sarah Philips"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Date of birth"
+            },
+            value: {
+              text: "5 January 1978"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Contact information"
+            },
+            value: {
+              html: "72 Guild Street<br>London<br>SE23 6FH"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "contact information"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Contact details"
+            },
+            value: {
+              html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+      <h2 class="govuk-heading-m">Now enter PSC discrepancy
+      </h2>
+
+      <p class="govuk-body">By submitting this you confirm that the above details are correct.
+      </p>
+      {{ govukButton({
+text: "Continue",
+href: 'first-report.html'
+}) }}
+
+    </div>
+  </div>
+
+{% endblock %}

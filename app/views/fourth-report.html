@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Obliged Entity PSC Discrepancy
+{% endblock %}
+{% block beforeContent %}
+
+  {{ govukBackLink({
+  href: "#",
+  text: "Back"
+}) }}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% set textHtml %}
+      {{ govukInput({
+  id: "contact-by-text",
+  name: "contact-by-text",
+  type: "tel",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Mobile phone number"
+  }
+}) }}
+      {% endset -%}
+      {{ govukRadios({
+  idPrefix: "where-do-you-live",
+  name: "where-do-you-live",
+  fieldset: {
+    legend: {
+      text: "What is the nature of the PSC discrepancy?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  items: [
+    {
+      value: "england",
+      text: "PSC Mismatch"
+    },
+    {
+      value: "scotland",
+      text: "PSC Exemption"
+    },
+    {
+      value: "wales",
+      text: "Appointment"
+    },
+    {
+      value: "northern-ireland",
+      text: "Relevant Legal Entity (RLE)"
+    },
+    {
+      value: "northern-ireland",
+      text: "PSC Personal Details"
+    },
+    {
+      value: "northern-ireland",
+      text: "Shareholder"
+    },
+    {
+      value: "northern-ireland",
+      text: "Nature of Control"
+    },
+    {
+      value: "northern-ireland",
+      text: "Active PSC Statement"
+    },
+    {
+      value: "northern-ireland",
+      text: "Circular Ownership Structure"
+    },
+    {
+      value: "northern-ireland",
+      text: "General Integrity"
+    },
+    {
+      value: "",
+      text: "Other",
+      conditional: {
+  html: textHtml
+}
+    }
+  ]
+}) }}
+      {{ govukButton({
+text: "Continue",
+href: "fifth-report.html"
+}) }}
+
+    </div>
+  </div>
+
+{% endblock %}
