@@ -16,18 +16,17 @@
     <div class="govuk-grid-column-two-thirds">
       {% set textHtml %}
       {{ govukInput({
-  id: "contact-by-text",
-  name: "contact-by-text",
-  type: "tel",
+  id: "other-organisation",
+  name: "other-organisation",
   classes: "govuk-!-width-one-third",
   label: {
-    text: "Mobile phone number"
+    text: "How would you describe your organisation?"
   }
 }) }}
       {% endset -%}
       {{ govukRadios({
-  idPrefix: "where-do-you-live",
-  name: "where-do-you-live",
+  idPrefix: "organisation-type",
+  name: "organisation-type",
   fieldset: {
     legend: {
       text: "What type of organisation are you?",
@@ -37,23 +36,23 @@
   },
   items: [
     {
-      value: "england",
+      value: "bank",
       text: "Bank or Financial Institution"
     },
     {
-      value: "scotland",
+      value: "account",
       text: "Accountants, Auditors or Tax Adviser"
     },
     {
-      value: "wales",
+      value: "solicitor",
       text: "Solicitors or Legal Counsel"
     },
     {
-      value: "northern-ireland",
+      value: "trusted-service",
       text: "Trusted Service Providers (e.g. Formation agent)"
     },
     {
-      value: "northern-ireland",
+      value: "credit-reference",
       text: "Credit Reference Agencies"
     },
     {
