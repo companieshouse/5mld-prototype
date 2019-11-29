@@ -6,7 +6,7 @@
 {% block beforeContent %}
 
   {{ govukBackLink({
-  href: "#",
+  href: "address",
   text: "Back"
 }) }}
 {% endblock %}
@@ -14,7 +14,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Your contact name</h1>
+      <h1 class="govuk-heading-xl">Your details</h1>
       {{ govukInput({
         label: {
           text: "Full name"
@@ -23,9 +23,17 @@
         id: "your-contact-name",
         name: "your-contact-name"
       }) }}
+      {{ govukInput({
+        label: {
+          text: "Email address"
+        },
+          classes: "govuk-input--width-20",
+        id: "your-contact-name",
+        name: "your-contact-name"
+      }) }}
       {{ govukButton({
 text: "Continue",
-href: "telephone.html"
+href: "/discrepancy-details/company-number.html"
 }) }}
 
     </div>

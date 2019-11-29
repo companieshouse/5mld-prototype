@@ -6,7 +6,7 @@
 {% block beforeContent %}
 
   {{ govukBackLink({
-  href: "#",
+  href: "/",
   text: "Back"
 }) }}
 {% endblock %}
@@ -14,20 +14,78 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Your company name</h1>
+      <h1 class="govuk-heading-xl">Your company information</h1>
       {{ govukInput({
         label: {
-          text: "Organisation name"
+          text: "Your company name"
         },
           classes: "govuk-input--width-20",
         id: "your-company-name",
         name: "your-company-name"
       }) }}
-      {{ govukButton({
-text: "Continue",
-href: "contact-name.html"
+      {{ govukRadios({
+  idPrefix: "where-do-you-live",
+  name: "where-do-you-live",
+  fieldset: {
+    legend: {
+      text: "What type of obliged entity do you represent?"
+    }
+  },
+  items: [
+    {
+      value: "credit-institutions",
+      text: "Credit institutions"
+    },
+    {
+      value: "finanacial-institutions",
+      text: "Financial institutions"
+    },
+    {
+      value: "auditor",
+      text: "Auditor, external accountants or tax advisors"
+    },
+    {
+      value: "notary",
+      text: "Notary or other independent legal professionals"
+    },
+    {
+      value: "trust",
+      text: "Trust or company service providers"
+    },
+    {
+      value: "estate-agent",
+      text: "Estate agents including when acting as an intermediaries"
+    },
+    {
+      value: "other-person",
+      text: "Other persons trading in goods in cash in amount of EUR 10 000 or more"
+    },
+    {
+      value: "gambling",
+      text: "Providers of gambling services"
+    },
+    {
+      value: "virtual-currencies",
+      text: "Providers engaged in exchange services between virtual currencies and fiat currencies"
+    },
+    {
+      value: "custodian",
+      text: "Custodian wallet providers"
+    },
+    {
+      value: "art-dealers",
+      text: "Art Dealers in a galleries or auction houses"
+    },
+    {
+      value: "free-ports",
+      text: "Art dealers in Free Ports"
+    }
+  ]
 }) }}
-
+      {{ govukButton({
+        text: "Continue",
+        href: "address.html"
+      }) }}
     </div>
   </div>
 
