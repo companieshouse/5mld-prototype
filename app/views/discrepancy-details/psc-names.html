@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Get company reminders
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "company-number"
+  }) }}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        PSC's for **insert company name**
+      </h1>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "**Name of PSC**"
+            },
+            value: {
+              text: "**PSC Role**"
+            },
+            actions: {
+              items: [
+                {
+                  href: "person-discrepancy.html",
+                  text: "Select",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "**Name of PSC**"
+            },
+            value: {
+              text: "**PSC Role**"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Select",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "**Name of PSC**"
+            },
+            value: {
+              html: "**PSC Role**"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Select",
+                  visuallyHiddenText: "contact information"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "**Name of PSC**"
+            },
+            value: {
+              html: '**PSC Role**'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Select",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Missing PSC"
+            },
+            value: {
+              html: ''
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Select",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            },
+            classes: "missing-psc"
+          }
+        ]
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}

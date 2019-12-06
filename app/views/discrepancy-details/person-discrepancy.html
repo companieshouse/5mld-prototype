@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Get company reminders
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "psc-names.html"
+  }) }}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        **PSC Name**
+      </h1>
+      {{ govukRadios({
+        idPrefix: "where-do-you-live",
+        name: "where-do-you-live",
+        fieldset: {
+          legend: {
+            text: "Where do you live?"
+          }
+        },
+        items: [
+          {
+            value: "england",
+            text: "Duplicate PSC"
+          },
+          {
+            value: "scotland",
+            text: "Inactive PSC"
+          },
+          {
+            value: "wales",
+            text: "Unauthorised PSC"
+          },
+          {
+            value: "northern-ireland",
+            text: "Incorrect PSC details"
+          }
+        ]
+      }) }}
+      {{ govukButton({
+  text: "Confirm",
+  href: "reminders"
+}) }}
+    </div>
+  </div>
+
+{% endblock %}
