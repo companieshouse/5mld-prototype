@@ -21,31 +21,31 @@
         name: "where-do-you-live",
         fieldset: {
           legend: {
-            text: "Where do you live?"
+            text: "What is the discrepancy?"
           }
         },
         items: [
+        {
+          value: "incorrect-psc",
+          text: "Incorrect PSC details"
+        },
           {
-            value: "england",
+            value: "duplicated-psc",
             text: "Duplicate PSC"
           },
           {
-            value: "scotland",
+            value: "inactive-psc",
             text: "Inactive PSC"
           },
           {
-            value: "wales",
+            value: "unauthorised-psc",
             text: "Unauthorised PSC"
-          },
-          {
-            value: "northern-ireland",
-            text: "Incorrect PSC details"
           }
         ]
       }) }}
       {{ govukButton({
-  text: "Confirm",
-  href: "reminders"
+  text: "Save and continue",
+  href: "incorrect-psc-options"
 }) }}
     </div>
   </div>

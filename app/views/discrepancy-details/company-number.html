@@ -3,13 +3,7 @@
 {% block pageTitle %}
   Obliged Entity PSC Discrepancy
 {% endblock %}
-{% block beforeContent %}
-
-  {{ govukBackLink({
-  href: "../contact-name",
-  text: "Back"
-}) }}
-{% endblock %}
+{% block beforeContent %}{% endblock %}
 {% block content %}
 
   <div class="govuk-grid-row">
@@ -17,7 +11,7 @@
       <h1 class="govuk-heading-xl">What is the company number?</h1>
       {{ govukInput({
         label: {
-          text: "Company number"
+          text: "Company number for the PSC with the discrepency"
         },
         hint: {
           text: "This is the 8 character reference issued by Companies House when the company was set up."

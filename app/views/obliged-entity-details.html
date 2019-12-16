@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sign in to Companies House
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Your contact information</h1>
+
+      {{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Sarah Philips"
+      }
+    },
+    {
+      key: {
+        text: "Company"
+      },
+      value: {
+        text: "Big Banks"
+      }
+    },
+    {
+      key: {
+        text: "Organisation"
+      },
+      value: {
+        text: "Credit institution"
+      }
+    },
+    {
+      key: {
+        text: "Contact information"
+      },
+      value: {
+        html: "72 Guild Street<br>London<br>SE23 6FH"
+      }
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
+      }
+    }
+  ]
+}) }}
+      <p class="govuk-body">You are about to report a discrepancy using this information</p>
+
+      {{ govukButton({
+  text: "Continue",
+  href: '/discrepancy-details/company-number.html',
+    classes: "govuk-!-margin-right-1"
+}) }}
+      {{ govukButton({
+  text: "Sign out",
+  classes: "govuk-button--secondary",
+  href: 'sign-in.html'
+}) }}
+    </div>
+  </div>
+{% endblock %}
