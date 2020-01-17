@@ -6,97 +6,54 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "company-number"
+    href: "confirm-company"
   }) }}
 {% endblock %}
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
-        MANY HAPPY RETURNS TRAVEL C.I.C.
-      </h1>
-      <p class="govuk-body govuk-!-margin-bottom-6">Company number
-        <strong>02854790</strong>
-      </p>
-      <h2 class="govuk-heading-l">
-        Persons with significant control
-      </h2>
-      <p class="govuk-body govuk-!-margin-bottom-8">
-        <strong>2 active persons with significant control / 0 active statements</strong>
-      </p>
-      <section class="person">
-        <h3 class="govuk-heading-m">Mr Jonathan Charles Gaynor
-        </h3>
-        <p class="govuk-body">Correspondence address</p>
-        <p class="govuk-body">
-          <strong>Ananda House, Magdalen Road, Hadleigh, Ipswich, Suffolk, IP7 5AD
-          </strong>
-        </p>
-        <div class="govuk-grid-row govuk-!-margin-top-6 govuk-!-margin-bottom-6">
-          <div class="govuk-grid-column-one-third">
-            <p class="govuk-body">Notified on</p>
-            <p class="govuk-body">
-              <strong>6 April 2016</strong>
-            </p>
-          </div>
-          <div class="govuk-grid-column-one-third">
-            <p class="govuk-body">Date of birth</p>
-            <p class="govuk-body">
-              <strong>June 1952</strong>
-            </p>
-          </div>
-          <div class="govuk-grid-column-one-third">
-            <p class="govuk-body">Nationality</p>
-            <p class="govuk-body">
-              <strong>British</strong>
-            </p>
-          </div>
-        </div>
-        <p class="govuk-body">Nature of control</p>
-        <p class="govuk-body">
-          <strong>Ownership of shares – More than 25% but not more than 50%
-          </strong>
-        </p>
-        <p class="govuk-body">
-          <strong>Ownership of voting rights - More than 25% but not more than 50%</strong>
-        </p>
-        {{ govukButton({
-  text: "Report discrepancy",
-  classes: "govuk-!-margin-0",
-  href: "person-discrepancy"
+      {{ govukCheckboxes({
+  idPrefix: "nationality",
+  name: "nationality",
+  fieldset: {
+    legend: {
+      text: "Which PSC information is incorrect?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  items: [
+
+    {
+      value: "british",
+      text: "Mrs Catherine Isabel Gaynor",
+      hint: {
+        html: "Born on
+          November 1962"
+      }
+    },
+
+    {
+      value: "other",
+      text: "Mr Jonathan Charles Gaynor",
+      hint: {
+        text: "Born on
+          June 1952"
+      }
+    },
+    {
+      value: "irish",
+      text: "Missing PSC"
+    }
+  ]
 }) }}
-      </section>
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-      <section class="person">
-        <h3 class="govuk-heading-m">Mrs Catherine Isabel Gaynor
-        </h3>
-        <p class="govuk-body">Correspondence address</p>
-        <p class="govuk-body">
-          <strong>Ananda House, Magdalen Road, Hadleigh, Ipswich, Suffolk, IP7 5AD
-          </strong>
-        </p>
-        <p class="govuk-body">Nature of control</p>
-        <p class="govuk-body">
-          <strong>Ownership of shares – More than 25% but not more than 50%
-          </strong>
-        </p>
-        <p class="govuk-body">
-          <strong>Ownership of voting rights - More than 25% but not more than 50%</strong>
-        </p>
-        {{ govukButton({
-  text: "Report discrepancy",
-  classes: "govuk-!-margin-0"
-}) }}
-      </section>
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-      <h3 class="govuk-heading-m">Missing PSC
-      </h3>
       {{ govukButton({
-text: "Report a missing PSC",
-classes: "govuk-!-margin-0"
+text: "Continue",
+href: "incorrect-psc-details"
 }) }}
-    </div>
+    </section>
   </div>
+</div>
 
 {% endblock %}
