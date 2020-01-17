@@ -4,9 +4,12 @@
   Get company reminders
 {% endblock %}
 {% block beforeContent %}
+
+  {% include "../includes/sign-in.html" %}
+
   {{ govukBackLink({
     text: "Back",
-    href: "confirm-company"
+    href: "company-number"
   }) }}
 {% endblock %}
 {% block content %}
