@@ -15,7 +15,53 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Check your details</h1>
+      <h1 class="govuk-heading-xl">Your discrepency report</h1>
+      {{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Sarah Philips"
+      }
+    },
+    {
+      key: {
+        text: "Organisation"
+      },
+      value: {
+        text: "Big Banks"
+      }
+    },
+    {
+      key: {
+        text: "Type of obliged entity"
+      },
+      value: {
+        text: "Credit institution"
+      }
+    },
+    {
+      key: {
+        text: "Contact information"
+      },
+      value: {
+        html: "72 Guild Street<br>London<br>SE23 6FH"
+      }
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
+      }
+    }
+  ]
+ }) }}
+      <h2 class="govuk-heading-m">Discrepencies for **insert company name**</h2>
+
       {{ govukSummaryList({
               classes: 'govuk-!-margin-bottom-9',
               rows: [
@@ -24,151 +70,23 @@
                     text: "Name"
                   },
                   value: {
-                    text: "Sarah Philips"
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "#",
-                        text: "Change",
-                        visuallyHiddenText: "name"
-                      }
-                    ]
+                    text: "**name of the psc**"
                   }
                 },
                 {
                   key: {
-                    text: "Date of birth"
+                    text: "Reason"
                   },
                   value: {
-                    text: "5 January 1978"
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "#",
-                        text: "Change",
-                        visuallyHiddenText: "date of birth"
-                      }
-                    ]
-                  }
-                },
-                {
-                  key: {
-                    text: "Address"
-                  },
-                  value: {
-                    html: "72 Guild Street<br>London<br>SE23 6FH"
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "#",
-                        text: "Change",
-                        visuallyHiddenText: "address"
-                      }
-                    ]
-                  }
-                },
-                {
-                  key: {
-                    text: "Contact details"
-                  },
-                  value: {
-                    html: '<p class="govuk-body">07700 900457</p><p class="govuk-body">sarah.phillips@example.com</p>'
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "#",
-                        text: "Change",
-                        visuallyHiddenText: "contact details"
-                      }
-                    ]
+                    text: "**insert reason**"
                   }
                 }
               ]
             }) }}
 
-      <h2 class="govuk-heading-m">Application details</h2>
+      <h2 class="govuk-heading-m">Now send your discrepency report</h2>
 
-      {{ govukSummaryList({
-              classes: 'govuk-!-margin-bottom-9',
-              rows: [
-                {
-                  key: {
-                    text: "Previous application number"
-                  },
-                  value: {
-                    text: "502135326"
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "#",
-                        text: "Change",
-                        visuallyHiddenText: "previous application number"
-                      }
-                    ]
-                  }
-                },
-                {
-                  key: {
-                    text: "Licence type"
-                  },
-                  value: {
-                    text: "For personal use"
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "#",
-                        text: "Change",
-                        visuallyHiddenText: "licence type"
-                      }
-                    ]
-                  }
-                },
-                {
-                  key: {
-                    text: "Home address"
-                  },
-                  value: {
-                    html: "72 Guild Street<br>London<br>SE23 6FH"
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "#",
-                        text: "Change",
-                        visuallyHiddenText: "home address"
-                      }
-                    ]
-                  }
-                },
-                {
-                  key: {
-                    text: "Licence period"
-                  },
-                  value: {
-                    text: "Valid for 6 months"
-                  },
-                  actions: {
-                    items: [
-                      {
-                        href: "#",
-                        text: "Change",
-                        visuallyHiddenText: "licence period"
-                      }
-                    ]
-                  }
-                }
-              ]
-            }) }}
-
-      <h2 class="govuk-heading-m">Now send your application</h2>
-
-      <p class="govuk-body">By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+      <p class="govuk-body">By submitting this discrepency you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
 
       <form action="/form-handler" method="post" novalidate="novalidate">
 
