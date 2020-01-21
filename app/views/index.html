@@ -4,41 +4,40 @@
   Obliged Entity PSC Discrepancy
 {% endblock %}
 {% block beforeContent %}
-  <div class="govuk-breadcrumbs">
-    <ol class="govuk-breadcrumbs__list">
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk/">Home</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="https://beta.companieshouse.gov.uk/">Companies House Search</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="/">Report a discrepancy</a>
-      </li>
-    </ol>
-  </div>
+  {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "https://www.gov.uk/"
+    },
+    {
+      text: "Companies House Search",
+      href: "https://beta.companieshouse.gov.uk/"
+    },
+    {
+      text: "Report a discrepancy"
+    }
+  ]
+  }) }}
 {% endblock %}
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
         Report a register discrepancy
       </h1>
       <p class="govuk-body-l">Use this service to report any discrepancies if you are an obliged entity.</p>
-
-      <p>
+      <p class="govuk-body">
         It may take up to 6 minutes to complete this form.
       </p>
-
       {{ govukButton({
-  text: "Start now",
-  href: "/sign-in",
-  isStartButton: true
-}) }}
+        text: "Start now",
+        href: "/sign-in",
+        isStartButton: true
+      }) }}
       <h2 class="govuk-heading-m">Before you start</h2>
-      <p>You should read the guidance on
-        <a href="https://www.gov.uk/guidance/report-a-discrepancy-about-a-beneficial-owner-on-the-psc-register-by-an-obliged-entity">reporting PSC discrepancy</a>.</p>
+      <p class="govuk-body">You should read the guidance on
+        <a class="govuk-link" href="https://www.gov.uk/guidance/report-a-discrepancy-about-a-beneficial-owner-on-the-psc-register-by-an-obliged-entity">reporting PSC discrepancy</a>.</p>
       <h3 class="govuk-heading-s">You'll need:</h3>
       <ul class="govuk-list govuk-list--bullet">
         <li>your organisation contact details</li>
@@ -46,7 +45,7 @@
         <li>information about the discrepancy</li>
       </ul>
       <h2 class="govuk-heading-m">After you submit a discrepency</h2>
-      <p>Once you submit a discrepency it will be sent to one of the Companies House staff to invesigate. We may contact you for further information.</p>
+      <p class="govuk-body">Once you submit a discrepency it will be sent to one of the Companies House staff to invesigate. We may contact you for further information.</p>
     </div>
     <div class="govuk-grid-column-one-third">
       <aside class="app-related-items" role="complementary">
@@ -56,7 +55,7 @@
         <nav role="navigation" aria-labelledby="subsection-title">
           <ul class="govuk-list govuk-body-s">
             <li>
-              <a href="https://www.gov.uk/guidance/report-a-discrepancy-about-a-beneficial-owner-on-the-psc-register-by-an-obliged-entity">
+              <a class="govuk-link" href="https://www.gov.uk/guidance/report-a-discrepancy-about-a-beneficial-owner-on-the-psc-register-by-an-obliged-entity">
                 Guideance on reporting a discrepancy
               </a>
             </li>
@@ -65,5 +64,4 @@
       </aside>
     </div>
   </div>
-
 {% endblock %}
