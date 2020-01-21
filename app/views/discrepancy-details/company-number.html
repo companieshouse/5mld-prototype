@@ -5,6 +5,10 @@
 {% endblock %}
 {% block beforeContent %}
   {% include "../includes/sign-in.html" %}
+  {{ govukBackLink({
+  href: "../obliged-entity-details",
+  text: "Back"
+}) }}
 {% endblock %}
 {% block content %}
 
