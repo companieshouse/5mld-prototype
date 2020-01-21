@@ -1,5 +1,4 @@
 {% extends "layout.html" %}
-
 {% block pageTitle %}
   Get company reminders
 {% endblock %}
@@ -12,11 +11,8 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-
       <h1 class="govuk-heading-xl">Check your answers before sending your application</h1>
-
       <h2 class="govuk-heading-m">Personal details</h2>
-
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
         rows: [
@@ -168,20 +164,14 @@
       }) }}
 
       <h2 class="govuk-heading-m">Now send your application</h2>
-
       <p class="govuk-body">By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
-
       <form action="/form-handler" method="post" novalidate="novalidate">
-
         <input type="hidden" name="answers-checked" value="true">
-
         {{ govukButton({
           text: "Submit",
           href: "confirmation"
         }) }}
-
       </form>
-
     </div>
   </div>
 {% endblock %}

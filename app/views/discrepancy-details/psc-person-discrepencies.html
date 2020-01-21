@@ -1,19 +1,15 @@
 {% extends "layout.html" %}
-
 {% block pageTitle %}
   Get company reminders
 {% endblock %}
 {% block beforeContent %}
-
   {% include "../includes/sign-in.html" %}
-
   {{ govukBackLink({
     text: "Back",
     href: "psc-names"
   }) }}
 {% endblock %}
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       {{ govukCheckboxes({
@@ -70,5 +66,4 @@ href: "other-info"
     </section>
   </div>
 </div>
-
 {% endblock %}

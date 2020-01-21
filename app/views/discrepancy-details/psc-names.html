@@ -1,19 +1,15 @@
 {% extends "layout.html" %}
-
 {% block pageTitle %}
   Get company reminders
 {% endblock %}
 {% block beforeContent %}
-
   {% include "../includes/sign-in.html" %}
-
   {{ govukBackLink({
     text: "Back",
     href: "company-number"
   }) }}
 {% endblock %}
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       {{ govukRadios({
@@ -27,7 +23,6 @@
     }
   },
   items: [
-
     {
       value: "british",
       text: "Mrs Catherine Isabel Gaynor",
@@ -36,7 +31,6 @@
           November 1962"
       }
     },
-
     {
       value: "other",
       text: "Mr Jonathan Charles Gaynor",
@@ -61,8 +55,6 @@
 text: "Continue",
 href: "psc-person-discrepencies"
 }) }}
-    </section>
+    </div>
   </div>
-</div>
-
 {% endblock %}
