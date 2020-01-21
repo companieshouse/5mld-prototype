@@ -9,14 +9,14 @@
 
   {{ govukBackLink({
     text: "Back",
-    href: "company-number"
+    href: "psc-names"
   }) }}
 {% endblock %}
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {{ govukRadios({
+      {{ govukCheckboxes({
   idPrefix: "nationality",
   name: "nationality",
   fieldset: {
@@ -30,27 +30,32 @@
 
     {
       value: "british",
-      text: "Mrs Catherine Isabel Gaynor",
-      hint: {
-        html: "Born on
-          November 1962"
-      }
+      text: "Name"
     },
 
     {
       value: "other",
-      text: "Mr Jonathan Charles Gaynor",
-      hint: {
-        text: "Born on
-          June 1952"
-      }
+      text: "Date of birth"
     },
     {
-  divider: "or"
-},
+      value: "irish",
+      text: "Nationality"
+    },
     {
       value: "irish",
-      text: "Missing PSC"
+      text: "Place of residence"
+    },
+    {
+      value: "irish",
+      text: "Address"
+    },
+    {
+      value: "irish",
+      text: "Notified date"
+    },
+    {
+      value: "irish",
+      text: "Nature of control"
     }
   ]
 }) }}

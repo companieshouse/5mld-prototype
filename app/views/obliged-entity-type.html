@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sign in to Companies House
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukRadios({
+        idPrefix: "where-do-you-live",
+        name: "where-do-you-live",
+        fieldset: {
+          legend: {
+            text: "What type of obliged entity do you represent?",
+            isPageHeading: true,
+     classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "england",
+            text: "Credit Institutions"
+          },
+          {
+            value: "scotland",
+            text: "Financial Institutions"
+          },
+          {
+            value: "wales",
+            text: "Auditors, external accountants and tax advisors"
+          },
+          {
+            value: "northern-ireland",
+            text: "Notaries and other independent legal professionals"
+          },
+          {
+            value: "england",
+            text: "Trust or company service providers"
+          },
+          {
+            value: "scotland",
+            text: "Estate agents including when acting as intermediaries"
+          },
+          {
+            value: "wales",
+            text: "Other persons trading in goods in cash in an amount of EUR 10 000 or more"
+          },
+          {
+            value: "northern-ireland",
+            text: "Providers of gambling services"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+  text: "Continue",
+  href: 'obliged-entity-details',
+    classes: "govuk-!-margin-right-1"
+}) }}
+
+    </div>
+  </div>
+{% endblock %}
