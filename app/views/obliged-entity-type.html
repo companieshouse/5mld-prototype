@@ -1,13 +1,10 @@
 {% extends "layout.html" %}
-
 {% block pageTitle %}
   Sign in to Companies House
 {% endblock %}
-
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
       {{ govukRadios({
         idPrefix: "where-do-you-live",
         name: "where-do-you-live",
@@ -61,7 +58,6 @@
   href: 'obliged-entity-details',
     classes: "govuk-!-margin-right-1"
 }) }}
-
     </div>
   </div>
 {% endblock %}
