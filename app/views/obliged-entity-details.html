@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Obliged Entity PSC Discrepancy
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+  href: "obliged-entity-type",
+  text: "Back"
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Your details</h1>
+      {{ govukInput({
+        label: {
+          text: "Full name"
+        },
+          classes: "govuk-input--width-20",
+        id: "your-contact-name",
+        name: "your-contact-name"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Organisation name"
+        },
+          classes: "govuk-input--width-20",
+        id: "your-contact-name",
+        name: "your-contact-name"
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "Email address"
+        },
+          classes: "govuk-input--width-20",
+        id: "your-contact-name",
+        name: "your-contact-name"
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "Telephone number"
+        },
+          classes: "govuk-input--width-20",
+        id: "your-contact-name",
+        name: "your-contact-name"
+      }) }}
+      {{ govukButton({
+text: "Continue",
+href: "/discrepancy-details/company-number.html"
+}) }}
+    </div>
+  </div>
+
+{% endblock %}

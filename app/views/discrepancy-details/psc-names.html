@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Get company reminders
+{% endblock %}
+{% block beforeContent %}
+
+  {% include "../includes/sign-in.html" %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "company-number"
+  }) }}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukRadios({
+  idPrefix: "nationality",
+  name: "nationality",
+  fieldset: {
+    legend: {
+      text: "Which PSC information is incorrect?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  items: [
+
+    {
+      value: "british",
+      text: "Mrs Catherine Isabel Gaynor",
+      hint: {
+        html: "Born on
+          November 1962"
+      }
+    },
+
+    {
+      value: "other",
+      text: "Mr Jonathan Charles Gaynor",
+      hint: {
+        text: "Born on
+          June 1952"
+      }
+    },
+    {
+  divider: "or"
+},
+    {
+      value: "irish",
+      text: "Other",
+      hint: {
+        html: "Such as the PSC is missing or type is incorrect"
+      }
+    }
+  ]
+}) }}
+      {{ govukButton({
+text: "Continue",
+href: "psc-person-discrepencies"
+}) }}
+    </section>
+  </div>
+</div>
+
+{% endblock %}
