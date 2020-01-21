@@ -3,8 +3,9 @@
   Obliged Entity PSC Discrepancy
 {% endblock %}
 {% block beforeContent %}
+  {% include "includes/sign-in.html" %}
   {{ govukBackLink({
-  href: "obliged-entity-type",
+  href: "obliged-entity-details-email",
   text: "Back"
 }) }}
 {% endblock %}

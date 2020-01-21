@@ -3,6 +3,7 @@
   Obliged Entity PSC Discrepancy
 {% endblock %}
 {% block beforeContent %}
+  {% include "includes/sign-in.html" %}
   {{ govukBackLink({
   href: "obliged-entity-type",
   text: "Back"
@@ -17,9 +18,12 @@
           isPageHeading: true,
           classes: "govuk-label--xl"
         },
-          classes: "govuk-input--width-20",
-        id: "your-contact-name",
-        name: "your-contact-name"
+        id: "full-name",
+        name: "full-name",
+        autocomplete: "name",
+        attributes: {
+          spellcheck: "false"
+        }
       }) }}
 
       {{ govukButton({

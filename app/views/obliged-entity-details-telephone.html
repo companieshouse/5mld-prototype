@@ -3,8 +3,9 @@
   Obliged Entity PSC Discrepancy
 {% endblock %}
 {% block beforeContent %}
+  {% include "includes/sign-in.html" %}
   {{ govukBackLink({
-  href: "obliged-entity-type",
+  href: "obliged-entity-details-organisation",
   text: "Back"
 }) }}
 {% endblock %}
@@ -13,13 +14,15 @@
     <div class="govuk-grid-column-two-thirds">
       {{ govukInput({
         label: {
-          text: "Telephone number",
+          text: "UK telephone number",
           isPageHeading: true,
           classes: "govuk-label--xl"
         },
-          classes: "govuk-input--width-20",
-        id: "your-contact-name",
-        name: "your-contact-name"
+        id: "telephone-number",
+        name: "telephone-number",
+        type: "tel",
+        autocomplete: "tel",
+        classes: "govuk-input--width-20"
       }) }}
       {{ govukButton({
 text: "Continue",
