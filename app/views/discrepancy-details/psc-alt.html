@@ -18,13 +18,13 @@
   name: "changed-name",
   fieldset: {
     legend: {
-      text: "The PSC is a duplicate, inactive or unauthorised?",
+      text: "Is the PSC a duplicate, inactive or unauthorised?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--xl"
     }
   },
   hint: {
-    text: "This includes changing your last name or spelling your name differently."
+    text: ""
   },
   items: [
     {
@@ -37,6 +37,8 @@
     }
   ]
 }) }}
+      <p>**if yes then jump to the free for all text box**</p>
+      <p>** if no then go to the tickboxes about which information is incorrect**</p>
       {{ govukButton({
 text: "Continue",
 href: "psc-person-discrepencies"
