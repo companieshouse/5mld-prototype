@@ -6,54 +6,22 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {{ govukRadios({
-        idPrefix: "where-do-you-live",
-        name: "where-do-you-live",
-        fieldset: {
-          legend: {
-            text: "What type of obliged entity do you represent?",
-            isPageHeading: true,
-     classes: "govuk-fieldset__legend--xl"
-          }
-        },
-        items: [
-          {
-            value: "credit-institutions",
-            text: "Credit Institutions"
-          },
-          {
-            value: "financial-institutions",
-            text: "Financial Institutions"
-          },
-          {
-            value: "auditors-external-accountants-and-tax-advisors",
-            text: "Auditors, external accountants and tax advisors"
-          },
-          {
-            value: "notaries-and-other-independent-legal-professionals",
-            text: "Notaries and other independent legal professionals"
-          },
-          {
-            value: "trust-or-company-service-providers",
-            text: "Trust or company service providers"
-          },
-          {
-            value: "scotland",
-            text: "Estate agents including when acting as intermediaries"
-          },
-          {
-            value: "wales",
-            text: "Other persons trading in goods in cash in an amount of EUR 10 000 or more"
-          },
-          {
-            value: "northern-ireland",
-            text: "Providers of gambling services"
-          }
-        ]
-      }) }}
+      <h1 class="govuk-heading-xl">Obliged entity list</h1>
+      <p class="govuk-body-l">To report a discrepancy you must be one of the following:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Credit Institutions</li>
+        <li>Financial Institutions</li>
+        <li>Auditors, external accountants and tax advisors</li>
+        <li>Notaries and other independent legal professionals</li>
+        <li>Estate agents including when acting as intermediaries</li>
+        <li>Other persons trading in goods in cash in an amount of EUR 10 000 or more</li>
+        <li>Providers of gambling services</li>
+      </ul>
       {{ govukInsetText({
         text: "If your not on this list then you are not obliged to report a PSC discrepency with Companies House."
       }) }}
+
       {{ govukButton({
   text: "Continue",
   href: 'obliged-entity-details-organisation',

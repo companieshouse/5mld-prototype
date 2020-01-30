@@ -11,24 +11,67 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      {% set emailHtml %}
+
       {{ govukInput({
+        id: "contact-by-email",
+        name: "contact-by-email",
+        type: "email",
+        classes: "govuk-!-width-one-third",
         label: {
-          text: "UK telephone number",
-          isPageHeading: true,
-          classes: "govuk-label--xl"
+          text: "Email address"
         },
-  hint: {
-    text: "For international numbers include the country code."
-  },
-        id: "telephone-number",
-        name: "telephone-number",
+        attributes: {
+          spellcheck: "false"
+        }
+      }) }}
+      {% endset -%}
+
+      {% set phoneHtml %}
+      {{ govukInput({
+        id: "contact-by-phone",
+        name: "contact-by-phone",
         type: "tel",
-        autocomplete: "tel",
-        classes: "govuk-input--width-20"
+        classes: "govuk-!-width-one-third",
+        label: {
+          text: "Phone number"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukCheckboxes({
+        idPrefix: "citizenship-conditional",
+        name: "citizen",
+        fieldset: {
+          legend: {
+            text: "How would you like to be contacted?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "Select all options that are relevant to you."
+        },
+        items: [
+          {
+            value: "email",
+            text: "Email",
+            conditional: {
+              html: emailHtml
+            }
+          },
+          {
+            value: "phone",
+            text: "Phone",
+            conditional: {
+              html: phoneHtml
+            }
+          }
+        ]
       }) }}
       {{ govukButton({
 text: "Continue",
-href: "obliged-entity-details-email"
+href: "/discrepancy-details/company-number"
 }) }}
     </div>
   </div>
