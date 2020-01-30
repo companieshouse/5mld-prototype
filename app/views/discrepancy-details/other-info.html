@@ -3,7 +3,6 @@
   Get company reminders
 {% endblock %}
 {% block beforeContent %}
-  {% include "../includes/sign-in.html" %}
   {{ govukBackLink({
     text: "Back",
     href: "psc-names"
@@ -23,7 +22,7 @@
         }
       }) }}
       {{ govukButton({
-  text: "Continue",
+  text: "Submit discrepency report",
   href: "../confirmation"
 }) }}
     </div>

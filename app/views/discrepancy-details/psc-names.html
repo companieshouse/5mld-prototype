@@ -3,7 +3,6 @@
   Get company reminders
 {% endblock %}
 {% block beforeContent %}
-  {% include "../includes/sign-in.html" %}
   {{ govukBackLink({
     text: "Back",
     href: "company-number"
@@ -12,14 +11,13 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">PSC information for **company name**</h1>
       {{ govukCheckboxes({
   idPrefix: "nationality",
   name: "nationality",
   fieldset: {
     legend: {
-      text: "Which PSC information is incorrect?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--xl"
+      html: "<strong>Which PSC's are incorrect?</strong>"
     }
   },
   items: [
