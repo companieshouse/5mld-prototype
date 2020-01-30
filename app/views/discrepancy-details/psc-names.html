@@ -12,7 +12,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {{ govukRadios({
+      {{ govukCheckboxes({
   idPrefix: "nationality",
   name: "nationality",
   fieldset: {
@@ -43,7 +43,7 @@
 }) }}
       {{ govukButton({
 text: "Continue",
-href: "psc-alt"
+href: "other-info"
 }) }}
     </div>
   </div>
