@@ -13,44 +13,42 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">PSC information for **company name**</h1>
       {{ govukRadios({
-  idPrefix: "nationality",
-  name: "nationality",
-  fieldset: {
-    legend: {
-      html: "<strong>Which PSC's are incorrect?</strong>"
-    }
-  },
-  items: [
-    {
-      value: "british",
-      text: "Mrs Catherine Isabel Gaynor",
-      hint: {
-        html: "Born on
-          November 1962"
-      }
-    },
-    {
-      value: "other",
-      text: "Mr Jonathan Charles Gaynor",
-      hint: {
-        text: "Born on
-          June 1952"
-      }
-    },
-    {
-      value: "other",
-      text: "Statement"
-    },
-    {
-      value: "other",
-      text: "PSC Missing"
-    }
-  ]
-}) }}
+        idPrefix: "nationality",
+        name: "nationality",
+        fieldset: {
+          legend: {
+            html: "<strong>Which PSC's are incorrect?</strong>"
+          }
+        },
+        items: [
+          {
+            value: "british",
+            text: "Mrs Catherine Isabel Gaynor",
+            hint: {
+              html: "Born on November 1962"
+            }
+          },
+          {
+            value: "other",
+            text: "Mr Jonathan Charles Gaynor",
+            hint: {
+              text: "Born on June 1952"
+            }
+          },
+          {
+            value: "other",
+            text: "Statement"
+          },
+          {
+            value: "other",
+            text: "PSC Missing"
+          }
+        ]
+      }) }}
       {{ govukButton({
-text: "Continue",
-href: "other-info"
-}) }}
+        text: "Continue",
+        href: "other-info"
+      }) }}
     </div>
   </div>
 {% endblock %}

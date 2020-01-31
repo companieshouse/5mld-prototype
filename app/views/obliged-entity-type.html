@@ -7,55 +7,54 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       {{ govukRadios({
-  idPrefix: "where-do-you-live",
-  name: "where-do-you-live",
-  fieldset: {
-    legend: {
-      text: "What type of obliged entity are you?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--xl"
-    }
-  },
-  items: [
-    {
-      value: "england",
-      text: "Credit Institutions"
-    },
-    {
-      value: "scotland",
-      text: "Financial Institutions"
-    },
-    {
-      value: "wales",
-      text: "Auditors, external accountants and tax advisors"
-    },
-    {
-      value: "northern-ireland",
-      text: "Notaries and other independent legal professionals"
-    },
-    {
-      value: "northern-ireland",
-      text: "Estate agents including when acting as intermediaries"
-    },
-    {
-      value: "northern-ireland",
-      text: "Other persons trading in goods in cash in an amount of EUR 10 000 or more"
-    },
-    {
-      value: "northern-ireland",
-      text: "Providers of gambling services"
-    }
-  ]
-}) }}
+        idPrefix: "where-do-you-live",
+        name: "where-do-you-live",
+        fieldset: {
+          legend: {
+            text: "What type of obliged entity are you?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "england",
+            text: "Credit Institutions"
+          },
+          {
+            value: "scotland",
+            text: "Financial Institutions"
+          },
+          {
+            value: "wales",
+            text: "Auditors, external accountants and tax advisors"
+          },
+          {
+            value: "northern-ireland",
+            text: "Notaries and other independent legal professionals"
+          },
+          {
+            value: "northern-ireland",
+            text: "Estate agents including when acting as intermediaries"
+          },
+          {
+            value: "northern-ireland",
+            text: "Other persons trading in goods in cash in an amount of EUR 10 000 or more"
+          },
+          {
+            value: "northern-ireland",
+            text: "Providers of gambling services"
+          }
+        ]
+      }) }}
       {{ govukInsetText({
         text: "If your not on this list then you are not obliged to report a PSC discrepency with Companies House."
       }) }}
-
       {{ govukButton({
-  text: "Continue",
-  href: 'obliged-entity-details-organisation',
-    classes: "govuk-!-margin-right-1"
-}) }}
+        text: "Continue",
+        href: 'obliged-entity-details-organisation',
+        classes: "govuk-!-margin-right-1"
+      }) }}
     </div>
   </div>
 {% endblock %}

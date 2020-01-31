@@ -12,7 +12,6 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       {% set emailHtml %}
-
       {{ govukInput({
         id: "contact-by-email",
         name: "contact-by-email",
@@ -26,7 +25,6 @@
         }
       }) }}
       {% endset -%}
-
       {% set phoneHtml %}
       {{ govukInput({
         id: "contact-by-phone",
@@ -38,7 +36,6 @@
         }
       }) }}
       {% endset -%}
-
       {{ govukCheckboxes({
         idPrefix: "citizenship-conditional",
         name: "citizen",
@@ -70,10 +67,9 @@
         ]
       }) }}
       {{ govukButton({
-text: "Continue",
-href: "/discrepancy-details/company-number"
-}) }}
+        text: "Continue",
+        href: "/discrepancy-details/company-number"
+      }) }}
     </div>
   </div>
-
 {% endblock %}
