@@ -12,8 +12,8 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       {{ govukRadios({
-        idPrefix: "where-do-you-live",
-        name: "where-do-you-live",
+        idPrefix: "obliged-type",
+        name: "obliged-type",
         fieldset: {
           legend: {
             text: "What type of obliged entity are you?",
@@ -23,47 +23,47 @@
         },
         items: [
           {
-            value: "england",
+            value: "Credit institution",
             text: "Credit institution"
           },
           {
-            value: "scotland",
+            value: "Financial institution",
             text: "Financial institution"
           },
           {
-            value: "wales",
+            value: "Auditor, external accountant or tax advisor",
             text: "Auditor, external accountant or tax advisor"
           },
           {
-            value: "northern-ireland",
+            value: "Notary or independent legal professional",
             text: "Notary or independent legal professional"
           },
           {
-            value: "northern-ireland",
+            value: "Estate agent or intermediary",
             text: "Estate agent or intermediary"
           },
           {
-            value: "northern-ireland",
+            value: "Entity trading goods in cash over €10,000",
             text: "Entity trading goods in cash over €10,000"
           },
           {
-            value: "northern-ireland",
+            value: "Gambling service provider",
             text: "Gambling service provider"
           },
           {
-            value: "northern-ireland",
+            value: "Exchange service provider of fiat and virtual currencies",
             text: "Exchange service provider of fiat and virtual currencies"
           },
           {
-            value: "northern-ireland",
+            value: "Custodian wallet provider",
             text: "Custodian wallet provider"
           },
           {
-            value: "northern-ireland",
+            value: "Art dealer - galleries and auction houses",
             text: "Art dealer - galleries and auction houses"
           },
           {
-            value: "northern-ireland",
+            value: "Art dealer - free ports",
             text: "Art dealer - free ports"
           }
         ]
@@ -73,8 +73,7 @@
       }) }}
       {{ govukButton({
         text: "Continue",
-        href: 'obliged-entity-details-organisation',
-        classes: "govuk-!-margin-right-1"
+        href: 'obliged-entity-details-organisation'
       }) }}
     </div>
   </div>

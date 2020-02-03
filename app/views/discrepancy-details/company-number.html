@@ -11,7 +11,31 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {{ govukInput({
+      <form action="/discrepancy-details/company-number" method="post">
+        {% if errorNum == true %}
+          {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: errorList
+      }) }}
+          {{ govukInput({
+    label: {
+      text: "What is the company number for the PSC with the discrepancy?",
+      isPageHeading: true,
+      classes: "govuk-label--xl"
+    },
+    hint: {
+      text: "This is the 8 character reference issued by Companies House."
+    },
+    classes: "govuk-input--width-5",
+    id: "company-number",
+    name: "company-number",
+    errorMessage: {
+        text: "Enter company number"
+    }
+  }) }}
+
+        {% else %}
+          {{ govukInput({
         label: {
           text: "What is the company number for the PSC with the discrepancy?",
           isPageHeading: true,
@@ -20,18 +44,20 @@
         hint: {
           text: "This is the 8 character reference issued by Companies House."
         },
-                    classes: "govuk-input--width-5",
-        id: "your-contact-name",
-        name: "your-contact-name"
+        classes: "govuk-input--width-5",
+        id: "company-number",
+        name: "company-number"
       }) }}
-      {{ govukDetails({
-        summaryText: "Help with company number",
-        html: '<p>Use the <a target="blank" href="https://beta.companieshouse.gov.uk/">Companies House service</a> to find it.</p>'
+
+        {% endif %}
+        {{ govukDetails({
+  summaryText: "Help with company number",
+  html: '<p>Use the <a target="blank" href="https://beta.companieshouse.gov.uk/">Companies House service</a> to find it.</p>'
+}) }}
+        {{ govukButton({
+        text: "Continue"
       }) }}
-      {{ govukButton({
-        text: "Continue",
-        href: "/discrepancy-details/psc-names"
-      }) }}
+      </form>
     </div>
   </div>
 {% endblock %}
