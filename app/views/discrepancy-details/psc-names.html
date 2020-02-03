@@ -11,13 +11,14 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">PSC information for **company name**</h1>
       {{ govukRadios({
         idPrefix: "nationality",
         name: "nationality",
         fieldset: {
           legend: {
-            html: "<strong>Which PSC are incorrect?</strong>"
+            html: "Which PSC are incorrect for **company name**?",
+            isPageHeading: true,
+            classes: "govuk-label--xl"
           }
         },
         items: [
@@ -34,10 +35,6 @@
             hint: {
               text: "Born on June 1952"
             }
-          },
-          {
-            value: "other",
-            text: "Statement"
           },
           {
             value: "other",
