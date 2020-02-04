@@ -3,6 +3,8 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 router.get('/', function (req, res) {
+  req.session.destroy()
+
   res.render('index', {
   })
 })
@@ -99,6 +101,22 @@ router.post('/discrepancy-details/company-number', function (req, res) {
 router.get('/discrepeancy-details/psc-names', function (req, res) {
   res.render('/discrepeancy-details/psc-names', {
   })
+})
+
+router.post('/discrepancy-details/psc-names', function (req, res) {
+  var errors = []
+  if (typeof req.session.data['psc'] === 'undefined') {
+    errors.push({
+      text: 'Select type of obliged entity',
+      href: '#psc'
+    })
+    res.render('discrepancy-details/psc-names', {
+      errorPSC: true,
+      errorList: errors
+    })
+  } else {
+    res.redirect('/discrepancy-details/other-info')
+  }
 })
 
 router.get('/discrepeancy-details/other-info', function (req, res) {

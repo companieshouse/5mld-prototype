@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  Your UK telephone number
+  Your contact details
 {% endblock %}
 {% block beforeContent %}
   {{ govukBackLink({
@@ -11,61 +11,32 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {% set emailHtml %}
+      <h1 class="govuk-heading-xl">How would you like to be contacted?</h1>
       {{ govukInput({
-        id: "contact-by-email",
-        name: "contact-by-email",
-        type: "email",
-        classes: "govuk-!-width-one-third",
         label: {
           text: "Email address"
         },
+        hint: {
+          text: "We’ll only use this to contact you for more information"
+        },
+        id: "email",
+        name: "email",
+        type: "email",
+        autocomplete: "email",
         attributes: {
           spellcheck: "false"
         }
       }) }}
-      {% endset -%}
-      {% set phoneHtml %}
       {{ govukInput({
-        id: "contact-by-phone",
-        name: "contact-by-phone",
-        type: "tel",
-        classes: "govuk-!-width-one-third",
-        label: {
-          text: "Phone number"
-        }
-      }) }}
-      {% endset -%}
-      {{ govukCheckboxes({
-        idPrefix: "citizenship-conditional",
-        name: "citizen",
-        fieldset: {
-          legend: {
-            text: "How would you like to be contacted?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
-          }
-        },
-        hint: {
-          text: "Select all options that are relevant to you."
-        },
-        items: [
-          {
-            value: "email",
-            text: "Email",
-            conditional: {
-              html: emailHtml
-            }
-          },
-          {
-            value: "phone",
-            text: "Phone",
-            conditional: {
-              html: phoneHtml
-            }
-          }
-        ]
-      }) }}
+  label: {
+    text: "UK telephone number (optional)"
+  },
+  id: "telephone-number",
+  name: "telephone-number",
+  type: "tel",
+  autocomplete: "tel",
+  classes: "govuk-input--width-20"
+}) }}
       {{ govukButton({
         text: "Continue",
         href: "/discrepancy-details/company-number"

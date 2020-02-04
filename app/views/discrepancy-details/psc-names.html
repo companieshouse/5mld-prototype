@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  Get company reminders
+  PSC information
 {% endblock %}
 {% block beforeContent %}
   {{ govukBackLink({
@@ -11,9 +11,18 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {{ govukRadios({
-        idPrefix: "nationality",
-        name: "nationality",
+      <form action="/discrepancy-details/psc-names" method="post">
+        {% if errorPSC == true %}
+          {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: errorList
+      }) }}
+          {{ govukRadios({
+        idPrefix: "psc",
+        name: "psc",
+        errorMessage: {
+            text: "Select type of obliged entity"
+        },
         fieldset: {
           legend: {
             html: "Which PSC is incorrect for Testing Limited?",
@@ -45,10 +54,47 @@
           }
         ]
       }) }}
-      {{ govukButton({
-        text: "Continue",
-        href: "other-info"
+
+        {% else %}
+          {{ govukRadios({
+        idPrefix: "psc",
+        name: "psc",
+        fieldset: {
+          legend: {
+            html: "Which PSC is incorrect for Testing Limited?",
+            isPageHeading: true,
+            classes: "govuk-label--xl"
+          }
+        },
+        items: [
+          {
+            value: "british",
+            text: "Mrs Catherine Isabel Gaynor",
+            hint: {
+              html: "Born on November 1962"
+            }
+          },
+          {
+            value: "other",
+            text: "Mr Jonathan Charles Gaynor",
+            hint: {
+              text: "Born on June 1952"
+            }
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "other",
+            text: "PSC is missing"
+          }
+        ]
       }) }}
+        {% endif %}
+        {{ govukButton({
+        text: "Continue"
+      }) }}
+      </form>
     </div>
   </div>
 {% endblock %}
