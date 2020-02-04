@@ -11,17 +11,36 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {{ govukTextarea({
+      <form action="/discrepancy-details/other-info" method="post">
+        {% if errorOther == true %}
+          {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: errorList
+      }) }}
+          {{ govukTextarea({
+name: "more-detail",
+id: "more-detail",
+label: {
+  html: "<h1 class='govuk-fieldset__legend--xl govuk-!-margin-top-0'>What information is incorrect for the PSC?</h1>"
+},
+errorMessage: {
+    text: "Enter information"
+}
+}) }}
+
+        {% else %}
+          {{ govukTextarea({
         name: "more-detail",
         id: "more-detail",
         label: {
           html: "<h1 class='govuk-fieldset__legend--xl govuk-!-margin-top-0'>What information is incorrect for the PSC?</h1>"
         }
       }) }}
-      {{ govukButton({
-        text: "Submit discrepency report",
-        href: "../confirmation"
+        {% endif %}
+        {{ govukButton({
+        text: "Submit discrepency report"
       }) }}
+      </form>
     </div>
   </div>
 {% endblock %}

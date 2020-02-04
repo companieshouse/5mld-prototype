@@ -90,6 +90,22 @@ router.get('/discrepeancy-details/other-info', function (req, res) {
   })
 })
 
+router.post('/discrepancy-details/other-info', function (req, res) {
+  var errors = []
+  if (req.session.data['more-detail'] === '') {
+    errors.push({
+      text: 'Enter information',
+      href: '#more-detail'
+    })
+    res.render('discrepancy-details/other-info', {
+      errorOther: true,
+      errorList: errors
+    })
+  } else {
+    res.redirect('/confirmation')
+  }
+})
+
 router.get('/confirmation', function (req, res) {
   res.render('confirmation', {
   })
