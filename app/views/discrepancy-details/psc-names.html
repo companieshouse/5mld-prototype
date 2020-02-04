@@ -16,84 +16,83 @@
           {{ govukErrorSummary({
             titleText: "There is a problem",
             errorList: errorList
-      }) }}
+          }) }}
           {{ govukRadios({
-        idPrefix: "psc",
-        name: "psc",
-        errorMessage: {
-            text: "Select type of obliged entity"
-        },
-        fieldset: {
-          legend: {
-            html: "Which PSC is incorrect for Testing Limited?",
-            isPageHeading: true,
-            classes: "govuk-label--xl"
-          }
-        },
-        items: [
-          {
-            value: "british",
-            text: "Mrs Catherine Isabel Gaynor",
-            hint: {
-              html: "Born on November 1962"
-            }
-          },
-          {
-            value: "other",
-            text: "Mr Jonathan Charles Gaynor",
-            hint: {
-              text: "Born on June 1952"
-            }
-          },
-          {
-            divider: "or"
-          },
-          {
-            value: "other",
-            text: "PSC is missing"
-          }
-        ]
-      }) }}
-
+            idPrefix: "psc",
+            name: "psc",
+            errorMessage: {
+              text: "Select type of obliged entity"
+            },
+            fieldset: {
+              legend: {
+                html: "Which PSC is incorrect for Testing Limited?",
+                isPageHeading: true,
+                classes: "govuk-label--xl"
+              }
+            },
+            items: [
+              {
+                value: "british",
+                text: "Mrs Catherine Isabel Gaynor",
+                hint: {
+                  html: "Born on November 1962"
+                }
+              },
+              {
+                value: "other",
+                text: "Mr Jonathan Charles Gaynor",
+                hint: {
+                  text: "Born on June 1952"
+                }
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "other",
+                text: "PSC is missing"
+              }
+            ]
+          }) }}
         {% else %}
           {{ govukRadios({
-        idPrefix: "psc",
-        name: "psc",
-        fieldset: {
-          legend: {
-            html: "Which PSC is incorrect for Testing Limited?",
-            isPageHeading: true,
-            classes: "govuk-label--xl"
-          }
-        },
-        items: [
-          {
-            value: "british",
-            text: "Mrs Catherine Isabel Gaynor",
-            hint: {
-              html: "Born on November 1962"
-            }
-          },
-          {
-            value: "other",
-            text: "Mr Jonathan Charles Gaynor",
-            hint: {
-              text: "Born on June 1952"
-            }
-          },
-          {
-            divider: "or"
-          },
-          {
-            value: "other",
-            text: "PSC is missing"
-          }
-        ]
-      }) }}
+            idPrefix: "psc",
+            name: "psc",
+            fieldset: {
+              legend: {
+                html: "Which PSC is incorrect for Testing Limited?",
+                isPageHeading: true,
+                classes: "govuk-label--xl"
+              }
+            },
+            items: [
+              {
+                value: "british",
+                text: "Mrs Catherine Isabel Gaynor",
+                hint: {
+                  html: "Born on November 1962"
+                }
+              },
+              {
+                value: "other",
+                text: "Mr Jonathan Charles Gaynor",
+                hint: {
+                  text: "Born on June 1952"
+                }
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "other",
+                text: "PSC is missing"
+              }
+            ]
+          }) }}
         {% endif %}
         {{ govukButton({
-        text: "Continue"
-      }) }}
+          text: "Continue"
+        }) }}
       </form>
     </div>
   </div>

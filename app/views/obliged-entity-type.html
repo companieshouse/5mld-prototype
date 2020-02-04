@@ -16,38 +16,37 @@
           {{ govukErrorSummary({
             titleText: "There is a problem",
             errorList: errorList
-      }) }}
-
+          }) }}
           {{ govukRadios({
-idPrefix: "obliged-type",
-name: "obliged-type",
-errorMessage: {
-    text: "Select type of obliged entity"
-},
-fieldset: {
-legend: {
-  text: "What type of obliged entity are you?",
-  isPageHeading: true,
-  classes: "govuk-fieldset__legend--xl"
-}
-},
-items: [
-{
-  value: "Credit institution",
-  text: "Credit institution"
-},
-{
-  value: "Financial institution",
-  text: "Financial institution"
-},
-{
-  value: "Auditor, external accountant or tax advisor",
-  text: "Auditor, external accountant or tax advisor"
-},
-{
-  value: "Notary or independent legal professional",
-  text: "Notary or independent legal professional"
-},
+            idPrefix: "obliged-type",
+            name: "obliged-type",
+            errorMessage: {
+              text: "Select type of obliged entity"
+            },
+            fieldset: {
+              legend: {
+                text: "What type of obliged entity are you?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            items: [
+              {
+                value: "Credit institution",
+                text: "Credit institution"
+              },
+              {
+                value: "Financial institution",
+                text: "Financial institution"
+              },
+              {
+                value: "Auditor, external accountant or tax advisor",
+                text: "Auditor, external accountant or tax advisor"
+              },
+              {
+                value: "Notary or independent legal professional",
+                text: "Notary or independent legal professional"
+              },
 {
   value: "Estate agent or intermediary",
   text: "Estate agent or intermediary"

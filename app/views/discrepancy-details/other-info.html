@@ -16,30 +16,29 @@
           {{ govukErrorSummary({
             titleText: "There is a problem",
             errorList: errorList
-      }) }}
+          }) }}
           {{ govukTextarea({
-name: "more-detail",
-id: "more-detail",
-label: {
-  html: "<h1 class='govuk-fieldset__legend--xl govuk-!-margin-top-0'>What information is incorrect for the PSC?</h1>"
-},
-errorMessage: {
-    text: "Enter information"
-}
-}) }}
-
+            name: "more-detail",
+            id: "more-detail",
+            label: {
+              html: "<h1 class='govuk-fieldset__legend--xl govuk-!-margin-top-0'>What information is incorrect for the PSC?</h1>"
+            },
+            errorMessage: {
+              text: "Enter information"
+            }
+          }) }}
         {% else %}
           {{ govukTextarea({
-        name: "more-detail",
-        id: "more-detail",
-        label: {
-          html: "<h1 class='govuk-fieldset__legend--xl govuk-!-margin-top-0'>What information is incorrect for the PSC?</h1>"
-        }
-      }) }}
+            name: "more-detail",
+            id: "more-detail",
+            label: {
+              html: "<h1 class='govuk-fieldset__legend--xl govuk-!-margin-top-0'>What information is incorrect for the PSC?</h1>"
+            }
+          }) }}
         {% endif %}
         {{ govukButton({
-        text: "Submit discrepency report"
-      }) }}
+          text: "Submit discrepency report"
+        }) }}
       </form>
     </div>
   </div>
