@@ -11,7 +11,75 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {{ govukRadios({
+      <form action="/obliged-entity-type" method="post">
+        {% if errorType == true %}
+          {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: errorList
+      }) }}
+
+          {{ govukRadios({
+idPrefix: "obliged-type",
+name: "obliged-type",
+errorMessage: {
+    text: "Select type of obliged entity"
+},
+fieldset: {
+legend: {
+  text: "What type of obliged entity are you?",
+  isPageHeading: true,
+  classes: "govuk-fieldset__legend--xl"
+}
+},
+items: [
+{
+  value: "Credit institution",
+  text: "Credit institution"
+},
+{
+  value: "Financial institution",
+  text: "Financial institution"
+},
+{
+  value: "Auditor, external accountant or tax advisor",
+  text: "Auditor, external accountant or tax advisor"
+},
+{
+  value: "Notary or independent legal professional",
+  text: "Notary or independent legal professional"
+},
+{
+  value: "Estate agent or intermediary",
+  text: "Estate agent or intermediary"
+},
+{
+  value: "Entity trading goods in cash over €10,000",
+  text: "Entity trading goods in cash over €10,000"
+},
+{
+  value: "Gambling service provider",
+  text: "Gambling service provider"
+},
+{
+  value: "Exchange service provider of fiat and virtual currencies",
+  text: "Exchange service provider of fiat and virtual currencies"
+},
+{
+  value: "Custodian wallet provider",
+  text: "Custodian wallet provider"
+},
+{
+  value: "Art dealer - galleries and auction houses",
+  text: "Art dealer - galleries and auction houses"
+},
+{
+  value: "Art dealer - free ports",
+  text: "Art dealer - free ports"
+}
+]
+}) }}
+        {% else %}
+          {{ govukRadios({
         idPrefix: "obliged-type",
         name: "obliged-type",
         fieldset: {
@@ -68,13 +136,14 @@
           }
         ]
       }) }}
-      {{ govukInsetText({
+        {% endif %}
+        {{ govukInsetText({
         text: "If your not on this list then you are not obliged to report a PSC discrepency with Companies House."
       }) }}
-      {{ govukButton({
-        text: "Continue",
-        href: 'obliged-entity-details-organisation'
+        {{ govukButton({
+        text: "Continue"
       }) }}
+      </form>
     </div>
   </div>
 {% endblock %}

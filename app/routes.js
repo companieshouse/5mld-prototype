@@ -12,6 +12,22 @@ router.get('/obliged-entity-type', function (req, res) {
   })
 })
 
+router.post('/obliged-entity-type', function (req, res) {
+  var errors = []
+  if (typeof req.session.data['obliged-type'] === 'undefined') {
+    errors.push({
+      text: 'Select type of obliged entity',
+      href: '#obliged-type'
+    })
+    res.render('obliged-entity-type', {
+      errorType: true,
+      errorList: errors
+    })
+  } else {
+    res.redirect('obliged-entity-details-organisation')
+  }
+})
+
 router.get('/obliged-entity-name', function (req, res) {
   res.render('obliged-entity-name', {
   })
