@@ -4,7 +4,7 @@
 {% endblock %}
 {% block beforeContent %}
   {{ govukBackLink({
-  href: "obliged-entity-details-email",
+  href: "obliged-entity-type",
   text: "Back"
 }) }}
 {% endblock %}
@@ -27,7 +27,7 @@
       id: "your-organisation-name",
       name: "your-organisation-name",
       errorMessage: {
-          text: "Enter an organisation name"
+          text: "Enter your organisation name"
       }
     }) }}
         {% else %}

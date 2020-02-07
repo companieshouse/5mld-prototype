@@ -17,7 +17,7 @@ router.post('/obliged-entity-type', function (req, res) {
   var errors = []
   if (typeof req.session.data['obliged-type'] === 'undefined') {
     errors.push({
-      text: 'Select type of obliged entity',
+      text: 'Select what type of obliged entity you are',
       href: '#obliged-type'
     })
     res.render('obliged-entity-type', {
@@ -38,7 +38,7 @@ router.post('/obliged-entity-details-name', function (req, res) {
   var errors = []
   if (req.session.data['full-name'] === '') {
     errors.push({
-      text: 'Enter your name',
+      text: 'Enter your full name',
       href: '#full-name'
     })
     res.render('obliged-entity-details-name', {
@@ -59,7 +59,7 @@ router.post('/obliged-entity-details-organisation', function (req, res) {
   var errors = []
   if (req.session.data['your-organisation-name'] === '') {
     errors.push({
-      text: 'Enter an organisation name',
+      text: 'Enter your organisation name',
       href: '#your-organisation-name'
     })
     res.render('obliged-entity-details-organisation', {
@@ -85,7 +85,7 @@ router.post('/discrepancy-details/company-number', function (req, res) {
   var errors = []
   if (req.session.data['company-number'] === '') {
     errors.push({
-      text: 'Enter company number',
+      text: 'Enter the company number',
       href: '#company-number'
     })
     res.render('discrepancy-details/company-number', {
@@ -106,7 +106,7 @@ router.post('/discrepancy-details/psc-names', function (req, res) {
   var errors = []
   if (typeof req.session.data['psc'] === 'undefined') {
     errors.push({
-      text: 'Select type of obliged entity',
+      text: 'Select the PSC with the incorrect information',
       href: '#psc'
     })
     res.render('discrepancy-details/psc-names', {
@@ -127,7 +127,7 @@ router.post('/discrepancy-details/other-info', function (req, res) {
   var errors = []
   if (req.session.data['more-detail'] === '') {
     errors.push({
-      text: 'Enter information',
+      text: 'Enter the information that is incorrect for the PSC',
       href: '#more-detail'
     })
     res.render('discrepancy-details/other-info', {
