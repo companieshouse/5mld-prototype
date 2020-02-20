@@ -6,16 +6,15 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {% set buttonHref = "We will review your submitted case." %}
+      {% set buttonHref = "" %}
       {{ govukPanel({
-        titleText: "Discrepency submitted",
+        titleText: "Discrepancy report submitted",
         html: buttonHref
       }) }}
       <h2 class="govuk-heading-m">What happens next?</h2>
-      <p class="govuk-body">We’ll review the information you’ve given us and investigate the discrepancy in more detail. We may contact you for more information.
+      <p class="govuk-body">We may need to contact the company about the discrepancy, which could take some time. We'll contact you when we have completed our enquiries.
       </p>
-      <h2 class="govuk-heading-m">Urgent requests</h2>
-      <p class="govuk-body">If you need something urgently email us at
+      <p class="govuk-body">If you have any further information concerning this discrepancy, email
         <a class="govuk-link" href="mailto:pscdiscrepancies@companieshouse.gov.uk">pscdiscrepancies@companieshouse.gov.uk</a>
       </p>
       <p class="govuk-body">
