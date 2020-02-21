@@ -12,7 +12,38 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">How would you like to be contacted?</h1>
-      {{ govukInput({
+      <form action="/obliged-entity-details-telephone" method="post">
+        {% if errorEmail == true %}
+          {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: errorList
+      }) }}
+          {{ govukInput({
+        label: {
+        text: "Email address"
+        },
+        hint: {
+        text: "We’ll only use this to contact you for more information"
+        },
+        id: "email",
+        name: "email",
+        autocomplete: "email",
+        attributes: {
+        spellcheck: "false"
+        }
+        }) }}
+          {{ govukInput({
+        label: {
+        text: "Phone number (optional)"
+        },
+        id: "telephone-number",
+        name: "telephone-number",
+        type: "tel",
+        autocomplete: "tel",
+        classes: "govuk-input--width-20"
+        }) }}
+        {% else %}
+          {{ govukInput({
         label: {
           text: "Email address"
         },
@@ -21,15 +52,14 @@
         },
         id: "email",
         name: "email",
-        type: "email",
         autocomplete: "email",
         attributes: {
           spellcheck: "false"
         }
       }) }}
-      {{ govukInput({
+          {{ govukInput({
         label: {
-          text: "UK telephone number (optional)"
+          text: "Phone number (optional)"
         },
         id: "telephone-number",
         name: "telephone-number",
@@ -37,10 +67,11 @@
         autocomplete: "tel",
         classes: "govuk-input--width-20"
       }) }}
-      {{ govukButton({
-        text: "Continue",
-        href: "/discrepancy-details/company-number"
+        {% endif %}
+        {{ govukButton({
+        text: "Continue"
       }) }}
+      </form>
     </div>
   </div>
 {% endblock %}

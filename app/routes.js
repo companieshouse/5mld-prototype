@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const { check } = require('express-validator')
 
 // Add your routes here - above the module.exports line
 router.get('/', function (req, res) {
@@ -74,6 +75,22 @@ router.post('/obliged-entity-details-organisation', function (req, res) {
 router.get('/obliged-entity-details-telephone', function (req, res) {
   res.render('obliged-entity-details-telephone', {
   })
+})
+
+router.post('/obliged-entity-details-telephone', function (req, res) {
+  var errors = []
+  if (req.session.data['email'] === '') {
+    errors.push({
+      text: 'Enter your email address',
+      href: '#email'
+    })
+    res.render('obliged-entity-details-telephone', {
+      errorEmail: true,
+      errorList: errors
+    })
+  } else {
+    res.redirect('/discrepancy-details/company-number')
+  }
 })
 
 router.get('/discrepeancy-details/company-number', function (req, res) {
