@@ -2,12 +2,6 @@
 {% block pageTitle %}
   Report a discrepancy about a beneficial owner on the PSC register by an obliged entity
 {% endblock %}
-{% block beforeContent %}
-  {{ govukBackLink({
-  href: "index.html",
-  text: "Back"
-}) }}
-{% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -19,10 +13,21 @@
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible govuk-!-margin-bottom-3">
       <p class="govuk-body-s govuk-!-margin-bottom-1">Published 10 January 2020</p>
       <p class="govuk-body-s">From:
-        <a class="govuk-link" href="https://www.gov.uk/government/organisations/companies-house">Companies House</a>
+        <a class="govuk-link govuk-!-font-weight-bold" href="https://www.gov.uk/government/organisations/companies-house">Companies House</a>
       </p>
 
-      <p class="govuk-body-s">Contents</p>
+      <p class="govuk-body-s govuk-!-margin-bottom-2">Contents</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
+        <li>When to report a discrepancy
+        </li>
+        <li>What a discrepancy is</li>
+        <li>Information to include in the discrepancy report
+        </li>
+        <li>After the report is submitted
+        </li>
+        <li>Contact us
+        </li>
+      </ul>
       <p class="govuk-body">Obliged entities [link to what an obliged entity is in full guidance] must let us know if there’s a discrepancy between the information that they have about a beneficial owner of a company, limited liability partnership, or
         Scottish limited or qualifying partnership, and the information that’s on the public PSC register.
       </p>
