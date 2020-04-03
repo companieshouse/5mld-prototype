@@ -46,6 +46,15 @@ router.post('/obliged-entity-details-name', function (req, res) {
       errorName: true,
       errorList: errors
     })
+  } else if (req.session.data['full-name'] === '@') {
+    errors.push({
+      text: 'Full name must only include letters a to z, hyphens, spaces and apostrophes',
+      href: '#full-name'
+    })
+    res.render('obliged-entity-details-name', {
+      errorNametwo: true,
+      errorList: errors
+    })
   } else {
     res.redirect('obliged-entity-details-telephone')
   }
