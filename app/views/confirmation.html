@@ -20,10 +20,50 @@
       <p class="govuk-body">
         <a href="/">Submit another discrepancy</a>
       </p>
-      <p class="govuk-body">
-        <a href="#">What did you think of this service?</a>
-        (takes 30 seconds)</a>
-    </p>
+      {{ govukRadios({
+        idPrefix: "feedback",
+        name: "feedback",
+        fieldset: {
+          legend: {
+            text: "How would you describe your experience with this service?"
+          }
+        },
+        items: [
+          {
+            value: "very-good",
+            text: "Very good"
+          },
+          {
+            value: "good",
+            text: "Good"
+          },
+          {
+            value: "neither",
+            text: "Neither good or bad"
+          },
+          {
+            value: "bad",
+            text: "Bad"
+          },
+          {
+            value: "very-bad",
+            text: "Very bad"
+          }
+        ]
+      }) }}
+      {{ govukTextarea({
+        name: "more-detail",
+        id: "more-detail",
+        label: {
+          text: "How can we improve this service?"
+        },
+        hint: {
+          text: "For example, if a question was confusing let us know which one."
+        }
+      }) }}
+      {{ govukButton({
+        text: "Submit"
+      }) }}
+    </div>
   </div>
-</div>
 {% endblock %}
