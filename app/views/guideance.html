@@ -17,7 +17,7 @@
       </p>
 
       <p class="govuk-body-s govuk-!-margin-bottom-2">Contents</p>
-      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
+      <ul class="govuk-list govuk-list govuk-!-margin-bottom-8">
         <li>
           <a class="govuk-link govuk-body-s" href="">What an obliged entity is</a>
         </li>
@@ -37,21 +37,38 @@
           <a class="govuk-link govuk-body-s" href="">Contact us</a>
         </li>
       </ul>
-      <p class="govuk-body">Obliged entities must let us know if there’s a discrepancy between the information that they have about a beneficial owner of a company, limited liability partnership, Scottish limited partnership or Scottish qualifying
-        partnership, and the information that’s on the public PSC register.
+      <p class="govuk-body">Obliged entities must tell Companies House if there’s a discrepancy between the information that they hold about a beneficial owner of a company, limited liability partnership, or Scottish limited or qualifying partnership and the information that’s on the public people with significant control (PSC) register.</p>
+      <p class="govuk-body">This will help us to make sure that the register is as accurate and up to date as possible.
       </p>
-      <p class="govuk-body">This will help us to make sure the register is as accurate and up to date as possible.
-      </p>
-      {{ govukInsetText({
-  html: "A beneficial owner does not have the same definition as a PSC. The requirement to report discrepancies is based on the <a href=''>Companies Act definition of a PSC</a>. "
-}) }}
-      <h2 class="govuk-heading-l">When to report a discrepancy
+      <p class="govuk-body">A beneficial owner does not have the same definition as a PSC. The requirement to report discrepancies is based on the Companies Act definition of a PSC. Read <a href="https://www.gov.uk/government/publications/guidance-to-the-people-with-significant-control-requirements-for-companies-and-limited-liability-partnerships" class="govuk-link">how to identify PSCs of companies and limited liability partnerships.</a></p>
+<h2 class="govuk-heading-l">What an obliged entity is
+</h2>
+<p class="govuk-body">An obliged entity is a:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>credit institution</li>
+  <li>financial institution</li>
+  <li>auditor, insolvency practitioner, external accountant or tax advisor</li>
+  <li>notary or other independent legal professional</li>
+  <li>trust or company service provider</li>
+  <li>estate agent, including when acting as an intermediary</li>
+  <li>other person trading goods in cash amounting to 10,000 euros or more</li>
+  <li>gambling service</li>
+  <li>exchange service between virtual and fiat currencies</li>
+  <li>custodian wallet provider</li>
+  <li>art dealer in a gallery and auction house</li>
+  <li>art dealer in a free port</li>
+
+</ul>  <h2 class="govuk-heading-l">When to report a discrepancy
       </h2>
       <p class="govuk-body">Obliged entities must make a report if discrepancies are found when setting up a new business relationship with a customer.
       </p>
       <p class="govuk-body">The discrepancy report should be made as soon as possible. Obliged entities should not wait to make reports in bulk as this prevents the PSC register being kept up to date.
       </p>
-      <p class="govuk-body">A discrepancy report does not replace a Suspicious Activity Report (SAR). You should still submit a SAR when it is needed.
+      {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+{{ govukInsetText({
+  text: "A discrepancy report does not replace a Suspicious Activity Report (SAR). You should still submit a SAR when it is needed."
+}) }}
       </p>
       <h2 class="govuk-heading-l">What a discrepancy is
       </h2>
@@ -62,9 +79,7 @@
       </p>
       <p class="govuk-body">If this type of minor error is found, obliged entities should encourage the company to contact us to resolve it.
       </p>
-      <p class="govuk-body">Read more about
-        <a href="">the different types of discrepancies</a>.
-      </p>
+
 
       <h2 class="govuk-heading-l">Information to include in the discrepancy report
       </h2>
@@ -92,6 +107,7 @@
       <li>details of the discrepancy, for example an incorrect address or an invalid PSC statement
       </li>
     </ul>
+    <br>
     <p class="govuk-body govuk-!-font-weight-bold">If a beneficial owner’s correspondence address is different from the service address on the Companies House PSC register
     </p>
     <p class="govuk-body">Obliged entities should check with their client if the correspondence address they’ve given when a new business relationship is being set up has also been given as the PSC’s usual residential address with Companies House.
@@ -110,24 +126,6 @@
     <p class="govuk-body">We email the obliged entity to let them know the outcome of our investigation.
     </p>
 
-    <h2 class="govuk-heading-l">What an obliged entity is
-    </h2>
-    <p class="govuk-body">An obliged entity is a:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>credit institution</li>
-      <li>financial institution</li>
-      <li>auditor, insolvency practitioner, external accountant or tax advisor</li>
-      <li>notary or other independent legal professional</li>
-      <li>trust or company service provider</li>
-      <li>estate agent, including when acting as an intermediary</li>
-      <li>other person trading goods in cash amounting to 10,000 euros or more</li>
-      <li>gambling service</li>
-      <li>exchange service between virtual and fiat currencies</li>
-      <li>custodian wallet provider</li>
-      <li>art dealer in a gallery and auction house</li>
-      <li>art dealer in a free port</li>
-
-    </ul>
 
     <h2 class="govuk-heading-l">Contact us
     </h2>
