@@ -2,12 +2,6 @@
 {% block pageTitle %}
   Your contact details
 {% endblock %}
-{% block beforeContent %}
-  {{ govukBackLink({
-  href: "obliged-entity-details-name",
-  text: "Back"
-}) }}
-{% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -17,13 +11,14 @@
               errorList: errorList
         }) }}
       {% endif %}
-      <h1 class="govuk-heading-xl">What are your contact details?</h1>
       <form action="/obliged-entity-details-telephone" method="post">
         {% if errorEmail == true %}
 
           {{ govukInput({
         label: {
-        text: "Email address"
+        text: "What is your email address?",
+        classes: "govuk-label--xl",
+isPageHeading: true
         },
         hint: {
         text: "We’ll only use this to contact you for more information"
@@ -38,46 +33,12 @@
         spellcheck: "false"
         }
         }) }}
-          {{ govukInput({
-        label: {
-        text: "Phone number (optional)"
-        },
-        id: "telephone-number",
-        name: "telephone-number",
-        type: "tel",
-        autocomplete: "tel",
-        classes: "govuk-input--width-20"
-        }) }}
-          {{ govukCheckboxes({
-idPrefix: "waste",
-name: "waste",
-fieldset: {
-  legend: {
-    text: "Would you like to join the Companies House user panel to share ideas and help improve our services?"
-  }
-},
-items: [
-  {
-    value: "carcasses",
-    text: "Yes, I would like to join the user panel"
-  }
-]
-}) }}
-
-          {{ govukDetails({
-summaryText: "More information about our user panel",
-html: "You’ll need to be 18 or over. We’ll ask a few questions about what you do. You don’t need to be good with computers or the internet to join.<br/><br/>
-When you’re on the user panel you could be asked to:
-<ul class='govuk-list govuk-list--bullet govuk-!-margin-bottom-0'>
-<li>take part in research sessions</li>
-<li>answer email questionnaires</li>
-<li>take part in telephone interviews</li></ul><br/>
-You can say no to any invitation and can leave the user panel at any time."
-}) }}
         {% else %}
           {{ govukInput({
         label: {
-          text: "Email address"
+          text: "What is your email address?",
+          classes: "govuk-label--xl",
+isPageHeading: true
         },
         hint: {
           text: "We’ll only use this to contact you if we need more information"
@@ -89,42 +50,6 @@ You can say no to any invitation and can leave the user panel at any time."
           spellcheck: "false"
         }
       }) }}
-          {{ govukInput({
-        label: {
-          text: "Phone number (optional)"
-        },
-        id: "telephone-number",
-        name: "telephone-number",
-        type: "tel",
-        autocomplete: "tel",
-        classes: "govuk-input--width-20"
-      }) }}
-          {{ govukCheckboxes({
-  idPrefix: "waste",
-  name: "waste",
-  fieldset: {
-    legend: {
-      text: "Would you like to join the Companies House user panel to share ideas and help improve our services?"
-    }
-  },
-  items: [
-    {
-      value: "carcasses",
-      text: "Yes, I would like to join the user panel"
-    }
-  ]
-}) }}
-
-          {{ govukDetails({
-  summaryText: "More information about our user panel",
-  html: "You’ll need to be 18 or over. We’ll ask a few questions about what you do. You don’t need to be good with computers or the internet to join.<br/><br/>
-When you’re on the user panel you could be asked to:
-<ul class='govuk-list govuk-list--bullet govuk-!-margin-bottom-0'>
-<li>take part in research sessions</li>
-<li>answer email questionnaires</li>
-<li>take part in telephone interviews</li></ul><br/>
-You can say no to any invitation and can leave the user panel at any time."
-}) }}
         {% endif %}
         {{ govukButton({
         text: "Continue"
