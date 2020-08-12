@@ -7,53 +7,52 @@
     <div class="govuk-grid-column-two-thirds">
       {% if errorEmail == true %}
         {{ govukErrorSummary({
-              titleText: "There is a problem",
-              errorList: errorList
+          titleText: "There is a problem",
+          errorList: errorList
         }) }}
       {% endif %}
       <form action="/obliged-entity-details-telephone" method="post">
         {% if errorEmail == true %}
-
           {{ govukInput({
-        label: {
-        text: "What is your email address?",
-        classes: "govuk-label--xl",
-isPageHeading: true
-        },
-        hint: {
-        text: "We’ll only use this to contact you for more information"
-        },
-        id: "email",
-        name: "email",
-        autocomplete: "email",
-        errorMessage: {
-            text: "Enter your email address"
-        },
-        attributes: {
-        spellcheck: "false"
-        }
-        }) }}
+            label: {
+              text: "What is your email address?",
+              classes: "govuk-label--xl",
+              isPageHeading: true
+            },
+            hint: {
+              text: "We’ll only use this to contact you for more information"
+            },
+            id: "email",
+            name: "email",
+            autocomplete: "email",
+            errorMessage: {
+              text: "Enter your email address"
+            },
+            attributes: {
+              spellcheck: "false"
+            }
+          }) }}
         {% else %}
           {{ govukInput({
-        label: {
-          text: "What is your email address?",
-          classes: "govuk-label--xl",
-isPageHeading: true
-        },
-        hint: {
-          text: "We’ll only use this to contact you if we need more information"
-        },
-        id: "email",
-        name: "email",
-        autocomplete: "email",
-        attributes: {
-          spellcheck: "false"
-        }
-      }) }}
+            label: {
+              text: "What is your email address?",
+              classes: "govuk-label--xl",
+              isPageHeading: true
+            },
+            hint: {
+              text: "We’ll only use this to contact you if we need more information"
+            },
+            id: "email",
+            name: "email",
+            autocomplete: "email",
+            attributes: {
+              spellcheck: "false"
+            }
+          }) }}
         {% endif %}
         {{ govukButton({
-        text: "Continue"
-      }) }}
+          text: "Continue"
+        }) }}
       </form>
     </div>
   </div>

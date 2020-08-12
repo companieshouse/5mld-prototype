@@ -10,35 +10,35 @@
           {{ govukErrorSummary({
               titleText: "There is a problem",
               errorList: errorList
-        }) }}
+          }) }}
           {{ govukInput({
-      label: {
-        text: "Your organisation name",
-        isPageHeading: true,
-        classes: "govuk-label--xl"
-      },
-      classes: "govuk-input--width-20",
-      id: "your-organisation-name",
-      name: "your-organisation-name",
-      errorMessage: {
-          text: "Enter your organisation name"
-      }
-    }) }}
+            label: {
+              text: "Your organisation name",
+              isPageHeading: true,
+              classes: "govuk-label--xl"
+            },
+            classes: "govuk-input--width-20",
+            id: "your-organisation-name",
+            name: "your-organisation-name",
+            errorMessage: {
+              text: "Enter your organisation name"
+            }
+          }) }}
         {% else %}
           {{ govukInput({
-        label: {
-          text: "Your organisation name",
-          isPageHeading: true,
-          classes: "govuk-label--xl"
-        },
-        classes: "govuk-input--width-20",
-        id: "your-organisation-name",
-        name: "your-organisation-name"
-      }) }}
+            label: {
+              text: "Your organisation name",
+              isPageHeading: true,
+              classes: "govuk-label--xl"
+            },
+            classes: "govuk-input--width-20",
+            id: "your-organisation-name",
+            name: "your-organisation-name"
+          }) }}
         {% endif %}
         {{ govukButton({
-        text: "Continue"
-      }) }}
+          text: "Continue"
+        }) }}
       </form>
     </div>
   </div>

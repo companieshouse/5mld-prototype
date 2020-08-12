@@ -10,62 +10,62 @@
           {{ govukErrorSummary({
             titleText: "There is a problem",
             errorList: errorList
-      }) }}
+          }) }}
           {{ govukInput({
-      label: {
-        text: "Your full name",
-        isPageHeading: true,
-        classes: "govuk-label--xl"
-      },
-      id: "full-name",
-      name: "full-name",
-      autocomplete: "name",
-      attributes: {
-        spellcheck: "false"
-      },
-      errorMessage: {
-          text: "Full name must only include letters a to z, hyphens, spaces and apostrophes"
-      }
-    }) }}
+            label: {
+              text: "Your full name",
+              isPageHeading: true,
+              classes: "govuk-label--xl"
+            },
+            id: "full-name",
+            name: "full-name",
+            autocomplete: "name",
+            attributes: {
+              spellcheck: "false"
+            },
+            errorMessage: {
+              text: "Full name must only include letters a to z, hyphens, spaces and apostrophes"
+            }
+          }) }}
         {% elif errorName == true %}
           {{ govukErrorSummary({
             titleText: "There is a problem",
             errorList: errorList
-      }) }}
+          }) }}
           {{ govukInput({
-      label: {
-        text: "Your full name",
-        isPageHeading: true,
-        classes: "govuk-label--xl"
-      },
-      id: "full-name",
-      name: "full-name",
-      autocomplete: "name",
-      attributes: {
-        spellcheck: "false"
-      },
-      errorMessage: {
-          text: "Enter your full name"
-      }
-    }) }}
+            label: {
+              text: "Your full name",
+              isPageHeading: true,
+              classes: "govuk-label--xl"
+            },
+            id: "full-name",
+            name: "full-name",
+            autocomplete: "name",
+            attributes: {
+              spellcheck: "false"
+            },
+            errorMessage: {
+              text: "Enter your full name"
+            }
+          }) }}
         {% else %}
           {{ govukInput({
-        label: {
-          text: "Your full name",
-          isPageHeading: true,
-          classes: "govuk-label--xl"
-        },
-        id: "full-name",
-        name: "full-name",
-        autocomplete: "name",
-        attributes: {
-          spellcheck: "false"
-        }
-      }) }}
+            label: {
+              text: "Your full name",
+              isPageHeading: true,
+              classes: "govuk-label--xl"
+            },
+            id: "full-name",
+            name: "full-name",
+            autocomplete: "name",
+            attributes: {
+              spellcheck: "false"
+            }
+          }) }}
         {% endif %}
         {{ govukButton({
-        text: "Continue"
-      }) }}
+          text: "Continue"
+        }) }}
       </form>
     </div>
   </div>
