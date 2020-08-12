@@ -6,12 +6,26 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form action="/discrepancy-details/other-info" method="post">
-        {% if errorOther == true %}
-          {{ govukErrorSummary({
+        <p class="govuk-body">This should include:
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>details of the discrepancy, for example an incorrect address or an invalid PSC statement
+          </li>
+          <li>
+            the date when the discrepancy was first noticed
+          </a>
+        </li>
+        <li>
+          the business address of the obliged entity making the report
+        </li>
+
+      </ul>
+      {% if errorOther == true %}
+        {{ govukErrorSummary({
             titleText: "There is a problem",
             errorList: errorList
           }) }}
-          {{ govukTextarea({
+        {{ govukTextarea({
             name: "more-detail",
             id: "more-detail",
             label: {
@@ -21,19 +35,19 @@
               text: "Enter the information that is incorrect for the PSC"
             }
           }) }}
-        {% else %}
-          {{ govukTextarea({
+      {% else %}
+        {{ govukTextarea({
             name: "more-detail",
             id: "more-detail",
             label: {
               html: "<h1 class='govuk-fieldset__legend--xl govuk-!-margin-top-0'>What PSC information is incorrect?</h1>"
             }
           }) }}
-        {% endif %}
-        {{ govukButton({
+      {% endif %}
+      {{ govukButton({
           text: "Submit discrepency report"
         }) }}
-      </form>
-    </div>
+    </form>
   </div>
+</div>
 {% endblock %}
