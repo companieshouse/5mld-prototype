@@ -5,21 +5,22 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="/discrepancy-details/other-info" method="post">
-        <p class="govuk-body">This should include:
-        </p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>details of the discrepancy, for example an incorrect address or an invalid PSC statement
-          </li>
-          <li>
-            the date when the discrepancy was first noticed
-          </a>
+      <h1 class="govuk-heading-xl">What information is incorrect for the PSC?</h1>
+      <p class="govuk-body">This should include:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>details of the discrepancy, for example an incorrect address or an invalid PSC statement
         </li>
         <li>
-          the business address of the obliged entity making the report
-        </li>
+          the date when the discrepancy was first noticed
+        </a>
+      </li>
+      <li>
+        the business address of the obliged entity making the report
+      </li>
+    </ul>
+    <form action="/discrepancy-details/other-info" method="post">
 
-      </ul>
       {% if errorOther == true %}
         {{ govukErrorSummary({
             titleText: "There is a problem",
@@ -29,7 +30,7 @@
             name: "more-detail",
             id: "more-detail",
             label: {
-              html: "<h1 class='govuk-fieldset__legend--xl govuk-!-margin-top-0'>What information is incorrect for the PSC?</h1>"
+              html: "Enter the incorrect PSC information"
             },
             errorMessage: {
               text: "Enter the information that is incorrect for the PSC"
@@ -40,7 +41,7 @@
             name: "more-detail",
             id: "more-detail",
             label: {
-              html: "<h1 class='govuk-fieldset__legend--xl govuk-!-margin-top-0'>What PSC information is incorrect?</h1>"
+              html: "Enter the incorrect PSC information"
             }
           }) }}
       {% endif %}
