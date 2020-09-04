@@ -13,7 +13,7 @@
           }) }}
           {{ govukInput({
             label: {
-              text: "What is your full name?",
+              text: "What is your name?",
               isPageHeading: true,
               classes: "govuk-label--xl"
             },
@@ -24,7 +24,7 @@
               spellcheck: "false"
             },
             errorMessage: {
-              text: "Full name must only include letters a to z, hyphens, spaces and apostrophes"
+              text: "Name must only include letters a to z, hyphens, spaces and apostrophes"
             }
           }) }}
         {% elif errorName == true %}
@@ -34,7 +34,7 @@
           }) }}
           {{ govukInput({
             label: {
-              text: "What is your full name?",
+              text: "What is your name?",
               isPageHeading: true,
               classes: "govuk-label--xl"
             },
@@ -45,13 +45,13 @@
               spellcheck: "false"
             },
             errorMessage: {
-              text: "Enter your full name"
+              text: "Enter your name"
             }
           }) }}
         {% else %}
           {{ govukInput({
             label: {
-              text: "What is your full name?",
+              text: "What is your name?",
               isPageHeading: true,
               classes: "govuk-label--xl"
             },
