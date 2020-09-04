@@ -31,6 +31,9 @@
               isPageHeading: true,
               classes: "govuk-label--xl"
             },
+            hint: {
+              html: "This is the 8-character reference issued by Companies House when the company was set up."
+            },
             classes: "govuk-input--width-10",
             id: "company-number",
             name: "company-number"
@@ -38,7 +41,7 @@
         {% endif %}
         {{ govukDetails({
           summaryText: "How do I find the company number?",
-          html: "<p>Use the <a target='blank' href='https://beta.companieshouse.gov.uk/'>Companies House service</a> to find company details (opens in a new window or tab).</p>"
+          html: "<p>Use the <a target='blank' href='https://beta.companieshouse.gov.uk/'>Companies House service</a> to find company details (opens in a new tab).</p>"
          }) }}
         {{ govukButton({
           text: "Continue"
