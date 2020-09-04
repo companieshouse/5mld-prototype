@@ -1,12 +1,16 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  Get company reminders
+  What information is incorrect for the PSC?
 {% endblock %}
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      
+      {% if errorOther == true %}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: errorList
+        }) }}
+      {% endif %}
       <h1 class="govuk-heading-xl">What information is incorrect for the PSC?</h1>
       <p class="govuk-body">This should include:
       </p>
@@ -22,12 +26,7 @@
       </li>
     </ul>
     <form action="/discrepancy-details/other-info" method="post">
-
       {% if errorOther == true %}
-        {{ govukErrorSummary({
-            titleText: "There is a problem",
-            errorList: errorList
-          }) }}
         {{ govukTextarea({
             name: "more-detail",
             id: "more-detail",
@@ -46,20 +45,15 @@
               html: "Incorrect PSC information"
             }
           }) }}
-          <h2 class="govuk-heading-m">Now submit your report</h2>
-
+      {% endif %}
+      <h2 class="govuk-heading-m">Now submit your report</h2>
       <p class="govuk-body">By submitting this report you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
-
-      <form action="/form-handler" method="post" novalidate>
-
+      <form action="/form-handler" method="post" novalidate="novalidate">
         <input type="hidden" name="answers-checked" value="true">
-
         {{ govukButton({
           text: "Submit discrepancy report"
         }) }}
-      {% endif %}
-
-    </form>
+      </form>
+    </div>
   </div>
-</div>
 {% endblock %}

@@ -45,110 +45,109 @@
                 value: "Trust or company service provider",
                 text: "Trust or company service provider"
               },
-{
-  value: "Estate agent or intermediary",
-  text: "Estate agent or intermediary"
-},
-{
-  value: "Entity trading goods in cash over €10,000",
-  text: "Entity trading goods in cash over €10,000"
-},
-{
-  value: "Gambling service provider",
-  text: "Gambling service provider"
-},
-{
-  value: "Exchange service provider of fiat and virtual currencies",
-  text: "Exchange service provider of fiat and virtual currencies"
-},
-{
-  value: "Custodian wallet provider",
-  text: "Custodian wallet provider"
-},
-{
-  value: "Art dealer - galleries and auction houses",
-  text: "Art dealer - galleries and auction houses"
-},
-{
-  value: "Art dealer - free ports",
-  text: "Art dealer - free ports"
-},
-{
-  value: "Insolvency practitioner",
-  text: "Insolvency practitioner"
-}
-]
-}) }}
+              {
+                value: "Estate agent or intermediary",
+                text: "Estate agent or intermediary"
+              },
+              {
+                value: "Entity trading goods in cash over €10,000",
+                text: "Entity trading goods in cash over €10,000"
+              },
+              {
+                value: "Gambling service provider",
+                text: "Gambling service provider"
+              },
+              {
+                value: "Exchange service provider of fiat and virtual currencies",
+                text: "Exchange service provider of fiat and virtual currencies"
+              },
+              {
+                value: "Custodian wallet provider",
+                text: "Custodian wallet provider"
+              },
+              {
+                value: "Art dealer - galleries and auction houses",
+                text: "Art dealer - galleries and auction houses"
+              },
+              {
+                value: "Art dealer - free ports",
+                text: "Art dealer - free ports"
+              },
+              {
+                value: "Insolvency practitioner",
+                text: "Insolvency practitioner"
+              }
+            ]
+          }) }}
         {% else %}
           {{ govukRadios({
-        idPrefix: "obliged-type",
-        name: "obliged-type",
-        fieldset: {
-          legend: {
-            text: "What type of obliged entity are you?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
-          }
-        },
-        items: [
-          {
-            value: "Credit institution",
-            text: "Credit institution"
-          },
-          {
-            value: "Financial institution",
-            text: "Financial institution"
-          },
-          {
-            value: "Auditor, external accountant or tax advisor",
-            text: "Auditor, external accountant or tax advisor"
-          },
-          {
-            value: "Notary or independent legal professional",
-            text: "Notary or independent legal professional"
-          },
-          {
-            value: "Trust or company service provider",
-            text: "Trust or company service provider"
-          },
-          {
-            value: "Estate agent or intermediary",
-            text: "Estate agent or intermediary"
-          },
-          {
-            value: "Entity trading goods in cash over €10,000",
-            text: "Entity trading goods in cash over €10,000"
-          },
-          {
-            value: "Gambling service provider",
-            text: "Gambling service provider"
-          },
-          {
-            value: "Exchange service provider of fiat and virtual currencies",
-            text: "Exchange service provider of fiat and virtual currencies"
-          },
-          {
-            value: "Custodian wallet provider",
-            text: "Custodian wallet provider"
-          },
-          {
-            value: "Art dealer - galleries and auction houses",
-            text: "Art dealer - galleries and auction houses"
-          },
-          {
-            value: "Art dealer - free ports",
-            text: "Art dealer - free ports"
-          },
-          {
-            value: "Insolvency practitioner",
-            text: "Insolvency practitioner"
-          }
-        ]
-      }) }}
+            idPrefix: "obliged-type",
+            name: "obliged-type",
+            fieldset: {
+              legend: {
+                text: "What type of obliged entity are you?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
+              }
+            },
+            items: [
+              {
+                value: "Credit institution",
+                text: "Credit institution"
+              },
+              {
+                value: "Financial institution",
+                text: "Financial institution"
+              },
+              {
+                value: "Auditor, external accountant or tax advisor",
+                text: "Auditor, external accountant or tax advisor"
+              },
+              {
+                value: "Notary or independent legal professional",
+                text: "Notary or independent legal professional"
+              },
+              {
+                value: "Trust or company service provider",
+                text: "Trust or company service provider"
+              },
+              {
+                value: "Estate agent or intermediary",
+                text: "Estate agent or intermediary"
+              },
+              {
+                value: "Entity trading goods in cash over €10,000",
+                text: "Entity trading goods in cash over €10,000"
+              },
+              {
+                value: "Gambling service provider",
+                text: "Gambling service provider"
+              },
+              {
+                value: "Exchange service provider of fiat and virtual currencies",
+                text: "Exchange service provider of fiat and virtual currencies"
+              },
+              {
+                value: "Custodian wallet provider",
+                text: "Custodian wallet provider"
+              },
+              {
+                value: "Art dealer - galleries and auction houses",
+                text: "Art dealer - galleries and auction houses"
+              },
+              {
+                value: "Art dealer - free ports",
+                text: "Art dealer - free ports"
+              },
+              {
+                value: "Insolvency practitioner",
+                text: "Insolvency practitioner"
+              }
+            ]
+          }) }}
         {% endif %}
-        <div class="govuk-inset-text">
-  If you’re not an obliged entity, do not use this service to report a PSC discrepancy. If you want to update your PSC details, you can <a class="govuk-link" href="guidance.html">tell Companies House about changes to your limited company</a>.
-</div>
+        <p class="govuk-inset-text">If you’re not an obliged entity, do not use this service to report a PSC discrepancy. If you want to update your PSC details, you can
+          <a class="govuk-link" href="guidance.html">tell Companies House about changes to your limited company</a>.</p>
         {{ govukButton({
         text: "Continue"
       }) }}

@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  Your contact details
+  Your email address
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
@@ -11,7 +11,7 @@
           errorList: errorList
         }) }}
       {% endif %}
-      <form action="/obliged-entity-details-telephone" method="post">
+      <form action="/obliged-entity-email" method="post">
         {% if errorEmail == true %}
           {{ govukInput({
             label: {
@@ -24,6 +24,7 @@
             },
             id: "email",
             name: "email",
+            classes: "govuk-!-width-two-thirds",
             autocomplete: "email",
             errorMessage: {
               text: "Enter your email address"
@@ -44,6 +45,7 @@
             },
             id: "email",
             name: "email",
+            classes: "govuk-!-width-two-thirds",
             autocomplete: "email",
             attributes: {
               spellcheck: "false"

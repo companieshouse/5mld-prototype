@@ -56,7 +56,7 @@ router.post('/obliged-entity-details-name', function (req, res) {
       errorList: errors
     })
   } else {
-    res.redirect('obliged-entity-details-telephone')
+    res.redirect('obliged-entity-email')
   }
 })
 
@@ -81,19 +81,19 @@ router.post('/obliged-entity-details-organisation', function (req, res) {
   }
 })
 
-router.get('/obliged-entity-details-telephone', function (req, res) {
-  res.render('obliged-entity-details-telephone', {
+router.get('/obliged-entity-email', function (req, res) {
+  res.render('obliged-entity-email', {
   })
 })
 
-router.post('/obliged-entity-details-telephone', function (req, res) {
+router.post('/obliged-entity-email', function (req, res) {
   var errors = []
   if (req.session.data['email'] === '') {
     errors.push({
       text: 'Enter your email address',
       href: '#email'
     })
-    res.render('obliged-entity-details-telephone', {
+    res.render('obliged-entity-email', {
       errorEmail: true,
       errorList: errors
     })
