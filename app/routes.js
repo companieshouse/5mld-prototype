@@ -118,6 +118,8 @@ router.post('/discrepancy-details/company-number', function (req, res) {
       errorNum: true,
       errorList: errors
     })
+  } if (req.session.data['company-number'] === '00445790') {
+    res.redirect('/unable-to-use')
   } else {
     res.redirect('/discrepancy-details/psc-names')
   }
