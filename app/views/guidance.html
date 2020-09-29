@@ -61,19 +61,6 @@
         <li>art dealer in a gallery and auction house</li>
         <li>art dealer in a free port</li>
         <li>insolvency practitioner</li>
-
-      </ul>
-      <h2 class="govuk-heading-l">When to report a discrepancy
-      </h2>
-      <p class="govuk-body">Obliged entities must make a report if discrepancies are found when setting up a new business relationship with a customer.
-      </p>
-      <p class="govuk-body">The discrepancy report should be made as soon as possible. Obliged entities should not wait to make reports in bulk as this prevents the PSC register being kept up to date.
-      </p>
-      {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
-
-      {{ govukInsetText({
-  text: "A discrepancy report does not replace a Suspicious Activity Report (SAR). You should still submit a SAR when it is needed."
-}) }}
     </p>
     <h2 class="govuk-heading-l">What a discrepancy is
     </h2>
@@ -84,7 +71,18 @@
     </p>
     <p class="govuk-body">If this type of minor error is found, obliged entities should encourage the company to contact us to resolve it.
     </p>
+  </ul>
+  <h2 class="govuk-heading-l">When to report a discrepancy
+  </h2>
+  <p class="govuk-body">Obliged entities must make a report if discrepancies are found when setting up a new business relationship with a customer.
+  </p>
+  <p class="govuk-body">The discrepancy report should be made as soon as possible. Obliged entities should not wait to make reports in bulk as this prevents the PSC register being kept up to date.
+  </p>
+  {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
+  {{ govukInsetText({
+text: "A discrepancy report does not replace a Suspicious Activity Report (SAR). You should still submit a SAR when it is needed."
+}) }}
     <h2 class="govuk-heading-l">Information to include in the discrepancy report
     </h2>
     <p class="govuk-body">When making a report, obliged entities should include the:
