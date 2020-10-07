@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Confirm company
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/discrepancy-details/confirm-company" method="post">
+        <h1 class="govuk-heading-l">Confirm this is the correct company</h1>
+        {{ govukTable({
+          firstCellIsHeader: true,
+          classes: "align-top",
+          rows: [
+          [
+            {
+              text: "Company name"
+            },
+            {
+              text: "ZLC LTD"
+            }
+           ],
+          [
+            {
+              text: "Company number"
+            },
+            {
+              text: "10393288"
+            }
+          ],
+          [
+            {
+              text: "Status"
+            },
+            {
+              html: "Active"
+            }
+          ],
+          [
+            {
+              text: "Incorporation date"
+            },
+            {
+              text: "7 November 2011"
+            }
+          ],
+          [
+            {
+              text: "Company type"
+            },
+            {
+              text: "Private Limited Company"
+            }
+          ],
+          [
+            {
+              text: "Registered office address"
+            },
+            {
+              html: "606 Welton Road<br/> Delta Office Park<br/> Swindon<br/> United Kingdom<br/> SN5 7XF"
+            }
+          ]
+          ]
+        }) }}
+        {{ govukButton({
+          text: "Confirm and continue",
+          href: "/discrepancy-details/psc-names"
+                }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
