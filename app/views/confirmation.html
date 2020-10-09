@@ -1,12 +1,12 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-Confirmation page
+  Confirmation page
 {% endblock %}
 {% block beforeContent %}{% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {% set buttonHref = "" %}
+      {% set buttonHref = "Your reference number is Y2345678" %}
       {{ govukPanel({
         titleText: "Discrepancy report submitted",
         html: buttonHref
