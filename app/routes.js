@@ -102,14 +102,17 @@ router.post('/obliged-entity-email', function (req, res) {
   }
 })
 
+// Company number
 router.get('/discrepeancy-details/company-number', function (req, res) {
-  res.render('/discrepeancy-details/company-number', {
+  res.render('discrepeancy-details/company-number', {
   })
 })
 
 router.post('/discrepancy-details/company-number', function (req, res) {
   var errors = []
-  if (req.session.data['company-number'] === '') {
+  var str = req.session.data['company-number']
+  var n = str.length
+  if (str === '') {
     errors.push({
       text: 'Enter the company number',
       href: '#company-number'
@@ -118,6 +121,17 @@ router.post('/discrepancy-details/company-number', function (req, res) {
       errorNum: true,
       errorList: errors
     })
+    return
+  } if (n !== 8) {
+    errors.push({
+      text: 'Company number must be 8 characters ',
+      href: '#company-number'
+    })
+    res.render('discrepancy-details/company-number', {
+      errorNum: true,
+      errorList: errors
+    })
+    return
   } if (req.session.data['company-number'] === '00445790') {
     res.redirect('/unable-to-use')
   } else {

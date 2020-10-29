@@ -1,10 +1,16 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-What is the company number for the PSC with the discrepancy?
+  Company Number
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/obliged-entity-email"
+  }) }}
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/discrepancy-details/company-number" method="post">
         {% if errorNum == true %}
           {{ govukErrorSummary({
@@ -15,7 +21,7 @@ What is the company number for the PSC with the discrepancy?
             label: {
               text: "What is the company number for the PSC with the discrepancy?",
               isPageHeading: true,
-              classes: "govuk-label--xl"
+              classes: "govuk-label--l"
             },
             classes: "govuk-input--width-10",
             id: "company-number",
@@ -29,7 +35,7 @@ What is the company number for the PSC with the discrepancy?
             label: {
               text: "What is the company number for the PSC with the discrepancy?",
               isPageHeading: true,
-              classes: "govuk-label--xl"
+              classes: "govuk-label--l"
             },
             hint: {
               html: "This is the 8-character reference issued by Companies House when the company was set up."
