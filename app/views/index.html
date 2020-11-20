@@ -1,50 +1,32 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  Obliged Entity PSC Discrepancy
-{% endblock %}
-{% block beforeContent %}
-  {{ govukBreadcrumbs({
-  items: [
-    {
-      text: "Home",
-      href: "https://www.gov.uk/"
-    },
-    {
-      text: "Companies House Search",
-      href: "https://beta.companieshouse.gov.uk/"
-    },
-    {
-      text: "Report a discrepancy"
-    }
-  ]
-  }) }}
+  Report a discrepancy about a beneficial owner on the PSC register
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Report a register discrepancy
+        Report a discrepancy about a beneficial owner on the PSC register
       </h1>
-      <p class="govuk-body-l">Use this service to report any discrepancies if you are an obliged entity.</p>
-      <p class="govuk-body">
-        It may take up to 6 minutes to complete this form.
+      <p class="govuk-body-l">
+        Use this service if you are an obliged entity and the information you hold about a beneficial owner is different from the information on the people with significant control (PSC) register.
+      </p>
+      <h3 class="govuk-heading-s">You'll need:</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the company number of the entity being reported as having a discrepancy</li>
+        <li>details of the discrepancy, for example, an incorrect address or an invalid PSC statement</li>
+        <li>the date when the discrepancy was first noticed</li>
+      </ul>
+      <p>Reporting a discrepancy takes up to 10 minutes.
       </p>
       {{ govukButton({
         text: "Start now",
-        href: "/sign-in",
+        href: "/obliged-entity-type",
         isStartButton: true
       }) }}
       <h2 class="govuk-heading-m">Before you start</h2>
-      <p class="govuk-body">You should read the guidance on
-        <a class="govuk-link" href="https://www.gov.uk/guidance/report-a-discrepancy-about-a-beneficial-owner-on-the-psc-register-by-an-obliged-entity">reporting PSC discrepancy</a>.</p>
-      <h3 class="govuk-heading-s">You'll need:</h3>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>your organisation contact details</li>
-        <li>company information on who you are reporting the discrepancy about</li>
-        <li>information about the discrepancy</li>
-      </ul>
-      <h2 class="govuk-heading-m">After you submit a discrepency</h2>
-      <p class="govuk-body">Once you submit a discrepency it will be sent to one of the Companies House staff to invesigate. We may contact you for further information.</p>
+      <p class="govuk-body">You should
+        <a class="govuk-link" href="guidance.html">read the guidance about reporting a discrepancy</a>.</p>
     </div>
     <div class="govuk-grid-column-one-third">
       <aside class="app-related-items" role="complementary">
@@ -54,8 +36,8 @@
         <nav role="navigation" aria-labelledby="subsection-title">
           <ul class="govuk-list govuk-body-s">
             <li>
-              <a class="govuk-link" href="https://www.gov.uk/guidance/report-a-discrepancy-about-a-beneficial-owner-on-the-psc-register-by-an-obliged-entity">
-                Guideance on reporting a discrepancy
+              <a class="govuk-link" href="guidance.html">
+                Guidance on reporting a discrepancy
               </a>
             </li>
           </ul>

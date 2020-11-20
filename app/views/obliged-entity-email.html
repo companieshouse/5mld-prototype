@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  What is your email address?
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% if errorEmail == true %}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: errorList
+        }) }}
+      {% endif %}
+      <form action="/obliged-entity-email" method="post">
+        {% if errorEmail == true %}
+          {{ govukInput({
+            label: {
+              text: "What is your email address?",
+              classes: "govuk-label--xl",
+              isPageHeading: true
+            },
+            hint: {
+              text: "We’ll only use this to contact you for more information."
+            },
+            id: "email",
+            name: "email",
+            classes: "govuk-!-width-two-thirds",
+            autocomplete: "email",
+            errorMessage: {
+              text: "Enter your email address"
+            },
+            attributes: {
+              spellcheck: "false"
+            }
+          }) }}
+        {% else %}
+          {{ govukInput({
+            label: {
+              text: "What is your email address?",
+              classes: "govuk-label--xl",
+              isPageHeading: true
+            },
+            hint: {
+              text: "We’ll only use this to contact you if we need more information."
+            },
+            id: "email",
+            name: "email",
+            classes: "govuk-!-width-two-thirds",
+            autocomplete: "email",
+            attributes: {
+              spellcheck: "false"
+            }
+          }) }}
+        {% endif %}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

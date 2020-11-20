@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+   What is the name of your organisation?
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/obliged-entity-details-organisation" method="post">
+        {% if errorTelephoneNumber == true %}
+          {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: errorList
+          }) }}
+          {{ govukInput({
+            label: {
+              text: "What is the name of your organisation?",
+              isPageHeading: true,
+              classes: "govuk-label--xl"
+            },
+            classes: "govuk-!-width-two-thirds",
+            id: "your-organisation-name",
+            name: "your-organisation-name",
+            errorMessage: {
+              text: "Enter your organisation name"
+            }
+          }) }}
+        {% else %}
+          {{ govukInput({
+            label: {
+              text: "What is the name of your organisation?",
+              isPageHeading: true,
+              classes: "govuk-label--xl"
+            },
+              classes: "govuk-!-width-two-thirds",
+            id: "your-organisation-name",
+            name: "your-organisation-name"
+          }) }}
+        {% endif %}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

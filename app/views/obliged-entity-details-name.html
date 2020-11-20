@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  What is your name?
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/obliged-entity-details-name" method="post">
+        {% if errorNametwo == true %}
+          {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: errorList
+          }) }}
+          {{ govukInput({
+            label: {
+              text: "What is your name?",
+              isPageHeading: true,
+              classes: "govuk-label--xl"
+            },
+            id: "full-name",
+            name: "full-name",
+            classes: "govuk-!-width-two-thirds",
+            autocomplete: "name",
+            attributes: {
+              spellcheck: "false"
+            },
+            errorMessage: {
+              text: "Name must only include letters a to z, hyphens, spaces and apostrophes"
+            }
+          }) }}
+        {% elif errorName == true %}
+          {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: errorList
+          }) }}
+          {{ govukInput({
+            label: {
+              text: "What is your name?",
+              isPageHeading: true,
+              classes: "govuk-label--xl"
+            },
+            id: "full-name",
+              classes: "govuk-!-width-two-thirds",
+            name: "full-name",
+            autocomplete: "name",
+            attributes: {
+              spellcheck: "false"
+            },
+            errorMessage: {
+              text: "Enter your name"
+            }
+          }) }}
+        {% else %}
+          {{ govukInput({
+            label: {
+              text: "What is your name?",
+              isPageHeading: true,
+              classes: "govuk-label--xl"
+            },
+            id: "full-name",
+              classes: "govuk-!-width-two-thirds",
+            name: "full-name",
+            autocomplete: "name",
+            attributes: {
+              spellcheck: "false"
+            }
+          }) }}
+        {% endif %}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

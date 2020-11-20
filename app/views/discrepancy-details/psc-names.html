@@ -1,68 +1,93 @@
 {% extends "layout.html" %}
-
 {% block pageTitle %}
-  Get company reminders
-{% endblock %}
-{% block beforeContent %}
-
-  {% include "../includes/sign-in.html" %}
-
-  {{ govukBackLink({
-    text: "Back",
-    href: "company-number"
-  }) }}
+  Which PSC is incorrect for ZLC LTD?
 {% endblock %}
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {{ govukRadios({
-  idPrefix: "nationality",
-  name: "nationality",
-  fieldset: {
-    legend: {
-      text: "Which PSC information is incorrect?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--xl"
-    }
-  },
-  items: [
-
-    {
-      value: "british",
-      text: "Mrs Catherine Isabel Gaynor",
-      hint: {
-        html: "Born on
-          November 1962"
-      }
-    },
-
-    {
-      value: "other",
-      text: "Mr Jonathan Charles Gaynor",
-      hint: {
-        text: "Born on
-          June 1952"
-      }
-    },
-    {
-  divider: "or"
-},
-    {
-      value: "irish",
-      text: "Other",
-      hint: {
-        html: "Such as the PSC is missing or type is incorrect"
-      }
-    }
-  ]
-}) }}
-      {{ govukButton({
-text: "Continue",
-href: "psc-person-discrepencies"
-}) }}
-    </section>
+      <form action="/discrepancy-details/psc-names" method="post">
+        {% if errorPSC == true %}
+          {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: errorList
+          }) }}
+          {{ govukRadios({
+            idPrefix: "psc",
+            name: "psc",
+            errorMessage: {
+              text: "Select the PSC with the incorrect information"
+            },
+            fieldset: {
+              legend: {
+                html: "Which PSC is incorrect for ZLC LTD?",
+                isPageHeading: true,
+                classes: "govuk-label--xl"
+              }
+            },
+            items: [
+              {
+                value: "british",
+                text: "Mrs Catherine Isabel Gaynor",
+                hint: {
+                  html: "Born November 1962"
+                }
+              },
+              {
+                value: "other",
+                text: "Mr Jonathan Charles Gaynor",
+                hint: {
+                  text: "Born June 1952"
+                }
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "other",
+                text: "PSC is missing"
+              }
+            ]
+          }) }}
+        {% else %}
+          {{ govukRadios({
+            idPrefix: "psc",
+            name: "psc",
+            fieldset: {
+              legend: {
+                html: "Which PSC is incorrect for ZLC LTD?",
+                isPageHeading: true,
+                classes: "govuk-label--xl"
+              }
+            },
+            items: [
+              {
+                value: "british",
+                text: "Mrs Catherine Isabel Gaynor",
+                hint: {
+                  html: "Born November 1962"
+                }
+              },
+              {
+                value: "other",
+                text: "Mr Jonathan Charles Gaynor",
+                hint: {
+                  text: "Born June 1952"
+                }
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "other",
+                text: "PSC is missing"
+              }
+            ]
+          }) }}
+        {% endif %}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
   </div>
-</div>
-
 {% endblock %}
