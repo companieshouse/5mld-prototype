@@ -1,0 +1,62 @@
+{% set title = "Tell us your company number" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  What type of discrepancy are you reporting? - Report a discrepancy about a beneficial owner on the PSC register - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "psc-names"
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/discrepancy-details/psc-person" method="post">
+        {{ govukCheckboxes({
+        idPrefix: "pscname",
+        name: "pscname",
+        fieldset: {
+          legend: {
+            html: "What type of discrepancy are you reporting for Mrs Catherine Isabel Gaynor?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "Select all that apply."
+        },
+        items: [
+          {
+            value: "noc",
+            text: "Nature of control"
+          },
+          {
+            value: "address",
+            text: "Correspondence address"
+          },
+          {
+            value: "name",
+            text: "Name"
+          },
+          {
+            value: "dob",
+            text: "Date of birth"
+          },
+          {
+            value: "nationality",
+            text: "Nationality"
+          },
+          {
+            value: "nd",
+            text: "Date notified"
+          }
+        ]
+        }) }}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

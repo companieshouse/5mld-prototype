@@ -1,0 +1,319 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Check your answers before submitting your report - Report a discrepancy about a beneficial owner on the PSC register - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "discrepancy-details/psc-name-input"
+  }) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">Check your answers before submitting your report</h1>
+      <h2 class="govuk-heading-m">Personal details</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['full-name'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden">
+                name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['email'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden">
+                email address</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Organisation name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['your-organisation-name'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden">
+                organisation name</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Organisation type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['obliged-type'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden">
+                organisation type</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+      <h2 class="govuk-heading-m">Company details for the PSC with the discrepancy</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Company number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['company-number'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden">
+                previous application number</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Company name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            ZLC LTD
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#"></a>
+          </dd>
+        </div>
+      </dl>
+      <h2 class="govuk-heading-m">Discrepancy details</h2>
+      <div class="govuk-summary-card govuk-!-margin-bottom-9">
+        <div class="govuk-summary-card_heading govuk-!-padding-top-4 govuk-!-padding-bottom-4 govuk-!-padding-right-3 govuk-!-padding-left-3">
+          <p class="govuk-!-margin-0">Mrs Catherine Isabel Gaynor</p>
+        </div>
+        <div class="govuk-summary-card_content govuk-!-padding-3">
+          {% if data['pscnoc'] %}
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Discrepancy type
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Nature of control
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Remove<span class="govuk-visually-hidden">
+                      licence type</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Discrepancy information
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['pscnoc'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden">
+                      licence type</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+          {% endif %}
+          {% if data['pscaddressinput'] %}
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Discrepancy type
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Address
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Remove<span class="govuk-visually-hidden">
+                      licence type</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Discrepancy information
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['pscaddressinput'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden">
+                      licence type</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+          {% endif %}
+          {% if data['psc-name-input'] %}
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Discrepancy type
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Name
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Remove<span class="govuk-visually-hidden">
+                      discrepancy</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Discrepancy information
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['psc-name-input'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden">
+                      discrepancy reason</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+          {% endif %}
+          {% if data['psc-dob-input'] %}
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Discrepancy type
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Date of birth
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Remove<span class="govuk-visually-hidden">
+                      discrepancy</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Discrepancy information
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['psc-dob-input'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden">
+                      discrepancy reason</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+          {% endif %}
+          {% if data['psc-nationality-input'] %}
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Discrepancy type
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Nationality
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Remove<span class="govuk-visually-hidden">
+                      discrepancy</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Discrepancy information
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['psc-nationality-input'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden">
+                      discrepancy reason</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+          {% endif %}
+          {% if data['psc-appointed-on-input'] %}
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Discrepancy type
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Appointed on
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Remove<span class="govuk-visually-hidden">
+                      discrepancy</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Discrepancy information
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['psc-appointed-on-input'] }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">
+                    Change<span class="govuk-visually-hidden">
+                      discrepancy reason</span>
+                  </a>
+                </dd>
+              </div>
+            </dl>
+          {% endif %}
+          <p class="govuk-body">
+            <a href="#" class="govuk-link govuk-link--no-visited-state">Add another discrepancy</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m">Now submit your report</h2>
+      <p class="govuk-body">By submitting this report you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+      <form action="/check-your-answers" method="post" novalidate="novalidate">
+        <input type="hidden" name="answers-checked" value="true">
+        {{ govukButton({
+          text: "Submit report"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

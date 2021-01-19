@@ -9,6 +9,37 @@ router.get('/', function (req, res) {
   })
 })
 
+router.post('/sign-in', function (req, res) {
+  var errors = []
+  var emailHasError = false
+  var passwordHasError = false
+
+  if (req.session.data['email'] === '') {
+    emailHasError = true
+    errors.push({
+      text: 'Enter your email address',
+      href: '#email-error'
+    })
+  }
+  if (req.session.data['password'] === '') {
+    passwordHasError = true
+    errors.push({
+      text: 'Enter your password',
+      href: '#password-error'
+    })
+  }
+
+  if (emailHasError || passwordHasError) {
+    res.render('sign-in', {
+      errorEmail: emailHasError,
+      errorPassword: passwordHasError,
+      errorList: errors
+    })
+  } else {
+    res.redirect('obliged-entity-type')
+  }
+})
+
 router.get('/obliged-entity-type', function (req, res) {
   res.render('obliged-entity-type', {
   })
@@ -146,7 +177,7 @@ router.get('/discrepeancy-details/psc-names', function (req, res) {
 
 router.post('/discrepancy-details/psc-names', function (req, res) {
   var errors = []
-  if (typeof req.session.data['psc'] === 'undefined') {
+  if (typeof req.body.psc === 'undefined') {
     errors.push({
       text: 'Select the PSC with the incorrect information',
       href: '#psc'
@@ -155,8 +186,38 @@ router.post('/discrepancy-details/psc-names', function (req, res) {
       errorPSC: true,
       errorList: errors
     })
+    return
+  } if (req.body.psc.includes('duplicate')) {
+    res.redirect('/discrepancy-details/psc-duplicate')
+    return
+  } if (req.body.psc.includes('other')) {
+    res.redirect('/discrepancy-details/psc-missing')
+    return
   } else {
-    res.redirect('/discrepancy-details/other-info')
+    res.redirect('/discrepancy-details/psc-person')
+    return
+  }
+})
+
+// PSC Person
+router.get('/discrepeancy-details/psc-person', function (req, res, next) {
+  res.render('/discrepeancy-details/psc-person', {
+  })
+})
+
+router.post('/discrepancy-details/psc-person', function (req, res, next) {
+  var errors = []
+  if (typeof req.body.pscname === 'undefined') {
+    errors.push({
+      text: 'Select the PSC with the incorrect information',
+      href: '#pscname'
+    })
+    res.render('discrepancy-details/psc-person', {
+      errorPSC: true,
+      errorList: errors
+    })
+  } else {
+    res.redirect('../check-your-answers')
   }
 })
 
@@ -177,7 +238,7 @@ router.post('/discrepancy-details/other-info', function (req, res) {
       errorList: errors
     })
   } else {
-    res.redirect('/confirmation')
+    res.redirect('/check-your-answers')
   }
 })
 
