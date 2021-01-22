@@ -135,40 +135,47 @@ router.post('/obliged-entity-email', function (req, res) {
 
 // Company number
 router.get('/discrepeancy-details/company-number', function (req, res) {
+  req.session.destroy(req.session.company)
   res.render('discrepeancy-details/company-number', {
   })
 })
 
+// Code for company lookup and confirming company
 router.post('/discrepancy-details/company-number', function (req, res) {
-  var errors = []
-  var str = req.session.data['company-number']
-  var n = str.length
-  if (str === '') {
-    errors.push({
-      text: 'Enter the company number',
-      href: '#company-number'
-    })
-    res.render('discrepancy-details/company-number', {
-      errorNum: true,
-      errorList: errors
-    })
-    return
-  } if (n !== 8) {
-    errors.push({
-      text: 'Company number must be 8 characters ',
-      href: '#company-number'
-    })
-    res.render('discrepancy-details/company-number', {
-      errorNum: true,
-      errorList: errors
-    })
-    return
-  } if (req.session.data['company-number'] === '00445790') {
-    res.redirect('/unable-to-use')
-  } else {
-    res.redirect('/discrepancy-details/confirm-company')
+  // Capture the entered company number using req.body.number the 'number' should match the ID of the input. The uppercase is to deal with company numbers that have letters as it needs to be all uppercase
+  var companyNumber = req.body.number.toUpperCase()
+  // Require the request node module, you may need to install this if it's a new prototype
+  var request = require('request')
+  // Construct the API request
+  var options = {
+    'method': 'GET',
+    'url': 'https://api.company-information.service.gov.uk/company/' + companyNumber + '',
+    'headers': {
+      'Authorization': 'Basic T3cyMEZHVTg1RTMybXFlaFVwdEZLdm5MMDQ4Z0pLVEQ4YU5GejE5RDo='
+    },
+    'json': true
   }
+  request(options, function (error, response) {
+    if (error) throw new Error(error)
+    // With the response put that as a session variable so it can be used across all pages
+    req.session.company = response.body
+    // Redirect to the confirm company page
+    res.redirect('/discrepancy-details/confirm-company')
+  })
 })
+
+router.get('/discrepancy-details/confirm-company', function (req, res) {
+  // Render the confirm company page
+  res.render('discrepancy-details/confirm-company', {
+    // To use the company data on that page use the following
+    company: req.session.company
+  })
+})
+
+router.post('/discrepancy-details/confirm-company', function (req, res) {
+
+})
+// End code for company lookup and confirm company
 
 router.get('/discrepeancy-details/psc-names', function (req, res) {
   res.render('/discrepeancy-details/psc-names', {

@@ -7,65 +7,54 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="/discrepancy-details/confirm-company" method="post">
         <h1 class="govuk-heading-l">Confirm this is the correct company</h1>
-        {{ govukTable({
-          firstCellIsHeader: true,
-          classes: "align-top",
-          rows: [
-          [
-            {
-              text: "Company name"
-            },
-            {
-              text: "ZLC LTD"
-            }
-           ],
-          [
-            {
-              text: "Company number"
-            },
-            {
-              text: "10393288"
-            }
-          ],
-          [
-            {
-              text: "Status"
-            },
-            {
-              html: "Active"
-            }
-          ],
-          [
-            {
-              text: "Incorporation date"
-            },
-            {
-              text: "7 November 2011"
-            }
-          ],
-          [
-            {
-              text: "Company type"
-            },
-            {
-              text: "Private Limited Company"
-            }
-          ],
-          [
-            {
-              text: "Registered office address"
-            },
-            {
-              html: "606 Welton Road<br/> Delta Office Park<br/> Swindon<br/> United Kingdom<br/> SN5 7XF"
-            }
-          ]
-          ]
-        }) }}
+        <dl class="govuk-summary-list">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Company name</dt>
+            <dd class="govuk-summary-list__value">{{company.company_name}}</dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Company number</dt>
+            <dd class="govuk-summary-list__value">{{company.company_number}}</dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Status</dt>
+            <dd class="govuk-summary-list__value">
+              {% if company.company_status === 'active' %}
+                <strong class="govuk-tag">{{company.company_status | capitalize}}</strong>
+              {% elif company.company_status === 'dissolved' or company.company_status === 'closed' %}
+                <strong class="govuk-tag govuk-tag--grey">{{company.company_status | capitalize}}</strong>
+              {% else %}
+                {{company.company_status | capitalize}}
+              {% endif %}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Incorporation date</dt>
+            <dd class="govuk-summary-list__value">{{company.date_of_creation}}</dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Company type</dt>
+            <dd class="govuk-summary-list__value">{{company.type | capitalize}}</dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Registered office address</dt>
+            <dd class="govuk-summary-list__value">{{company.registered_office_address.address_line_1}}<br>{{company.registered_office_address.address_line_2}}</dd>
+          </div>
+        </dl>
         {{ govukButton({
           text: "Confirm and continue",
           href: "/discrepancy-details/psc-names"
-                }) }}
+         }) }}
       </form>
+      <p class="govuk-body">
+        <a href="company-number">Change company</a>
+      </p>
     </div>
   </div>
 {% endblock %}
