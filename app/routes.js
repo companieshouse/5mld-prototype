@@ -131,7 +131,7 @@ router.post('/obliged-entity-email', function (req, res) {
       errorList: errors
     })
   } else {
-    res.redirect('/discrepancy-details/company-number')
+    res.redirect('/company-lookup/company-number')
   }
 })
 
