@@ -1,50 +1,66 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  Confirm this is the correct company
+  Confirm this is the correct company -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    href: "company-number",
+    text: "Back"
+  }) }}
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="/discrepancy-details/confirm-company" method="post">
+      <!-- The action will need to change depending on the location of the confirm-company page -->
+      <form action="/company-lookup/confirm-company" method="post">
         <h1 class="govuk-heading-l">Confirm this is the correct company</h1>
         <dl class="govuk-summary-list">
-
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Company name</dt>
             <dd class="govuk-summary-list__value">{{company.company_name}}</dd>
           </div>
-
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Company number</dt>
             <dd class="govuk-summary-list__value">{{company.company_number}}</dd>
           </div>
-
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Status</dt>
             <dd class="govuk-summary-list__value">
+              <!-- a set of if and elif conditions depending on the company status-->
               {% if company.company_status === 'active' %}
-                <strong class="govuk-tag">{{company.company_status | capitalize}}</strong>
+                <strong class="govuk-tag">{{company.company_status | upper}}</strong>
               {% elif company.company_status === 'dissolved' or company.company_status === 'closed' %}
-                <strong class="govuk-tag govuk-tag--grey">{{company.company_status | capitalize}}</strong>
+                <strong class="govuk-tag govuk-tag--grey">{{company.company_status | upper}}</strong>
               {% else %}
                 {{company.company_status | capitalize}}
               {% endif %}
             </dd>
           </div>
-
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Incorporation date</dt>
-            <dd class="govuk-summary-list__value">{{company.date_of_creation}}</dd>
+            <dd class="govuk-summary-list__value">{{companyIncorp}}</dd>
           </div>
-
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Company type</dt>
-            <dd class="govuk-summary-list__value">{{company.type | capitalize}}</dd>
+            <!-- upper is a way in Nunjucks to convert text into uppercase-->
+            <dd class="govuk-summary-list__value">{{company.type | upper}}</dd>
           </div>
-
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Registered office address</dt>
-            <dd class="govuk-summary-list__value">{{company.registered_office_address.address_line_1}}<br>{{company.registered_office_address.address_line_2}}</dd>
+            <dd class="govuk-summary-list__value">
+              <!-- if statements are used to stop gaps showing where there is missing information -->
+              {% if company.registered_office_address.address_line_1 %}
+                {{company.registered_office_address.address_line_1}}
+              {% endif %}
+              {% if company.registered_office_address.address_line_2 %}
+                <br>{{company.registered_office_address.address_line_2}}
+              {% endif %}
+              {% if company.registered_office_address.postal_code %}
+                <br>{{company.registered_office_address.postal_code}}
+              {% endif %}
+            </dd>
           </div>
         </dl>
         {{ govukButton({
