@@ -7,14 +7,14 @@ module.exports = function (router) {
       emailHasError = true
       errors.push({
         text: 'Enter your email address',
-        href: '#email-error'
+        href: '#email'
       })
     }
     if (req.session.data['password'] === '') {
       passwordHasError = true
       errors.push({
         text: 'Enter your password',
-        href: '#password-error'
+        href: '#password'
       })
     }
     if (emailHasError || passwordHasError) {
