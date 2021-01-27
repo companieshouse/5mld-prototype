@@ -1,10 +1,10 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  What type of obliged entity are you?
+  What type of obliged entity are you? - Report a discrepancy about a beneficial owner on the PSC register - GOV.UK
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/obliged-entity-type" method="post">
         {% if errorType == true %}
           {{ govukErrorSummary({
@@ -21,7 +21,7 @@
               legend: {
                 text: "What type of obliged entity are you?",
                 isPageHeading: true,
-                classes: "govuk-fieldset__legend--xl"
+                classes: "govuk-fieldset__legend--l"
               }
             },
             items: [
@@ -87,7 +87,7 @@
               legend: {
                 text: "What type of obliged entity are you?",
                 isPageHeading: true,
-                classes: "govuk-fieldset__legend--xl"
+                classes: "govuk-fieldset__legend--l"
               }
             },
             items: [

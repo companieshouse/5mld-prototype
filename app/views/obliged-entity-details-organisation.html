@@ -1,10 +1,10 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-   What is the name of your organisation?
+  What is the name of your organisation? - Report a discrepancy about a beneficial owner on the PSC register - GOV.UK
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/obliged-entity-details-organisation" method="post">
         {% if errorTelephoneNumber == true %}
           {{ govukErrorSummary({
@@ -15,7 +15,7 @@
             label: {
               text: "What is the name of your organisation?",
               isPageHeading: true,
-              classes: "govuk-label--xl"
+              classes: "govuk-label--l"
             },
             classes: "govuk-!-width-two-thirds",
             id: "your-organisation-name",
@@ -29,7 +29,7 @@
             label: {
               text: "What is the name of your organisation?",
               isPageHeading: true,
-              classes: "govuk-label--xl"
+              classes: "govuk-label--l"
             },
               classes: "govuk-!-width-two-thirds",
             id: "your-organisation-name",

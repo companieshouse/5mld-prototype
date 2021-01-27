@@ -1,7 +1,6 @@
 module.exports = function (router) {
   // Company number
   router.get('/company-lookup/company-number', function (req, res) {
-    req.session.destroy()
     res.render('company-lookup/company-number', {
     })
   })
@@ -66,6 +65,6 @@ module.exports = function (router) {
     })
   })
   router.post('/company-lookup/confirm-company', function (req, res) {
+    res.redirect('../discrepancy-details/psc-names')
   })
-  // End code for company lookup and confirm company
 }

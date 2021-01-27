@@ -153,7 +153,7 @@ router.post('/discrepancy-details/psc-person', function (req, res, next) {
       errorList: errors
     })
   } else {
-    res.redirect('../check-your-answers')
+    res.redirect('other-info')
   }
 })
 
@@ -176,6 +176,16 @@ router.post('/discrepancy-details/other-info', function (req, res) {
   } else {
     res.redirect('/check-your-answers')
   }
+})
+
+// Check your answers page
+router.post('/check-your-answers', function (req, res) {
+  res.redirect('confirmation')
+})
+
+router.get('/confirmation', function (req, res) {
+  res.render('confirmation', {
+  })
 })
 
 router.get('/confirmation', function (req, res) {
