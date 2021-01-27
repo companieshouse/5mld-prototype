@@ -1,17 +1,18 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  A PSC for this company has details protected
+  A PSC for this company has details protected - Report a discrepancy about a beneficial owner on the PSC register - GOV.UK
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
       {{ govukPanel({
-                titleText: "A PSC for this company has details protected",
-                classes: "unable-to-use"
-              }) }}
-
+        titleText: "A PSC for this company has details protected",
+        classes: "unable-to-use"
+      }) }}
       <p class="govuk-body">One or more person of significant control (PSC) for this company has their details protected. This means you cannot use this service to report a discrepancy.</p>
-      <p class="govuk-body">If you need to report a discrepancy about a beneficial owner on the PSC register for this company, you must contact the PSC discrepancy team directly at   <a class="govuk-link" href="mailto:pscdiscrepancies@companieshouse.gov.uk">pscdiscrepancies@companieshouse.gov.uk</a>.</p>
+      <p class="govuk-body">If you need to report a discrepancy about a beneficial owner on the PSC register for this company, you must contact the PSC discrepancy team directly at
+        <a class="govuk-link" href="mailto:pscdiscrepancies@companieshouse.gov.uk">pscdiscrepancies@companieshouse.gov.uk</a>.
+      </p>
     </div>
   </div>
 {% endblock %}

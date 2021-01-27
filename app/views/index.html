@@ -1,48 +1,208 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  Report a discrepancy about a beneficial owner on the PSC register - GOV.UK
+  {{serviceName}}
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds-from-desktop">
+    <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-xl">
-        Report a discrepancy about a beneficial owner on the PSC register
+        {{serviceName}}
+        service
       </h1>
-      <p class="govuk-body-l">
-        Use this service if you are an obliged entity and the information you hold about a beneficial owner is different from the information on the people with significant control (PSC) register.
-      </p>
-      <h3 class="govuk-heading-s">You'll need:</h3>
+      <h2 class="govuk-heading-l">Shortcuts into the journey</h2>
       <ul class="govuk-list govuk-list--bullet">
-        <li>the company number of the entity being reported as having a discrepancy</li>
-        <li>details of the discrepancy, for example, an incorrect address or an invalid PSC statement</li>
-        <li>the date when the discrepancy was first noticed</li>
+        <li>
+          <a href="start.html">Start page</a>
+        </li>
+        <li>
+          <a href="sign-in/sign-in">Sign in</a>
+        </li>
+        <li>
+          <a href="oe-contact">Contact details</a>
+        </li>
+        <li>
+          <a href="oe-type">Organisation details</a>
+        </li>
+        <li>
+          <a href="discrepancy-details/company-number">What is the company number for the PSC with the discrepancy</a>
+        </li>
+        <li>
+          <a href="discrepancy-details/confirm-company">Confirm company</a>
+        </li>
+        <li>
+          <a href="discrepancy-details/psc-names">PSC names</a>
+        </li>
+        <li>
+          <a href="discrepancy-details/psc-person">PSC person</a>
+        </li>
+        <li>
+          <a href="check-your-answers">Check answers</a>
+        </li>
+        <li>
+          <a href="confirmation">Confirmation</a>
+        </li>
       </ul>
-      <p>Reporting a discrepancy takes up to 10 minutes.
-      </p>
-      {{ govukButton({
-        text: "Start now",
-        href: "/sign-in/sign-in",
-        isStartButton: true
-      }) }}
-      <h2 class="govuk-heading-m">Before you start</h2>
-      <p class="govuk-body">You should
-        <a class="govuk-link" href="guidance.html">read the guidance about reporting a discrepancy</a>.</p>
-    </div>
-    <div class="govuk-grid-column-one-third">
-      <aside class="app-related-items" role="complementary">
-        <h2 class="govuk-heading-m" id="subsection-title">
-          Links
-        </h2>
-        <nav role="navigation" aria-labelledby="subsection-title">
-          <ul class="govuk-list govuk-body-s">
-            <li>
-              <a class="govuk-link" href="guidance.html">
-                Guidance on reporting a discrepancy
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
+      <h2 class="govuk-heading-l">Other service shortcuts</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="guidance.html">Guidance</a>
+        </li>
+        <li>
+          <a href="https://www.gov.uk/guidance/report-a-discrepancy-about-a-beneficial-owner-on-the-psc-register-by-an-obliged-entity">Live guidance</a>
+        </li>
+      </ul>
+      <h2 class="govuk-heading-l">Prototype versions</h2>
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Version</th>
+            <th scope="col" class="govuk-table__header">Tested on</th>
+            <th scope="col" class="govuk-table__header">Changes</th>
+            <th scope="col" class="govuk-table__header">Status</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <a href="https://fivemld-v3.herokuapp.com/">Version 3</a>
+            </th>
+            <td class="govuk-table__cell">TBC</td>
+            <td class="govuk-table__cell">
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Changes included in version 3
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>Added the confirm company pattern</li>
+                    <li>Added the breakdown of PSC information</li>
+                    <li>Added the check the answers page</li>
+                  </ul>
+                </div>
+              </details>
+            </td>
+            <td class="govuk-table__cell">
+              {{govukTag({
+                text: "Ready for dev",
+                classes: "govuk-tag--green"
+              })}}
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Version 2.3</th>
+            <td class="govuk-table__cell">TBC</td>
+            <td class="govuk-table__cell">
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Changes included in version 2.3
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>Added the check your answers page (without change links)</li>
+                    <li>Added the breakdown of PSC page (just for person)</li>
+                    <li>Updated headings changing from xl to l</li>
+                  </ul>
+                </div>
+              </details>
+            </td>
+            <td class="govuk-table__cell">
+              {{govukTag({
+                text: "Ready for dev",
+                classes: "govuk-tag--green"
+              })}}
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <a href="https://fivemld-v2-2.herokuapp.com/">Version 2.2</a>
+            </th>
+            <td class="govuk-table__cell">TBC</td>
+            <td class="govuk-table__cell">
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Changes included in version 2.2
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>Change 1</li>
+                    <li>Change 2</li>
+                    <li>Change 3</li>
+                  </ul>
+                </div>
+              </details>
+            </td>
+            <td class="govuk-table__cell">
+              {{govukTag({
+                text: "Ready for dev",
+                classes: "govuk-tag--green"
+              })}}
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <a href="https://fivemld-v2-1.herokuapp.com/">Version 2.1</a>
+            </th>
+            <td class="govuk-table__cell">TBC</td>
+            <td class="govuk-table__cell">
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Changes included in version 2.1
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>Change 1</li>
+                    <li>Change 2</li>
+                    <li>Change 3</li>
+                  </ul>
+                </div>
+              </details>
+            </td>
+            <td class="govuk-table__cell">
+              {{govukTag({
+                text: "Ready for dev",
+                classes: "govuk-tag--green"
+              })}}
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              <a href="https://fivemld-v2.herokuapp.com/">Version 2</a>
+            </th>
+            <td class="govuk-table__cell">TBC</td>
+            <td class="govuk-table__cell">
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Changes included in version 2
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>Change 1</li>
+                    <li>Change 2</li>
+                    <li>Change 3</li>
+                  </ul>
+                </div>
+              </details>
+            </td>
+            <td class="govuk-table__cell">
+              {{govukTag({
+                text: "Ready for dev",
+                classes: "govuk-tag--green"
+              })}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 {% endblock %}

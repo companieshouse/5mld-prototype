@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Report a discrepancy about a beneficial owner on the PSC register - GOV.UK
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-xl">
+        Report a discrepancy about a beneficial owner on the PSC register
+      </h1>
+      <p class="govuk-body">
+        Use this service if you are an obliged entity and the information you hold about a beneficial owner is different from the information on the people with significant control (PSC) register.
+      </p>
+      <p class="govuk-body">You'll need:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the company number of the entity being reported as having a discrepancy</li>
+        <li>details of the discrepancy, for example, an incorrect address or an invalid PSC statement</li>
+        <li>the date when the discrepancy was first noticed</li>
+      </ul>
+      <p>Reporting a discrepancy takes up to 10 minutes.
+      </p>
+      {{ govukButton({
+        text: "Start now",
+        href: "/sign-in/sign-in",
+        isStartButton: true
+      }) }}
+      <h2 class="govuk-heading-m">Before you start</h2>
+      <p class="govuk-body">You should
+        <a class="govuk-link" href="guidance.html">read the guidance about reporting a discrepancy</a>.</p>
+    </div>
+    <div class="govuk-grid-column-one-third-from-desktop">
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Links
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-body-s">
+            <li>
+              <a class="govuk-link" href="guidance.html">
+                Guidance on reporting a discrepancy
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+  </div>
+{% endblock %}
