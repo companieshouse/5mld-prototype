@@ -1,5 +1,8 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
+  {% if errorPSC == true %}
+    Error:
+  {% endif %}
   Which PSC is incorrect for ZLC LTD? - Report a discrepancy about a beneficial owner on the PSC register - GOV.UK
 {% endblock %}
 {% block content %}

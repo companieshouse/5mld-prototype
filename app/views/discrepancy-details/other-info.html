@@ -1,5 +1,8 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
+  {% if errorOther == true %}
+    Error:
+  {% endif %}
   What information is incorrect for the PSC? - Report a discrepancy about a beneficial owner on the PSC register - GOV.UK
 {% endblock %}
 {% block content %}
