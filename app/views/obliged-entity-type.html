@@ -1,5 +1,8 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
+  {% if errorType == true %}
+    Error:
+  {% endif %}
   What type of obliged entity are you? - Report a discrepancy about a beneficial owner on the PSC register - GOV.UK
 {% endblock %}
 {% block content %}

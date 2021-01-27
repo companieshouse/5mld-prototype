@@ -1,5 +1,8 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
+  {% if errorNametwo == true or errorName == true %}
+    Error:
+  {% endif %}
   What is your name? - Report a discrepancy about a beneficial owner on the PSC register - GOV.UK
 {% endblock %}
 {% block content %}
