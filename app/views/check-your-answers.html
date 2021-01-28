@@ -52,7 +52,7 @@
             Company number
           </dt>
           <dd class="govuk-summary-list__value">
-            {{ data['company-number'] }}
+            {{company.company_number}}
           </dd>
           <dd class="govuk-summary-list__actions"></dd>
         </div>
@@ -61,7 +61,7 @@
             Company name
           </dt>
           <dd class="govuk-summary-list__value">
-            ZLC LTD
+            {{company.company_name}}
           </dd>
           <dd class="govuk-summary-list__actions"></dd>
         </div>
@@ -73,24 +73,30 @@
             PSC
           </dt>
           <dd class="govuk-summary-list__value">
-            Sarah Philips
+            {{ data['psc'] }}
           </dd>
           <dd class="govuk-summary-list__actions"></dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Discrepancies
+            Discrepancy
           </dt>
           <dd class="govuk-summary-list__value">
-            Name, date of birth
+            <ul class="govuk-list govuk-list--bullet">
+              {% for feature in data['pscname'] %}
+                <li>{{ feature }}</li>
+              {% else %}
+                <li>No discrepancy reason selected</li>
+              {% endfor %}
+            </ul>
           </dd>
           <dd class="govuk-summary-list__actions"></dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Information
+            Additional information
           </dt>
-          <dd class="govuk-summary-list__value"></dd>
+          <dd class="govuk-summary-list__value">{{ data['more-detail'] }}</dd>
           <dd class="govuk-summary-list__actions"></dd>
         </div>
       </dl>

@@ -183,8 +183,10 @@ router.post('/check-your-answers', function (req, res) {
   res.redirect('confirmation')
 })
 
-router.get('/confirmation', function (req, res) {
-  res.render('confirmation', {
+router.get('/check-your-answers', function (req, res) {
+  res.render('check-your-answers', {
+    // To use the company data on that page use the following
+    company: req.session.company
   })
 })
 
