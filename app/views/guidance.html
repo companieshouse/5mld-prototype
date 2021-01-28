@@ -1,6 +1,8 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-  Guidance - Report a discrepancy about a beneficial owner on the PSC register
+  Guidance -
+  {{serviceName}}
+  - GOV.UK
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
@@ -61,8 +63,8 @@
         <li>art dealer in a gallery and auction house</li>
         <li>art dealer in a free port</li>
         <li>insolvency practitioner</li>
-    </p>
-      </ul>
+      </p>
+    </ul>
     <h2 class="govuk-heading-l">What a discrepancy is
     </h2>
     <p class="govuk-body">A discrepancy is when the information that an obliged entity holds about a beneficial owner clearly shows that the information recorded by Companies House is incorrect. Our focus is on clear factual errors, such as a missing PSC
@@ -72,76 +74,77 @@
     </p>
     <p class="govuk-body">If this type of minor error is found, obliged entities should encourage the company to contact us to resolve it.
     </p>
-  </ul>
-  <h2 class="govuk-heading-l">When to report a discrepancy
-  </h2>
-  <p class="govuk-body">Obliged entities must make a report if discrepancies are found when setting up a new business relationship with a customer.
-  </p>
-  <p class="govuk-body">The discrepancy report should be made as soon as possible. Obliged entities should not wait to make reports in bulk as this prevents the PSC register being kept up to date.
-  </p>
-  {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+</ul>
+<h2 class="govuk-heading-l">When to report a discrepancy
+</h2>
+<p class="govuk-body">Obliged entities must make a report if discrepancies are found when setting up a new business relationship with a customer.
+</p>
+<p class="govuk-body">The discrepancy report should be made as soon as possible. Obliged entities should not wait to make reports in bulk as this prevents the PSC register being kept up to date.
+</p>
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
-  {{ govukInsetText({
+{{ govukInsetText({
 text: "A discrepancy report does not replace a Suspicious Activity Report (SAR). You should still submit a SAR when it is needed."
 }) }}
-    <h2 class="govuk-heading-l">Information to include in the discrepancy report
-    </h2>
-    <p class="govuk-body">When making a report, obliged entities should include the:
-    </p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>
-        name and type of business of the obliged entity making the report
-      </li>
-      <li>
-        date when the discrepancy was first noticed
-      </a>
-    </li>
-    <li>
-      name and email address of the person making the report
-    </li>
-    <li>
-      company number of the entity being reported as having a discrepancy
-    </li>
-    <li>type of discrepancy, for example if it relates to a person, an RLE, a statement or a missing PSC
-    </li>
-    <li>details of the discrepancy, for example an incorrect address or an invalid PSC statement
-    </li>
-  </ul>
-  <br>
-  <p class="govuk-body govuk-!-font-weight-bold">If a beneficial owner’s correspondence address is different from the service address on the Companies House PSC register
-  </p>
-  <p class="govuk-body">Obliged entities should check with their client if the correspondence address they’ve given when a new business relationship is being set up has also been given as the PSC’s usual residential address (or 'home' address) with Companies House.
-  </p>
-  <p class="govuk-body">If they confirm it’s the same address, you do not have to make a discrepancy report.
-  </p>
+<h2 class="govuk-heading-l">Information to include in the discrepancy report
+</h2>
+<p class="govuk-body">When making a report, obliged entities should include the:
+</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>
+    name and type of business of the obliged entity making the report
+  </li>
+  <li>
+    date when the discrepancy was first noticed
+  </a>
+</li>
+<li>
+  name and email address of the person making the report
+</li>
+<li>
+  company number of the entity being reported as having a discrepancy
+</li>
+<li>type of discrepancy, for example if it relates to a person, an RLE, a statement or a missing PSC
+</li>
+<li>details of the discrepancy, for example an incorrect address or an invalid PSC statement
+</li>
+</ul>
+<br>
+<p class="govuk-body govuk-!-font-weight-bold">If a beneficial owner’s correspondence address is different from the service address on the Companies House PSC register
+</p>
+<p class="govuk-body">Obliged entities should check with their client if the correspondence address they’ve given when a new business relationship is being set up has also been given as the PSC’s usual residential address (or 'home' address) with Companies House.
+</p>
+<p class="govuk-body">If they confirm it’s the same address, you do not have to make a discrepancy report.
+</p>
 
-  <h2 class="govuk-heading-l">After the report is submitted
-  </h2>
-  <p class="govuk-body">We'll investigate the discrepancy, which could take some time. The company will not be informed that a discrepancy report has been made by an obliged entity about their PSC register information.
-  </p>
-  <p>If we find that the reported discrepancy needs to be corrected, we’ll contact the company and ask that they resolve it to make sure the PSC register is up to date. If the discrepancy is not resolved by the company, we may remove the incorrect information from the register.
-  </p>
-  <p class="govuk-body">We'll email the obliged entity to let them know the outcome of our investigation.
-  </p>
+<h2 class="govuk-heading-l">After the report is submitted
+</h2>
+<p class="govuk-body">We'll investigate the discrepancy, which could take some time. The company will not be informed that a discrepancy report has been made by an obliged entity about their PSC register information.
+</p>
+<p>If we find that the reported discrepancy needs to be corrected, we’ll contact the company and ask that they resolve it to make sure the PSC register is up to date. If the discrepancy is not resolved by the company, we may remove the incorrect
+information from the register.
+</p>
+<p class="govuk-body">We'll email the obliged entity to let them know the outcome of our investigation.
+</p>
 
-  <h2 class="govuk-heading-l">Contact us</h2>
-  <p class="govuk-body">If you have a question about reporting a PSC discrepancy, you can contact us.</p>
-  <h3 class="govuk-heading-s">Telephone</h3>
-  <ul class="govuk-list">
-    <li>0303 1234 500</li>
-    <li>Monday to Friday, 8:30am to 6pm</li>
-  </ul>
-  <p class="govuk-body">
-    <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
-  </p>
+<h2 class="govuk-heading-l">Contact us</h2>
+<p class="govuk-body">If you have a question about reporting a PSC discrepancy, you can contact us.</p>
+<h3 class="govuk-heading-s">Telephone</h3>
+<ul class="govuk-list">
+<li>0303 1234 500</li>
+<li>Monday to Friday, 8:30am to 6pm</li>
+</ul>
+<p class="govuk-body">
+<a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+</p>
 
-  <h3 class="govuk-heading-s">Email</h3>
+<h3 class="govuk-heading-s">Email</h3>
 
-  <ul class="govuk-list">
-    <li>
-      <a href="mailto:DSR@companieshouse.gov.uk">DSR@companieshouse.gov.uk</a>
-    </li>
-  </ul>
+<ul class="govuk-list">
+<li>
+  <a href="mailto:DSR@companieshouse.gov.uk">DSR@companieshouse.gov.uk</a>
+</li>
+</ul>
 
 </div>
 </div>
