@@ -106,11 +106,6 @@ router.post('/obliged-entity-email', function (req, res) {
   }
 })
 
-router.get('/discrepeancy-details/psc-names', function (req, res) {
-  res.render('/discrepeancy-details/psc-names', {
-  })
-})
-
 router.post('/discrepancy-details/psc-names', function (req, res) {
   var errors = []
   if (typeof req.body.psc === 'undefined') {

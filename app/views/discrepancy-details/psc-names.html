@@ -3,7 +3,8 @@
   {% if errorPSC == true %}
     Error:
   {% endif %}
-  Which PSC is incorrect for ZLC LTD? -
+  Which PSC is incorrect for
+  {{company.company_name}}? -
   {{serviceName}}
   - GOV.UK
 {% endblock %}
@@ -16,78 +17,81 @@
             titleText: "There is a problem",
             errorList: errorList
           }) }}
-          {{ govukRadios({
-            idPrefix: "psc",
-            name: "psc",
-            errorMessage: {
-              text: "Select the PSC with the incorrect information"
-            },
-            fieldset: {
-              legend: {
-                html: "Which PSC is incorrect for ZLC LTD?",
-                isPageHeading: true,
-                classes: "govuk-label--l"
-              }
-            },
-            items: [
-              {
-                value: "Mrs Catherine Isabel Gaynor",
-                text: "Mrs Catherine Isabel Gaynor",
-                hint: {
-                  html: "Born November 1962"
-                }
-              },
-              {
-                value: "Mr Jonathan Charles Gaynor",
-                text: "Mr Jonathan Charles Gaynor",
-                hint: {
-                  text: "Born June 1952"
-                }
-              },
-              {
-                divider: "or"
-              },
-              {
-                value: "PSC is missing",
-                text: "PSC is missing"
-              }
-            ]
-          }) }}
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="psc-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Which PSC is incorrect for
+                  {{company.company_name}}?
+                </h1>
+              </legend>
+              <div class="govuk-radios">
+                {% for psc in psc.items %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="psc" name="psc" type="radio" value="{{psc.kind}}" aria-describedby="psc-item-hint">
+                    <label class="govuk-label govuk-radios__label" for="psc">
+                      {{psc.name}}
+                    </label>
+                    <div id="psc-item-hint" class="govuk-hint govuk-radios__hint">
+                      {% if psc.kind === 'individual-person-with-significant-control' %}
+                        Born
+                        {{psc.date_of_birth.year}}
+                      {% elif psc.kind === 'corporate-entity-person-with-significant-control' %}
+                        Registration number
+                        {{psc.identification.registration_number}}
+                      {% else %}
+                      {% endif %}
+                    </div>
+                  </div>
+                {% endfor %}
+                <div class="govuk-radios__divider">or</div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="missing" name="missing" type="radio" value="missing">
+                  <label class="govuk-label govuk-radios__label" for="missing">
+                    PSC is missing
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
         {% else %}
-          {{ govukRadios({
-            idPrefix: "psc",
-            name: "psc",
-            fieldset: {
-              legend: {
-                html: "Which PSC is incorrect for ZLC LTD?",
-                isPageHeading: true,
-                classes: "govuk-label--l"
-              }
-            },
-            items: [
-              {
-                value: "Mrs Catherine Isabel Gaynor",
-                text: "Mrs Catherine Isabel Gaynor",
-                hint: {
-                  html: "Born November 1962"
-                }
-              },
-              {
-                value: "Mr Jonathan Charles Gaynor",
-                text: "Mr Jonathan Charles Gaynor",
-                hint: {
-                  text: "Born June 1952"
-                }
-              },
-              {
-                divider: "or"
-              },
-              {
-                value: "PSC is missing",
-                text: "PSC is missing"
-              }
-            ]
-          }) }}
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="psc-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Which PSC is incorrect for
+                  {{company.company_name}}?
+                </h1>
+              </legend>
+              <div class="govuk-radios">
+                {% for psc in psc.items %}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="psc" name="psc" type="radio" value="{{psc.kind}}" aria-describedby="psc-item-hint">
+                    <label class="govuk-label govuk-radios__label" for="psc">
+                      {{psc.name}}
+                    </label>
+                    <div id="psc-item-hint" class="govuk-hint govuk-radios__hint">
+                      {% if psc.kind === 'individual-person-with-significant-control' %}
+                        Born
+                        {{psc.date_of_birth.year}}
+                      {% elif psc.kind === 'corporate-entity-person-with-significant-control' %}
+                        Registration number
+                        {{psc.identification.registration_number}}
+                      {% else %}
+                      {% endif %}
+                    </div>
+                  </div>
+                {% endfor %}
+                <div class="govuk-radios__divider">or</div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="missing" name="missing" type="radio" value="missing">
+                  <label class="govuk-label govuk-radios__label" for="missing">
+                    PSC is missing
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
         {% endif %}
         {{ govukButton({
           text: "Continue"

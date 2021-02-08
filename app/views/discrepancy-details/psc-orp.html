@@ -8,10 +8,10 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <form action="/discrepancy-details/psc-person" method="post">
+      <form action="/discrepancy-details/psc-orp" method="post">
         {{ govukCheckboxes({
-        idPrefix: "pscname",
-        name: "pscname",
+        idPrefix: "pscorp",
+        name: "pscorp",
         fieldset: {
           legend: {
             html: "What type of discrepancy are you reporting for Mrs Catherine Isabel Gaynor?",
@@ -28,20 +28,16 @@
             text: "Nature of control"
           },
           {
-            value: "Correspondence address",
-            text: "Correspondence address"
+            value: "Governing law",
+            text: "Governing law"
           },
           {
-            value: "Name",
-            text: "Name"
+            value: "Legal form",
+            text: "Legal form"
           },
           {
-            value: "Date of birth",
-            text: "Date of birth"
-          },
-          {
-            value: "Nationality",
-            text: "Nationality"
+            value: "Address",
+            text: "Address"
           },
           {
             value: "Date notified",

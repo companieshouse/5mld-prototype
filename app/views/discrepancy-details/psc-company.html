@@ -1,0 +1,78 @@
+{% set title = "Tell us your company number" %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  What type of discrepancy are you reporting? -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="/discrepancy-details/psc-company" method="post">
+        {{ govukCheckboxes({
+        idPrefix: "psccompany",
+        name: "psccompany",
+        fieldset: {
+          legend: {
+            html: "What type of discrepancy are you reporting for Mrs Catherine Isabel Gaynor?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "Select all that apply."
+        },
+        items: [
+          {
+            value: "Nature of control",
+            text: "Nature of control"
+          },
+          {
+            value: "Address",
+            text: "Address"
+          },
+          {
+            value: "Name",
+            text: "Name"
+          },
+          {
+            value: "Company name",
+            text: "Company name"
+          },
+          {
+            value: "Company number",
+            text: "Company number"
+          },
+          {
+            value: "Place of registration",
+            text: "Place of registration"
+          },
+          {
+            value: "Incorporation law",
+            text: "Incorporation law"
+          },
+          {
+            value: "Governing law",
+            text: "Governing law"
+          },
+          {
+            value: "Legal form",
+            text: "Legal form"
+          },
+          {
+            value: "Notified date",
+            text: "Notified date"
+          },
+          {
+            value: "Other reason",
+            text: "Other reason"
+          }
+        ]
+        }) }}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

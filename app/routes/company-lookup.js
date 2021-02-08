@@ -9,6 +9,7 @@ module.exports = function (router) {
     // Capture the entered company number using req.body.number the 'number' should match the ID of the input. The uppercase is to deal with company numbers that have letters as it needs to be all uppercase
     var errors = []
     var companyNumber = req.body.number.toUpperCase().trim()
+    req.session.number = companyNumber
     var apiKey = process.env.CHS_API_KEY
     var n = companyNumber.length
     if (req.session.data['number'] === '') {
@@ -65,6 +66,28 @@ module.exports = function (router) {
     })
   })
   router.post('/company-lookup/confirm-company', function (req, res) {
-    res.redirect('../discrepancy-details/psc-names')
+    var request = require('request')
+    var apiKey = process.env.CHS_API_KEY
+    var companyNumber = req.session.number
+    var options = {
+      'method': 'GET',
+      'url': 'https://api.company-information.service.gov.uk/company/' + companyNumber + '/persons-with-significant-control',
+      'headers': {
+        'Authorization': apiKey
+      },
+      'json': true
+    }
+    request(options, function (error, response) {
+      if (error) throw new Error(error)
+      req.session.psc = response.body
+      console.log(req.session.psc)
+      res.redirect('../discrepancy-details/psc-names')
+    })
+  })
+  router.get('/discrepancy-details/psc-names', function (req, res) {
+    res.render('discrepancy-details/psc-names', {
+      psc: req.session.psc,
+      company: req.session.company
+    })
   })
 }
