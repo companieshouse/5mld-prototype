@@ -84,10 +84,35 @@ module.exports = function (router) {
       res.redirect('../discrepancy-details/psc-names')
     })
   })
+
+  // List of all PSC's
   router.get('/discrepancy-details/psc-names', function (req, res) {
     res.render('discrepancy-details/psc-names', {
       psc: req.session.psc,
       company: req.session.company
     })
+  })
+  router.post('/discrepancy-details/psc-names', function (req, res) {
+    var errors = []
+    var pscType = req.body.psc
+    if (typeof req.body.psc === 'undefined') {
+      errors.push({
+        text: 'Select the PSC with the incorrect information',
+        href: '#psc'
+      })
+      res.render('discrepancy-details/psc-names', {
+        errorPSC: true,
+        errorList: errors,
+        psc: req.session.psc,
+        company: req.session.company
+      })
+      return
+    } if (pscType === 'corporate-entity-person-with-significant-control') {
+      res.redirect('/discrepancy-details/psc-company')
+      return
+    } else {
+      res.redirect('/discrepancy-details/psc-person')
+      return
+    }
   })
 }

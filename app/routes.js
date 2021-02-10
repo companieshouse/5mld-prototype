@@ -106,30 +106,6 @@ router.post('/obliged-entity-email', function (req, res) {
   }
 })
 
-router.post('/discrepancy-details/psc-names', function (req, res) {
-  var errors = []
-  if (typeof req.body.psc === 'undefined') {
-    errors.push({
-      text: 'Select the PSC with the incorrect information',
-      href: '#psc'
-    })
-    res.render('discrepancy-details/psc-names', {
-      errorPSC: true,
-      errorList: errors
-    })
-    return
-  } if (req.body.psc.includes('duplicate')) {
-    res.redirect('/discrepancy-details/psc-duplicate')
-    return
-  } if (req.body.psc.includes('other')) {
-    res.redirect('/discrepancy-details/psc-missing')
-    return
-  } else {
-    res.redirect('/discrepancy-details/psc-person')
-    return
-  }
-})
-
 // PSC Person
 router.get('/discrepeancy-details/psc-person', function (req, res, next) {
   res.render('/discrepeancy-details/psc-person', {

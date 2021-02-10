@@ -17,7 +17,7 @@
             titleText: "There is a problem",
             errorList: errorList
           }) }}
-          <div class="govuk-form-group">
+          <div class="govuk-form-group govuk-form-group--error">
             <fieldset class="govuk-fieldset" aria-describedby="psc-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
@@ -25,6 +25,10 @@
                   {{company.company_name}}?
                 </h1>
               </legend>
+              <span id="passport-issued-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span>
+                Select the PSC with the incorrect information
+              </span>
               <div class="govuk-radios">
                 {% for psc in psc.items %}
                   <div class="govuk-radios__item">
@@ -39,6 +43,13 @@
                       {% elif psc.kind === 'corporate-entity-person-with-significant-control' %}
                         Registration number
                         {{psc.identification.registration_number}}
+                      {% elif psc.kind === 'legal-person-person-with-significant-control' %}
+                        Correspondence address
+                        {{psc.address.premises}}
+                        {{psc.address.address_line_1}}
+                        {% if psc.address.postal_code %}
+                          {{psc.address.postal_code}}
+                        {% endif %}
                       {% else %}
                       {% endif %}
                     </div>
@@ -73,10 +84,18 @@
                     <div id="psc-item-hint" class="govuk-hint govuk-radios__hint">
                       {% if psc.kind === 'individual-person-with-significant-control' %}
                         Born
+                        {{psc.date_of_birth.month}}
                         {{psc.date_of_birth.year}}
                       {% elif psc.kind === 'corporate-entity-person-with-significant-control' %}
                         Registration number
                         {{psc.identification.registration_number}}
+                      {% elif psc.kind === 'legal-person-person-with-significant-control' %}
+                        Correspondence address
+                        {{psc.address.premises}}
+                        {{psc.address.address_line_1}}
+                        {% if psc.address.postal_code %}
+                          {{psc.address.postal_code}}
+                        {% endif %}
                       {% else %}
                       {% endif %}
                     </div>
