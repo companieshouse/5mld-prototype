@@ -114,7 +114,7 @@ router.get('/discrepeancy-details/psc-person', function (req, res, next) {
 
 router.post('/discrepancy-details/psc-person', function (req, res, next) {
   var errors = []
-  if (typeof req.body.pscname === 'undefined') {
+  if (typeof req.body.pscperson === 'undefined') {
     errors.push({
       text: 'Select the PSC with the incorrect information',
       href: '#pscname'
