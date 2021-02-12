@@ -84,12 +84,14 @@
             Discrepancy
           </dt>
           <dd class="govuk-summary-list__value">
-            <ul class="govuk-list govuk-list--bullet">
-              {% for feature in data['pscperson'] %}
-                <li>{{ feature }}</li>
+            {% if data['pscperson'] %}
+              <ul class="govuk-list govuk-list--bullet">
+                {% for feature in data['pscperson'] %}
+                  <li>{{ feature }}</li>
+                {% endfor %}
               {% else %}
-                <li>No discrepancy reason selected</li>
-              {% endfor %}
+                No reason selected
+              {% endif %}
             </ul>
           </dd>
           <dd class="govuk-summary-list__actions"></dd>

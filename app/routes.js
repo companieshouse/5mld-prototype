@@ -128,6 +128,28 @@ router.post('/discrepancy-details/psc-person', function (req, res, next) {
   }
 })
 
+// PSC Company
+router.get('/discrepeancy-details/psc-company', function (req, res, next) {
+  res.render('/discrepeancy-details/psc-company', {
+  })
+})
+
+router.post('/discrepancy-details/psc-company', function (req, res, next) {
+  var errors = []
+  if (typeof req.body.pscperson === 'undefined') {
+    errors.push({
+      text: 'Select the PSC with the incorrect information',
+      href: '#pscname'
+    })
+    res.render('discrepancy-details/psc-company', {
+      errorPSC: true,
+      errorList: errors
+    })
+  } else {
+    res.redirect('other-info')
+  }
+})
+
 router.get('/discrepeancy-details/other-info', function (req, res) {
   res.render('/discrepeancy-details/other-info', {
   })
