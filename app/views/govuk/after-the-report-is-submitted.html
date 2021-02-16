@@ -1,0 +1,30 @@
+{% extends "layout-govuk.html" %}
+{% block pageTitle %}
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "#"
+    },
+    {
+      text: "Business and industry",
+      href: "https://www.gov.uk/business-and-industry"
+    }
+  ]
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    {% include "../includes/govuk-content-header.html" %}
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-0">
+      <h3 class="govuk-heading-m">Title</h3>
+
+    </div>
+    {% include "../includes/govuk-aside.html" %}
+  </div>
+{% endblock %}
