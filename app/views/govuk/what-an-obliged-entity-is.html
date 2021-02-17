@@ -22,8 +22,32 @@
     {% include "../includes/govuk-content-header.html" %}
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-0">
-      <h3 class="govuk-heading-m">Title</h3>
+      <h3 class="govuk-heading-m">What an obliged entity is</h3>
+      <p class="govuk-body">Obliged entities include:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>credit institutions</li>
+  <li>financial institutions</li>
+  <li>auditors, external accountants or tax advisors</li>
+  <li>notaries or other independent legal professionals</li>
+  <li>trusts or company service providers</li>
+  <li>estate agents, including when acting as intermediaries</li>
+  <li>other persons trading goods in cash amounting to €10,000 or more</li>
+  <li>gambling services</li>
+  <li>exchange services between virtual and fiat currencies</li>
+  <li>custodian wallet providers</li>
+  <li>art dealers in galleries and auction houses</li>
+  <li>art dealers in free ports</li>
+  <li>insolvency practitioners</li>
+</ul>
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+<div class="govuk-inset-text">
+  If you’re not an obliged entity, do not use this service to report a PSC discrepancy. If you want to update your PSC details, you can <a href="https://www.gov.uk/make-changes-to-your-limited-company/company-name" class="govuk-link">tell Companies House about changes to your limited company</a>.
+
+</div>
+
     </div>
     {% include "../includes/govuk-aside.html" %}
+
   </div>
 {% endblock %}
