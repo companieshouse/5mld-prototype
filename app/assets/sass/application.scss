@@ -15,7 +15,11 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/related-items";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
-
+.call-to-action {
+    margin: 2em 0;
+    background-color: #f3f2f1;
+    padding: 2em;
+}
 .missing-psc {
   background: #f5f5f5;
 }
