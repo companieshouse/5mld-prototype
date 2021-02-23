@@ -107,16 +107,16 @@ router.post('/obliged-entity-email', function (req, res) {
 })
 
 // PSC Person
-router.get('/discrepeancy-details/psc-person', function (req, res, next) {
-  res.render('/discrepeancy-details/psc-person', {
+router.get('/discrepancy-details/psc-person', function (req, res) {
+  res.render('discrepancy-details/psc-person', {
   })
 })
 
-router.post('/discrepancy-details/psc-person', function (req, res, next) {
+router.post('/discrepancy-details/psc-person', function (req, res) {
   var errors = []
-  if (typeof req.body.pscperson === 'undefined') {
+  if (typeof req.session.data['pscperson'] === 'undefined') {
     errors.push({
-      text: 'Select the PSC with the incorrect information',
+      text: 'Select the type of discrepancy you are reporting',
       href: '#pscname'
     })
     res.render('discrepancy-details/psc-person', {

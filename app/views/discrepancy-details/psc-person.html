@@ -9,7 +9,64 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       <form action="/discrepancy-details/psc-person" method="post">
-        {{ govukCheckboxes({
+        {% if errorPSC == true %}
+          {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: errorList
+          }) }}
+          {{ govukCheckboxes({
+          idPrefix: "pscperson",
+          name: "pscperson",
+          fieldset: {
+            legend: {
+              html: "What type of discrepancy are you reporting for Mrs Catherine Isabel Gaynor?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          errorMessage: {
+  text: "Select the type of discrepancy you are reporting"
+},
+          items: [
+            {
+              value: "Nature of control",
+              text: "Nature of control"
+            },
+            {
+              value: "Name",
+              text: "Name"
+            },
+            {
+              value: "Date of birth",
+              text: "Date of birth"
+            },
+            {
+              value: "Nationality",
+              text: "Nationality"
+            },
+            {
+              value: "Place of residence",
+              text: "Place of residence"
+            },
+            {
+              value: "Correspondence address",
+              text: "Correspondence address"
+            },
+            {
+              value: "Notified date",
+              text: "Notified date"
+            },
+            {
+              value: "Other reason",
+              text: "Other reason"
+            }
+          ]
+          }) }}
+        {% else %}
+          {{ govukCheckboxes({
         idPrefix: "pscperson",
         name: "pscperson",
         fieldset: {
@@ -57,6 +114,7 @@
           }
         ]
         }) }}
+        {% endif %}
         {{ govukButton({
           text: "Continue"
         }) }}
