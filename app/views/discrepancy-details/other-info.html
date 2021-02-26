@@ -16,16 +16,16 @@
           errorList: errorList
         }) }}
       {% endif %}
-      <h1 class="govuk-heading-l">What information is incorrect for the PSC?</h1>
-      <p class="govuk-body">This should include:
+      <h1 class="govuk-heading-l">Give us more information about the discrepancy</h1>
+      <p class="govuk-body">You should tell us:
       </p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>details of the discrepancy, for example an incorrect address or an invalid PSC statement
+        <li>what information on the PSC register is incorrect
         </li>
-        <li>
-          the date when the discrepancy was first noticed
-        </a>
+        <li>the correct information as you believe it should be shown on the register
       </li>
+    <li>any other relevant information about the discrepancy that supports the report
+  </li>
     </ul>
     <form action="/discrepancy-details/other-info" method="post">
       {% if errorOther == true %}
@@ -44,12 +44,13 @@
             name: "more-detail",
             id: "more-detail",
             label: {
-              html: "Incorrect PSC information"
+              html: "Discrepancy information"
             }
           }) }}
       {% endif %}
       <form action="/form-handler" method="post" novalidate="novalidate">
         <input type="hidden" name="answers-checked" value="true">
+
         {{ govukButton({
           text: "Continue"
         }) }}

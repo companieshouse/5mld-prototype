@@ -21,13 +21,13 @@
             <fieldset class="govuk-fieldset" aria-describedby="psc-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-                  Which PSC is incorrect for
+                  Which PSC has a discrepancy for
                   {{company.company_name}}?
                 </h1>
               </legend>
               <span id="passport-issued-error" class="govuk-error-message">
                 <span class="govuk-visually-hidden">Error:</span>
-                Select the PSC with the incorrect information
+                Select the PSC with the discrepancy, or if a PSC is missing
               </span>
               <div class="govuk-radios">
                 {% for psc in psc.items %}
@@ -70,7 +70,7 @@
             <fieldset class="govuk-fieldset" aria-describedby="psc-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-                  Which PSC is incorrect for
+                  Which PSC has a discrepancy for
                   {{company.company_name}}?
                 </h1>
               </legend>

@@ -138,7 +138,7 @@ router.post('/discrepancy-details/psc-company', function (req, res, next) {
   var errors = []
   if (typeof req.body.pscperson === 'undefined') {
     errors.push({
-      text: 'Select the PSC with the incorrect information',
+      text: '  Select the PSC with the discrepancy, or if a PSC is missing',
       href: '#pscname'
     })
     res.render('discrepancy-details/psc-company', {
