@@ -96,7 +96,7 @@ module.exports = function (router) {
     var pscType = req.body.psc
     if (typeof req.body.psc === 'undefined') {
       errors.push({
-        text: 'Select the PSC with the incorrect information',
+        text: 'Select the PSC with the discrepancy, or if a PSC is missing',
         href: '#psc'
       })
       res.render('discrepancy-details/psc-names', {
