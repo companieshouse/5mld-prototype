@@ -47,6 +47,11 @@ module.exports = function (router) {
         if (error) throw new Error(error)
         // With the response put that as a session variable so it can be used across all pages
         req.session.company = response.body
+        // Format date of incorporation
+        const dayOfIncorporation = req.session.company.date_of_creation.slice(-2)
+        const monthOfIncorporation = req.session.company.date_of_creation.slice(5, 7)
+        const yearOfIncorporation = req.session.company.date_of_creation.slice(0, 4)
+        req.session.companyIncorp = dayOfIncorporation + ' ' + monthOfIncorporation + ' ' + yearOfIncorporation
         // Redirect to the confirm company page
         res.redirect('/company-lookup/confirm-company')
       })
@@ -56,7 +61,8 @@ module.exports = function (router) {
     // Render the confirm company page
     res.render('company-lookup/confirm-company', {
       // To use the company data on that page use the following
-      company: req.session.company
+      company: req.session.company,
+      companyIncorp: req.session.companyIncorp
     })
   })
   router.post('/company-lookup/confirm-company', function (req, res) {
