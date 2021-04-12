@@ -17,8 +17,6 @@
 {% from "govuk/components/file-upload/macro.njk"      import govukFileUpload %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
 {% from "govuk/components/inset-text/macro.njk"       import govukInsetText %}
-{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
-{% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
 {% from "govuk/components/panel/macro.njk" import govukPanel %}
 {% from "govuk/components/phase-banner/macro.njk"     import govukPhaseBanner %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -35,99 +33,27 @@
   {% include "includes/head.html" %}
 {% endblock %}
 
-{#- Create a reuseable macro for page titles -#}
-{% macro pageTitle(title) %}
-  {{title}}
-  -
-  {{serviceName}}
-  - GOV.UK
-{% endmacro %}
-
 {% block pageTitle %}
-  {{serviceName}}
+  Upload a document to Companies House
 {% endblock %}
 
-{% block bodyStart %}
-  {% set html %}
-  <p>We use some essential cookies to make our services work.</p>
-  <p>We'd also like to use analytics cookies so we can understand how you use our services and to make improvements.</p>
-  {% endset %}
-  {{ govukCookieBanner({
-    ariaLabel: "Cookies on Companies House services",
-    messages: [
-      {
-        headingText: "Cookies on Companies House services",
-        html: html,
-        actions: [
-          {
-            text: "Accept analytics cookies",
-            type: "button",
-            name: "cookies",
-            value: "accept",
-            classes: "cookie-button"
-          },
-          {
-            text: "Reject analytics cookies",
-            type: "button",
-            name: "cookies",
-            value: "reject",
-            classes: "cookie-button"
-          },
-          {
-            text: "View cookies",
-            href: "https://find-and-update.company-information.service.gov.uk/help/cookies"
-          }
-        ]
-      }
-    ]
-  }) }}
-{% endblock %}
 {% block header %}
   {% include "includes/cookie-banner.html" %}
   {# Set serviceName in config.js. #}
   {{ govukHeader({
     homepageUrl: "https://www.gov.uk/",
-    serviceName: serviceName,
-      serviceUrl: "/"
-  }) }}
-  {{ govukPhaseBanner({
-    tag: {
-    text: "beta"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="https://www.research.net/r/reptpscdisp-fdbk">feedback</a> will help us to improve it.',
-    classes: 'govuk-width-container'
+    containerClasses: "govuk-width-container"
   }) }}
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
 
-{% if useAutoStoreData %}
-  {% block footer %}
-    {{ govukFooter({
-      meta: {
-        items: [
-          {
-            href: "https://govuk-prototype-kit.herokuapp.com/",
-            text: "Obliged Entity PSC Discrepancy " + releaseVersion
-          },
-          {
-            href: "/prototype-admin/clear-data",
-            text: "Clear data"
-          },
-          {
-            href: "accessibility.html",
-            text: "Accessibility statement"
-          }
-        ]
-      }
-    }) }}
-  {% endblock %}
-{% endif %}
+{% if useAutoStoreData %}{% endif %}
 
 {% block bodyEnd %}
   {% block scripts %}
     {% include "includes/scripts.html" %}
     {% block pageScripts %}{% endblock %}
   {% endblock %}
-
+  <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
 {% endblock %}

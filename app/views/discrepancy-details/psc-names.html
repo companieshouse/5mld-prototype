@@ -3,10 +3,8 @@
   {% if errorPSC == true %}
     Error:
   {% endif %}
-  Which PSC has a discrepancy for
-  {{company.company_name}}? -
-  {{serviceName}}
-  - GOV.UK
+
+  {{ pageTitle("Which PSC has a discrepancy for " + company.company_name) }}
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">

@@ -3,9 +3,7 @@
   {% if errorNametwo == true or errorName == true %}
     Error:
   {% endif %}
-  What is your name? -
-  {{serviceName}}
-  - GOV.UK
+  {{ pageTitle("What is your name?") }}
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">

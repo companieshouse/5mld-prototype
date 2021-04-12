@@ -1,10 +1,7 @@
 {% set title = "Sign in to Companies House" %}
 {% extends "layout.html" %}
 {% block pageTitle %}
-  {{title}}
-  -
-  {{serviceName}}
-  - GOV.UK
+  {{ pageTitle(title) }}
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">

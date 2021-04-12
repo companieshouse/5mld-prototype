@@ -3,9 +3,7 @@
   {% if errorTelephoneNumber == true %}
     Error:
   {% endif %}
-  What is the name of your organisation? -
-  {{serviceName}}
-  - GOV.UK
+  {{ pageTitle("What is the name of your organisation?") }}
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">

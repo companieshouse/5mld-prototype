@@ -3,9 +3,7 @@
   {% if errorOther == true %}
     Error:
   {% endif %}
-  Give us more information about the discrepancy -
-  {{serviceName}}
-  - GOV.UK
+  {{ pageTitle("Give us more information about the discrepancy") }}
 {% endblock %}
 {% block content %}
   <div class="govuk-grid-row">
@@ -23,13 +21,13 @@
         <li>what information on the PSC register is incorrect
         </li>
         <li>the correct information as you believe it should be shown on the register
-      </li>
-    <li>any other relevant information about the discrepancy that supports the report
-  </li>
-    </ul>
-    <form action="/discrepancy-details/other-info" method="post">
-      {% if errorOther == true %}
-        {{ govukTextarea({
+        </li>
+        <li>any other relevant information about the discrepancy that supports the report
+        </li>
+      </ul>
+      <form action="/discrepancy-details/other-info" method="post">
+        {% if errorOther == true %}
+          {{ govukTextarea({
             name: "more-detail",
             id: "more-detail",
             label: {
@@ -39,22 +37,22 @@
               text: "Enter the information that is incorrect for the PSC"
             }
           }) }}
-      {% else %}
-        {{ govukTextarea({
+        {% else %}
+          {{ govukTextarea({
             name: "more-detail",
             id: "more-detail",
             label: {
               html: "Discrepancy information"
             }
           }) }}
-      {% endif %}
-      <form action="/form-handler" method="post" novalidate="novalidate">
-        <input type="hidden" name="answers-checked" value="true">
+        {% endif %}
+        <form action="/form-handler" method="post" novalidate="novalidate">
+          <input type="hidden" name="answers-checked" value="true">
 
-        {{ govukButton({
+          {{ govukButton({
           text: "Continue"
         }) }}
-      </form>
+        </form>
+      </div>
     </div>
-  </div>
-{% endblock %}
+  {% endblock %}
