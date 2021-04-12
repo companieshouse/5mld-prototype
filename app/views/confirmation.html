@@ -6,11 +6,23 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      {% set buttonHref = "Your reference number is Y2345678" %}
+
+      {% set references = [
+        'HDJ2123F',
+        'LOPF123F',
+        'HLJ21789',
+        'HLJ2DOP',
+        'OPSF2DOP',
+        'TYPF2DOP',
+        'SWERCVF',
+        'SWERCVF',
+        'TYU8764'
+      ] | random %}
       {{ govukPanel({
         titleText: "Discrepancy report submitted",
-        html: buttonHref
+        html: "Your reference number is " + references
       }) }}
+
       <h2 class="govuk-heading-m">What happens next</h2>
       <p class="govuk-body">We'll investigate the discrepancy, which could take some time. The company will not be informed that a discrepancy report has been made about their PSC register information.
       </p>
