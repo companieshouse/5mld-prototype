@@ -17,6 +17,7 @@ router.get('/', function (req, res) {
 
 router.get('/obliged-entity-type', function (req, res) {
   res.render('obliged-entity-type', {
+    currentUrl: req.originalUrl
   })
 })
 
@@ -38,6 +39,7 @@ router.post('/obliged-entity-type', function (req, res) {
 
 router.get('/obliged-entity-name', function (req, res) {
   res.render('obliged-entity-name', {
+    currentUrl: req.originalUrl
   })
 })
 
@@ -68,6 +70,7 @@ router.post('/obliged-entity-details-name', function (req, res) {
 
 router.get('/obliged-entity-organisation', function (req, res) {
   res.render('obliged-entity-organisation', {
+    currentUrl: req.originalUrl
   })
 })
 
@@ -89,6 +92,7 @@ router.post('/obliged-entity-details-organisation', function (req, res) {
 
 router.get('/obliged-entity-email', function (req, res) {
   res.render('obliged-entity-email', {
+    currentUrl: req.originalUrl
   })
 })
 

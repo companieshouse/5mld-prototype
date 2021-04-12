@@ -19,7 +19,7 @@
       {% endif %}
       <h1 class="govuk-heading-l">{{title}}</h1>
       <p class="govuk-body govuk-hint">You cannot use your WebFiling details to sign in. You must sign in to or register a Companies House account.</p>
-      <form action="/sign-in/sign-in" method="post">
+      <form action="{{currentUrl}}" method="post">
         {% if errorEmail == true %}
           {{ govukInput({
             label: {

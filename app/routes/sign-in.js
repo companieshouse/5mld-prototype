@@ -1,4 +1,10 @@
 module.exports = function (router) {
+  router.get('/sign-in/sign-in', function (req, res) {
+    res.render('sign-in/sign-in', {
+      currentUrl: req.originalUrl
+    })
+  })
+
   router.post('/sign-in/sign-in', function (req, res) {
     var errors = []
     var emailHasError = false

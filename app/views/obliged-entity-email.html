@@ -14,7 +14,7 @@
           errorList: errorList
         }) }}
       {% endif %}
-      <form action="/obliged-entity-email" method="post">
+      <form action="{{currentUrl}}" method="post">
         {% if errorEmail == true %}
           {{ govukInput({
             label: {
