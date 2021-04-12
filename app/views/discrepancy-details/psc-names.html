@@ -30,7 +30,7 @@
               <div class="govuk-radios">
                 {% for psc in psc.items %}
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="psc" name="psc" type="radio" value="{{psc.kind}}" aria-describedby="psc-item-hint">
+                    <input class="govuk-radios__input" id="psc" name="psc" type="radio" value="{{psc.links.self}}" aria-describedby="psc-item-hint">
                     <label class="govuk-label govuk-radios__label" for="psc">
                       {{psc.name}}
                     </label>
@@ -75,7 +75,7 @@
               <div class="govuk-radios">
                 {% for psc in psc.items %}
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="psc" name="psc" type="radio" value="{{psc.kind}}" aria-describedby="psc-item-hint">
+                    <input class="govuk-radios__input" id="psc" name="psc" type="radio" value="{{psc.links.self}}" aria-describedby="psc-item-hint">
                     <label class="govuk-label govuk-radios__label" for="psc">
                       {{psc.name}}
                     </label>

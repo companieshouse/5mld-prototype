@@ -3,6 +3,8 @@ const router = express.Router()
 
 // Company lookup
 require('./routes/company-lookup.js')(router)
+// PSC lookup
+require('./routes/psc-lookup.js')(router)
 // Sign in
 require('./routes/sign-in.js')(router)
 
@@ -109,6 +111,7 @@ router.post('/obliged-entity-email', function (req, res) {
 // PSC Person
 router.get('/discrepancy-details/psc-person', function (req, res) {
   res.render('discrepancy-details/psc-person', {
+    pscSingle: req.session.pscSingle
   })
 })
 
@@ -179,7 +182,8 @@ router.post('/check-your-answers', function (req, res) {
 router.get('/check-your-answers', function (req, res) {
   res.render('check-your-answers', {
     // To use the company data on that page use the following
-    company: req.session.company
+    company: req.session.company,
+    pscSingle: req.session.pscSingle
   })
 })
 

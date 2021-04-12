@@ -6,6 +6,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
+
       <form action="/discrepancy-details/psc-person" method="post">
         {% if errorPSC == true %}
           {{ govukErrorSummary({
@@ -17,7 +18,7 @@
           name: "pscperson",
           fieldset: {
             legend: {
-              html: "What type of discrepancy are you reporting for Mrs Catherine Isabel Gaynor?",
+              html: "What type of discrepancy are you reporting for" + pscSingle.name + "?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
@@ -69,7 +70,7 @@
         name: "pscperson",
         fieldset: {
           legend: {
-            html: "What type of discrepancy are you reporting for Mrs Catherine Isabel Gaynor?",
+            html: "What type of discrepancy are you reporting for " + pscSingle.name + "?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
