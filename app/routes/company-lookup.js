@@ -80,6 +80,7 @@ module.exports = function (router) {
     request(options, function (error, response) {
       if (error) throw new Error(error)
       req.session.psc = response.body
+      console.log(req.session.psc)
       res.redirect('../discrepancy-details/psc-names')
     })
   })

@@ -15,101 +15,138 @@
             titleText: "There is a problem",
             errorList: errorList
           }) }}
-          <div class="govuk-form-group govuk-form-group--error">
-            <fieldset class="govuk-fieldset" aria-describedby="psc-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <h1 class="govuk-fieldset__heading">
-                  Which PSC has a discrepancy for
-                  {{company.company_name}}?
-                </h1>
-              </legend>
-              <span id="passport-issued-error" class="govuk-error-message">
-                <span class="govuk-visually-hidden">Error:</span>
-                Select the PSC with the discrepancy, or if a PSC is missing
-              </span>
-              <div class="govuk-radios">
-                {% for psc in psc.items %}
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="psc" name="psc" type="radio" value="{{psc.links.self}}" aria-describedby="psc-item-hint">
-                    <label class="govuk-label govuk-radios__label" for="psc">
-                      {{psc.name}}
-                    </label>
-                    <div id="psc-item-hint" class="govuk-hint govuk-radios__hint">
-                      {% if psc.kind === 'individual-person-with-significant-control' %}
-                        Born
-                        {{psc.date_of_birth.year}}
-                      {% elif psc.kind === 'corporate-entity-person-with-significant-control' %}
-                        Registration number
-                        {{psc.identification.registration_number}}
-                      {% elif psc.kind === 'legal-person-person-with-significant-control' %}
-                        Correspondence address
-                        {{psc.address.premises}}
-                        {{psc.address.address_line_1}}
-                        {% if psc.address.postal_code %}
-                          {{psc.address.postal_code}}
-                        {% endif %}
-                      {% else %}
-                      {% endif %}
-                    </div>
-                  </div>
-                {% endfor %}
-                <div class="govuk-radios__divider">or</div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="missing" name="missing" type="radio" value="missing">
-                  <label class="govuk-label govuk-radios__label" for="missing">
-                    PSC is missing
-                  </label>
-                </div>
-              </div>
-            </fieldset>
-          </div>
-        {% else %}
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="psc-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <h1 class="govuk-fieldset__heading">
-                  Which PSC has a discrepancy for
-                  {{company.company_name}}?
-                </h1>
-              </legend>
-              <div class="govuk-radios">
-                {% for psc in psc.items %}
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="psc" name="psc" type="radio" value="{{psc.links.self}}" aria-describedby="psc-item-hint">
-                    <label class="govuk-label govuk-radios__label" for="psc">
-                      {{psc.name}}
-                    </label>
-                    <div id="psc-item-hint" class="govuk-hint govuk-radios__hint">
-                      {% if psc.kind === 'individual-person-with-significant-control' %}
-                        Born
-                        {{psc.date_of_birth.month}}
-                        {{psc.date_of_birth.year}}
-                      {% elif psc.kind === 'corporate-entity-person-with-significant-control' %}
-                        Registration number
-                        {{psc.identification.registration_number}}
-                      {% elif psc.kind === 'legal-person-person-with-significant-control' %}
-                        Correspondence address
-                        {{psc.address.premises}}
-                        {{psc.address.address_line_1}}
-                        {% if psc.address.postal_code %}
-                          {{psc.address.postal_code}}
-                        {% endif %}
-                      {% else %}
-                      {% endif %}
-                    </div>
-                  </div>
-                {% endfor %}
-                <div class="govuk-radios__divider">or</div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="missing" name="missing" type="radio" value="missing">
-                  <label class="govuk-label govuk-radios__label" for="missing">
-                    PSC is missing
-                  </label>
-                </div>
-              </div>
-            </fieldset>
-          </div>
         {% endif %}
+
+        {% for pscErrors in psc.errors %}
+
+          {{ govukRadios({
+            idPrefix: "sign-in",
+            name: "sign-in",
+            fieldset: {
+              legend: {
+                text: "There are no PSC's for this company",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            hint: {
+              text: "There are no active PSC's for this company."
+            },
+            items: [
+              {
+                value: "government-gateway",
+                text: "PSC is missing"
+              },
+              {
+                value: "govuk-verify",
+                text: "Select a different company"
+              }
+            ]
+          }) }}
+        {% else %}
+          {% if errorPSC == true %}
+            <div class="govuk-form-group govuk-form-group--error">
+
+              <fieldset class="govuk-fieldset" aria-describedby="psc-hint">
+
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Which PSC has a discrepancy for
+                    {{company.company_name}}?
+                  </h1>
+                </legend>
+                <span id="passport-issued-error" class="govuk-error-message">
+                  <span class="govuk-visually-hidden">Error:</span>
+                  Select the PSC with the discrepancy, or if a PSC is missing
+                </span>
+
+                <div class="govuk-radios">
+                  {% for psc in psc.items %}
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="psc" name="psc" type="radio" value="{{psc.links.self}}" aria-describedby="psc-item-hint">
+                      <label class="govuk-label govuk-radios__label" for="psc">
+                        {{psc.name}}
+                      </label>
+                      <div id="psc-item-hint" class="govuk-hint govuk-radios__hint">
+                        {% if psc.kind === 'individual-person-with-significant-control' %}
+                          Born
+                          {{psc.date_of_birth.year}}
+                        {% elif psc.kind === 'corporate-entity-person-with-significant-control' %}
+                          Registration number
+                          {{psc.identification.registration_number}}
+                        {% elif psc.kind === 'legal-person-person-with-significant-control' %}
+                          Correspondence address
+                          {{psc.address.premises}}
+                          {{psc.address.address_line_1}}
+                          {% if psc.address.postal_code %}
+                            {{psc.address.postal_code}}
+                          {% endif %}
+                        {% else %}
+                        {% endif %}
+                      </div>
+                    </div>
+                  {% endfor %}
+                  <div class="govuk-radios__divider">or</div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="missing" name="missing" type="radio" value="missing">
+                    <label class="govuk-label govuk-radios__label" for="missing">
+                      PSC is missing
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          {% else %}
+            <div class="govuk-form-group">
+
+              <fieldset class="govuk-fieldset" aria-describedby="psc-hint">
+
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Which PSC has a discrepancy for
+                    {{company.company_name}}?
+                  </h1>
+                </legend>
+
+                <div class="govuk-radios">
+                  {% for psc in psc.items %}
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="psc" name="psc" type="radio" value="{{psc.links.self}}" aria-describedby="psc-item-hint">
+                      <label class="govuk-label govuk-radios__label" for="psc">
+                        {{psc.name}}
+                      </label>
+                      <div id="psc-item-hint" class="govuk-hint govuk-radios__hint">
+                        {% if psc.kind === 'individual-person-with-significant-control' %}
+                          Born
+                          {{psc.date_of_birth.year}}
+                        {% elif psc.kind === 'corporate-entity-person-with-significant-control' %}
+                          Registration number
+                          {{psc.identification.registration_number}}
+                        {% elif psc.kind === 'legal-person-person-with-significant-control' %}
+                          Correspondence address
+                          {{psc.address.premises}}
+                          {{psc.address.address_line_1}}
+                          {% if psc.address.postal_code %}
+                            {{psc.address.postal_code}}
+                          {% endif %}
+                        {% else %}
+                        {% endif %}
+                      </div>
+                    </div>
+                  {% endfor %}
+                  <div class="govuk-radios__divider">or</div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="missing" name="missing" type="radio" value="missing">
+                    <label class="govuk-label govuk-radios__label" for="missing">
+                      PSC is missing
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          {% endif %}
+        {% endfor %}
+
         {{ govukButton({
           text: "Continue"
         }) }}
