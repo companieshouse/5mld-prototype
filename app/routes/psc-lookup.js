@@ -3,7 +3,8 @@ module.exports = function (router) {
   router.get('/discrepancy-details/psc-names', function (req, res) {
     res.render('discrepancy-details/psc-names', {
       psc: req.session.psc,
-      company: req.session.company
+      company: req.session.company,
+      currentUrl: req.originalUrl
     })
   })
 

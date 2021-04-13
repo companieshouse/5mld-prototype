@@ -115,7 +115,8 @@ router.post('/obliged-entity-email', function (req, res) {
 // PSC Person
 router.get('/discrepancy-details/psc-person', function (req, res) {
   res.render('discrepancy-details/psc-person', {
-    pscSingle: req.session.pscSingle
+    pscSingle: req.session.pscSingle,
+    currentUrl: req.originalUrl
   })
 })
 
@@ -138,6 +139,7 @@ router.post('/discrepancy-details/psc-person', function (req, res) {
 // PSC Company
 router.get('/discrepeancy-details/psc-company', function (req, res, next) {
   res.render('/discrepeancy-details/psc-company', {
+    currentUrl: req.originalUrl
   })
 })
 
@@ -159,6 +161,7 @@ router.post('/discrepancy-details/psc-company', function (req, res, next) {
 
 router.get('/discrepeancy-details/other-info', function (req, res) {
   res.render('/discrepeancy-details/other-info', {
+    currentUrl: req.originalUrl
   })
 })
 

@@ -25,7 +25,7 @@
         <li>any other relevant information about the discrepancy that supports the report
         </li>
       </ul>
-      <form action="/discrepancy-details/other-info" method="post">
+      <form action="{{currentUrl}}" method="post">
         {% if errorOther == true %}
           {{ govukTextarea({
             name: "more-detail",

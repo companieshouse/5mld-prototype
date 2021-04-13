@@ -9,7 +9,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <form action="/discrepancy-details/psc-names" method="post">
+      <form action="{{currentUrl}}" method="post">
         {% if errorPSC == true %}
           {{ govukErrorSummary({
             titleText: "There is a problem",
