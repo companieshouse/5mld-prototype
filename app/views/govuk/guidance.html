@@ -1,0 +1,162 @@
+{% extends "layout-govuk.html" %}
+{% block pageTitle %}
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "#"
+    },
+    {
+      text: "Business and industry",
+      href: "https://www.gov.uk/business-and-industry"
+    }
+  ]
+}) }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    {% include "../includes/govuk-content-header.html" %}
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-0">
+      <h3 id="background" class="govuk-heading-m">What the Fifth Anti-Money Laundering Directive (5MLD) is</h3>
+      <p class="govuk-body">On 10 January 2020, the Fifth Anti-Money Laundering Directive (5MLD) came into force in the UK through the Money Laundering and Terrorist Financing (Amendment) Regulations 2019.</p>
+      <p class="govuk-body">Obliged entities must let us know if there’s a discrepancy between the information on the people with significant control (PSC) register, and the information they hold about a beneficial owner of a:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>company</li>
+        <li>limited liability partnership (LLP)</li>
+        <li>Scottish limited partnership (SLP)</li>
+        <li>Scottish qualifying partnership (SQP)
+        </li>
+      </ul>
+      <p class="govuk-body">If they find a discrepancy, obliged entities must make a report to Companies House.</p>
+      <p class="govuk-body">This will help us to make sure that the register is accurate and up to date.</p>
+      <h3 id="what-an-obliged-entity-is" class="govuk-heading-m">What an obliged entity is</h3>
+      <p class="govuk-body">Obliged entities include:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>credit institutions</li>
+        <li>financial institutions</li>
+        <li>auditors, external accountants or tax advisors</li>
+        <li>notaries or other independent legal professionals</li>
+        <li>trusts or company service providers</li>
+        <li>estate agents, including when acting as intermediaries</li>
+        <li>other persons trading goods in cash amounting to €10,000 or more</li>
+        <li>gambling services</li>
+        <li>exchange services between virtual and fiat currencies</li>
+        <li>custodian wallet providers</li>
+        <li>art dealers in galleries and auction houses</li>
+        <li>art dealers in free ports</li>
+        <li>insolvency practitioners</li>
+      </ul>
+
+      <div class="govuk-inset-text">
+        If you’re not an obliged entity, do not use this service to report a PSC discrepancy. If you want to update your PSC details, you can
+        <a href="https://www.gov.uk/make-changes-to-your-limited-company" class="govuk-link">tell Companies House about changes to your limited company</a>.
+      </div>
+
+      <h3 id="what-a-beneficial-owner-is" class="govuk-heading-m">What a PSC is</h3>
+      <p class="govuk-body">A PSC stands for ‘person with significant control’ and is someone who owns or controls a company. A company can have one or more PSCs.</p>
+      <p class="govuk-body">A beneficial owner does not have the same definition as a PSC. The requirement to report discrepancies is based on the Companies Act definition of a PSC.</p>
+
+      <p class="govuk-body call-to-action">Read about
+        <a href="#" class="govuk-link">how to identify PSCs of companies and limited liability partnerships (LLPs)</a>
+        and
+        <a href="#" class="govuk-link">how to identify PSCs of Scottish qualifying partnerships</a>.</p>
+
+      <h3 id="what-a-discrepancy-is" class="govuk-heading-m">What a discrepancy is</h3>
+      <p class="govuk-body">A discrepancy is when the information that an obliged entity holds about a beneficial owner clearly shows that the information recorded by Companies House, in terms of the definition of a PSC, is incorrect.</p>
+
+      <p class="govuk-body">A discrepancy exists when a relevant entity has information that clearly indicates that the PSC information recorded by Companies House is inaccurate.</p>
+
+      <p class="govuk-body">This could include a discrepancy with a:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>person listed as a PSC</li>
+        <li>missing PSC</li>
+        <li>PSC exemption</li>
+        <li>PSC type</li>
+        <li>address</li>
+        <li>place of registration</li>
+        <li>date of birth</li>
+        <li>nationality</li>
+        <li>legal form</li>
+        <li>company statement</li>
+      </ul>
+      <p class="govuk-body">Our focus is on factual errors, such as a missing PSC or an incorrect service address, not typing mistakes. It is not a discrepancy when the entity holds information that we do not include on the PSC register.
+      </p>
+      <p class="govuk-body">A spelling error is not a discrepancy. For example, Jon Smith instead of John Smith, or a missing or slightly different spelling of a middle name.</p>
+      <p class="govuk-body">Obliged entities can advise the company to contact us to correct these minor errors.</p>
+
+      <p class="govuk-body govuk-!-font-weight-bold">If a beneficial owner’s correspondence address is different from the service address on the PSC register</p>
+
+      <p class="govuk-body">The address shown for a PSC on Companies House records is a service address - this does not have to be their home address. Obliged entities should take this into consideration.</p>
+      <p class="govuk-body">PSCs must provide their home address to Companies House, but it’s kept on a private register. It’s only available on request to credit reference agencies and specified public authorities.</p>
+      <p class="govuk-body">As the PSC’s home address is not available on the public register, it might not be a discrepancy if it does not match the address given to an obliged entity. If the address a client has provided is different to what is shown on
+        the register, you may wish to check with them if they have used an alternative to their home address as a service address.</p>
+      <p class="govuk-body">You should only make a report when there is a clear discrepancy between the same types of address.</p>
+
+      <h3 id="when-to-make-a-discrepancy-report" class="govuk-heading-m">When to make a discrepancy report</h3>
+      <p class="govuk-body">Obliged entities must make a report if they find a discrepancy when setting up a new business relationship with a customer.</p>
+
+      <p class="govuk-body">You should report a discrepancy as soon as possible. Bulk reporting is not allowed. Obliged entities must not wait to make reports in bulk as this means the PSC register will not be up to date.</p>
+
+      <h3 id="start" class="govuk-heading-m">Make a discrepancy report</h3>
+      <p class="govuk-body">To report a discrepancy, you'll need:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the company number of the entity being reported as having a discrepancy</li>
+        <li>the type of discrepancy</li>
+        <li>what information on the PSC register is incorrect, for example an incorrect address or an invalid PSC statement</li>
+        <li>the correct information as you believe it should be shown on the register</li>
+        <li>any other relevant information about the discrepancy that supports the report</li>
+      </ul>
+      <p>Reporting a discrepancy takes up to 10 minutes.
+      </p>
+      {{ govukButton({
+        text: "Start now",
+        href: "../sign-in/sign-in",
+        isStartButton: true
+      }) }}
+      <h2 class="govuk-heading-m">Before you start</h2>
+
+      <p class="govuk-body">If one or more person with significant control (PSC) for a company has their details protected, you will not be able to use this service to report a discrepancy. You must
+        <a class="govuk-link" href="contact-us.html">contact the PSC discrepancy team</a>
+        by telephone instead.</p>
+
+      <h3 id="after-the-report-is-submitted" class="govuk-heading-m">After the report is submitted</h3>
+
+      <p class="govuk-body">We'll investigate the discrepancy, which could take some time. We will not reveal the identity of the person making the report, and the company will not be informed that a discrepancy report has been made by an obliged entity
+        about their PSC register information.</p>
+      <p class="govuk-body">We’ll check our records and if we find that the reported discrepancy needs to be corrected, we’ll contact the company and ask that they resolve it to make sure the PSC register is up to date. If the discrepancy is not resolved
+        by the company, we may remove the incorrect information from the register.</p>
+      <p class="govuk-body">We'll email the obliged entity to let them know the outcome of our investigation.</p>
+
+      <h3 id="contact-us" class="govuk-heading-m">Contact us</h3>
+      <p class="govuk-body">If you have a question about reporting a PSC discrepancy, you can contact us.</p>
+      <h3 class="govuk-heading-s">Telephone</h3>
+      <ul class="govuk-list">
+        <li>0303 1234 500</li>
+        <li>Monday to Friday, 8:30am to 6pm</li>
+      </ul>
+      <p class="govuk-body">
+        <a class="govuk-link" href="https://www.gov.uk/call-charges">Find out about call charges</a>
+      </p>
+      <h3 class="govuk-heading-s">Email</h3>
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="#">pscdiscrepancies@companieshouse.gov.uk</a>
+        </li>
+      </ul>
+      <div class="govuk-inset-text">
+        <h4 class="govuk-heading-s">Reporting a PSC who has their details protected</h4>
+        <p class="govuk-body">If one or more person with significant control (PSC) for a company has their details protected, you will not be able to use this service to report a discrepancy. Contact us by telephone on 0303 1234 500 if you need to report a
+          discrepancy about a PSC who has their details protected.</p>
+      </div>
+    </div>
+
+    {% include "../includes/govuk-aside.html" %}
+
+  </div>
+{% endblock %}
