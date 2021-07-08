@@ -20,8 +20,8 @@
         {% for pscErrors in psc.errors %}
 
           {{ govukRadios({
-            idPrefix: "sign-in",
-            name: "sign-in",
+            idPrefix: "psc",
+            name: "psc",
             fieldset: {
               legend: {
                 text: "There are no PSC's for this company",
@@ -34,11 +34,11 @@
             },
             items: [
               {
-                value: "government-gateway",
+                value: "missing",
                 text: "PSC is missing"
               },
               {
-                value: "govuk-verify",
+                value: "select-different-company",
                 text: "Select a different company"
               }
             ]

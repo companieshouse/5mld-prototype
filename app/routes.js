@@ -27,7 +27,7 @@ router.get('/discrepancy-details/psc-person', function (req, res) {
 
 router.post('/discrepancy-details/psc-person', function (req, res) {
   var errors = []
-  if (typeof req.session.data['pscperson'] === 'undefined') {
+  if (typeof req.session.data['psc'] === 'undefined') {
     errors.push({
       text: 'Select the type of discrepancy you are reporting',
       href: '#pscperson'
@@ -36,6 +36,8 @@ router.post('/discrepancy-details/psc-person', function (req, res) {
       errorPSC: true,
       errorList: errors
     })
+  } if (typeof req.session.data['psc'] === 'undefined') {
+    res.redirect('other-info')
   } else {
     res.redirect('other-info')
   }

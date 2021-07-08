@@ -3,9 +3,27 @@
 {% for scriptUrl in extensionConfig.scripts %}
   <script src="{{scriptUrl}}"></script>
 {% endfor %}
+<script src="/public/javascripts/TextHighlighter.min.js"></script>
 
 <script src="/public/javascripts/application.js"></script>
 
 {% if useAutoStoreData %}
   <script src="/public/javascripts/auto-store-data.js"></script>
 {% endif %}
+
+<script type="text/javascript">
+  (function () {
+    var removeBtn = document.getElementById('remove');
+    var sandbox = document.getElementById('sandbox');
+    var colors = new ColorPicker(document.querySelector('.color-picker'));
+    var hltr = new TextHighlighter(sandbox);
+
+    colors.onColorChange(function (color) {
+      hltr.setColor(color);
+    });
+
+    removeBtn.addEventListener('click', function () {
+      hltr.removeHighlights();
+    });
+  })();
+</script>

@@ -16,10 +16,11 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 .call-to-action {
-    margin: 2em 0;
-    background-color: #f3f2f1;
-    padding: 2em;
+  margin: 2em 0;
+  background-color: #f3f2f1;
+  padding: 2em;
 }
+
 .missing-psc {
   background: #f5f5f5;
 }
@@ -1525,4 +1526,65 @@ body.search #global-header .search-toggle {
   .search-toggle {
     display: block;
   }
+}
+
+.color-picker {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0 5px;
+  text-align: center;
+  position: -webkit-sticky;
+  /* for Safari */
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+}
+
+.color-picker div {
+  width: 80%;
+  height: 42px;
+  font-weight: 400;
+  font-size: 18px;
+  margin: 6px 0;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 0;
+  display: flex;
+  justify-content: center;
+  font-family: 'GDS Transport', arial, sans-serif;
+  align-items: center;
+}
+
+.color-picker div:nth-child(1) {
+  margin-top: 0;
+}
+
+.color-picker div:nth-child(1)::after {
+  content: 'Confusing';
+
+}
+
+.color-picker div:nth-child(2)::after {
+  content: 'Concerning';
+}
+
+.color-picker div:nth-child(3)::after {
+  content: 'Helpful';
+}
+
+.color-picker div:hover {
+  text-decoration: none;
+}
+
+.color-picker div.selected {
+  border: 4px solid #fd0;
+  box-shadow: none;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  /* for Safari */
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
 }
