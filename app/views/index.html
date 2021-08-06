@@ -72,7 +72,6 @@
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">Version</th>
-            <th scope="col" class="govuk-table__header">Tested on</th>
             <th scope="col" class="govuk-table__header">Changes</th>
             <th scope="col" class="govuk-table__header">Status</th>
           </tr>
@@ -80,9 +79,8 @@
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
-              <a href="https://fivemld-v3.herokuapp.com/" class="govuk-link govuk-link--no-visited-state">Version 3.0</a>
+              <a href="https://fivemld-v3.herokuapp.com/" class="govuk-link govuk-link--no-visited-state">Future version (3.0)</a>
             </th>
-            <td class="govuk-table__cell">TBC</td>
             <td class="govuk-table__cell">
               <details class="govuk-details" data-module="govuk-details">
                 <summary class="govuk-details__summary">
@@ -101,16 +99,15 @@
             </td>
             <td class="govuk-table__cell">
               {{govukTag({
-                text: "Out of date",
-                classes: "govuk-tag--yellow"
+                text: "To be built",
+                classes: "govuk-tag--grey"
               })}}
             </td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
-              <a href="https://fivemld-v2-5.herokuapp.com/" class="govuk-link govuk-link--no-visited-state">Version 2.5</a>
+              <a href="https://fivemld-v2-5.herokuapp.com/" class="govuk-link govuk-link--no-visited-state">Current version (2.5)</a>
             </th>
-            <td class="govuk-table__cell">TBC</td>
             <td class="govuk-table__cell">
               <details class="govuk-details" data-module="govuk-details">
                 <summary class="govuk-details__summary">
@@ -127,151 +124,9 @@
               </details>
             </td>
             <td class="govuk-table__cell">
-              {{govukTag({
-                text: "Ready for dev",
-                classes: "govuk-tag--green"
-              })}}
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">
-              <a href="https://fivemld-v2-4.herokuapp.com" class="govuk-link govuk-link--no-visited-state">Version 2.4</a>
-            </th>
-            <td class="govuk-table__cell">TBC</td>
-            <td class="govuk-table__cell">
-              <details class="govuk-details" data-module="govuk-details">
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                    Changes included in version 2.4
-                  </span>
-                </summary>
-                <div class="govuk-details__text">
-                  <ul class="govuk-list govuk-list--bullet">
-                    <li>Added the check your answers page (without change links)</li>
-                    <li>Added the breakdown of PSC page (just for person)</li>
-                    <li>Updated headings changing from xl to l</li>
-                    <li>Updated branding to GOV.UK</li>
-                    <li>Updated phase banner from alpha to beta</li>
-                    <li>Updated page titles to improve accessibility</li>
-                  </ul>
-                </div>
-              </details>
-            </td>
-            <td class="govuk-table__cell">
-              {{govukTag({
+              {{ govukTag({
                 text: "Built"
-              })}}
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">
-              <a href="https://fivemld-v2-3.herokuapp.com" class="govuk-link govuk-link--no-visited-state">Version 2.3</a>
-            </th>
-            <td class="govuk-table__cell">TBC</td>
-            <td class="govuk-table__cell">
-              <details class="govuk-details" data-module="govuk-details">
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                    Changes included in version 2.3
-                  </span>
-                </summary>
-                <div class="govuk-details__text">
-                  <ul class="govuk-list govuk-list--bullet">
-                    <li>Added the check your answers page (without change links)</li>
-                    <li>Added the breakdown of PSC page (just for person)</li>
-                    <li>Updated headings changing from xl to l</li>
-                    <li>Updated branding to GOV.UK</li>
-                    <li>Updated phase banner from alpha to beta</li>
-                    <li>Updated page titles to improve accessibility</li>
-                  </ul>
-                </div>
-              </details>
-            </td>
-            <td class="govuk-table__cell">
-              {{govukTag({
-                text: "Built"
-              })}}
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">
-              <a href="https://fivemld-v2-2.herokuapp.com/" class="govuk-link govuk-link--no-visited-state">Version 2.2</a>
-            </th>
-            <td class="govuk-table__cell">TBC</td>
-            <td class="govuk-table__cell">
-              <details class="govuk-details" data-module="govuk-details">
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                    Changes included in version 2.2
-                  </span>
-                </summary>
-                <div class="govuk-details__text">
-                  <ul class="govuk-list govuk-list--bullet">
-                    <li>Change 1</li>
-                    <li>Change 2</li>
-                    <li>Change 3</li>
-                  </ul>
-                </div>
-              </details>
-            </td>
-            <td class="govuk-table__cell">
-              {{govukTag({
-                  text: "Built"
-                })}}
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">
-              <a href="https://fivemld-v2-1.herokuapp.com/" class="govuk-link govuk-link--no-visited-state">Version 2.1</a>
-            </th>
-            <td class="govuk-table__cell">TBC</td>
-            <td class="govuk-table__cell">
-              <details class="govuk-details" data-module="govuk-details">
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                    Changes included in version 2.1
-                  </span>
-                </summary>
-                <div class="govuk-details__text">
-                  <ul class="govuk-list govuk-list--bullet">
-                    <li>Change 1</li>
-                    <li>Change 2</li>
-                    <li>Change 3</li>
-                  </ul>
-                </div>
-              </details>
-            </td>
-            <td class="govuk-table__cell">
-              {{govukTag({
-                  text: "Built"
-                })}}
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">
-              <a href="https://fivemld-v2.herokuapp.com/" class="govuk-link govuk-link--no-visited-state">Version 2.0</a>
-            </th>
-            <td class="govuk-table__cell">TBC</td>
-            <td class="govuk-table__cell">
-              <details class="govuk-details" data-module="govuk-details">
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                    Changes included in version 2.0
-                  </span>
-                </summary>
-                <div class="govuk-details__text">
-                  <ul class="govuk-list govuk-list--bullet">
-                    <li>Change 1</li>
-                    <li>Change 2</li>
-                    <li>Change 3</li>
-                  </ul>
-                </div>
-              </details>
-            </td>
-            <td class="govuk-table__cell">
-              {{govukTag({
-                  text: "Built"
-                })}}
+              }) }}
             </td>
           </tr>
         </tbody>
