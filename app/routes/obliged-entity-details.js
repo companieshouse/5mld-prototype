@@ -31,7 +31,7 @@ module.exports = function (router) {
     var errors = []
     if (req.session.data['full-name'] === '') {
       errors.push({
-        text: 'Enter your full name',
+        text: 'Enter your name',
         href: '#full-name'
       })
       res.render('obliged-entity-details-name', {
