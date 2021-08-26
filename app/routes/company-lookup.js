@@ -23,7 +23,7 @@ module.exports = function (router) {
       })
     } else if (n !== 8) {
       errors.push({
-        text: 'Company number must be 8 characters',
+        text: 'Enter the company number',
         href: '#number'
       })
       res.render('company-lookup/company-number', {
