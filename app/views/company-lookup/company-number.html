@@ -20,6 +20,9 @@
               isPageHeading: true,
               classes: "govuk-label--l"
             },
+            hint: {
+  text: "A company number is 8 characters long."
+},
             classes: "govuk-input--width-10",
             id: "number",
             value: data['number'],
@@ -28,6 +31,30 @@
               text: "Enter the company number"
             }
           }) }}
+
+        {% elif errorLength == true %}
+          {{ govukErrorSummary({
+              titleText: "There is a problem",
+              errorList: errorList
+            }) }}
+          {{ govukInput({
+              label: {
+                text: "What is the company number for the PSC with the discrepancy?",
+                isPageHeading: true,
+                classes: "govuk-label--l"
+              },
+              hint: {
+    text: "A company number is 8 characters long."
+  },
+              classes: "govuk-input--width-10",
+              id: "number",
+              value: data['number'],
+              name: "number",
+              errorMessage: {
+                text: "The company number must be 8 characters long"
+              }
+            }) }}
+
         {% else %}
           {{ govukInput({
             label: {
@@ -35,6 +62,9 @@
               isPageHeading: true,
               classes: "govuk-label--l"
             },
+            hint: {
+ text: "A company number is 8 characters long."
+},
             classes: "govuk-input--width-10",
             id: "number",
             value: data['number'],
