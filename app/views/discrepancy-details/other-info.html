@@ -27,9 +27,10 @@
       </ul>
       <form action="{{currentUrl}}" method="post">
         {% if errorOther == true %}
-          {{ govukTextarea({
+          {{ govukCharacterCount({
             name: "more-detail",
             id: "more-detail",
+            maxlength: 5000,
             value: data['more-detail'],
             spellcheck: true,
             label: {
@@ -40,9 +41,10 @@
             }
           }) }}
         {% else %}
-          {{ govukTextarea({
+          {{ govukCharacterCount({
             name: "more-detail",
             id: "more-detail",
+            maxlength: 5000,
             value: data['more-detail'],
             spellcheck: true,
             label: {
