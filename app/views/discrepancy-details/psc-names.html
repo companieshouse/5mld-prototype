@@ -18,28 +18,23 @@
         {% endif %}
 
         {% for pscErrors in psc.errors %}
-
+<h1 class="govuk-heading-l">There are no active PSCs for this company</h1>
           {{ govukRadios({
             idPrefix: "sign-in",
             name: "sign-in",
             fieldset: {
               legend: {
-                text: "There are no PSC's for this company",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--l"
+                text: "What do you want to do next?"
               }
-            },
-            hint: {
-              text: "There are no active PSC's for this company."
             },
             items: [
               {
                 value: "government-gateway",
-                text: "PSC is missing"
+                text: "Report a missing PSC for this company"
               },
               {
                 value: "govuk-verify",
-                text: "Select a different company"
+                text: "Choose a different company"
               }
             ]
           }) }}
