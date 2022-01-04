@@ -1,6 +1,7 @@
 // Core dependencies
 const fs = require('fs')
 const path = require('path')
+const url = require('url')
 
 // NPM dependencies
 const bodyParser = require('body-parser')
@@ -102,7 +103,7 @@ app.set('view engine', 'html')
 // Middleware to serve static assets
 app.use('/public', express.static(path.join(__dirname, '/public')))
 
-// Serve govuk-frontend in from node_modules (so not to break pre-extenstions prototype kits)
+// Serve govuk-frontend in from node_modules (so not to break pre-extensions prototype kits)
 app.use('/node_modules/govuk-frontend', express.static(path.join(__dirname, '/node_modules/govuk-frontend')))
 
 // Set up documentation app
@@ -300,7 +301,11 @@ if (useV6) {
 
 // Redirect all POSTs to GETs - this allows users to use POST for autoStoreData
 app.post(/^\/([^.]+)$/, function (req, res) {
-  res.redirect('/' + req.params[0])
+  res.redirect(url.format({
+    pathname: '/' + req.params[0],
+    query: req.query
+  })
+  )
 })
 
 // Catch 404 and forward to error handler
