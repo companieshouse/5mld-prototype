@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {% if errorNametwo == true or errorName == true %}
+    Error:
+  {% endif %}
+  {{ pageTitle("What is your name?") }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="{{currentUrl}}" method="post">
+<h1 class="govuk-heading-l">There are no active PSCs for this company</h1>
+          {{ govukRadios({
+            idPrefix: "sign-in",
+            name: "sign-in",
+            fieldset: {
+              legend: {
+                text: "What do you want to do next?"
+              }
+            },
+            items: [
+              {
+                value: "government-gateway",
+                text: "Report a missing PSC for this company"
+              },
+              {
+                value: "govuk-verify",
+                text: "Choose a different company"
+              }
+            ]
+          }) }}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
