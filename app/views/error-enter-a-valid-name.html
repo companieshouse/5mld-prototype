@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  {% if errorNametwo == true or errorName == true %}
+    Error:
+  {% endif %}
+  {{ pageTitle("What is your name?") }}
+{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <form action="{{currentUrl}}" method="post">
+          {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: [
+    {
+      text: "Enter a name that is 160 characters or less and contains permitted characters",
+      href: "#full-name"
+    }
+  ]
+          }) }}
+          {{ govukInput({
+            label: {
+              text: "What is your name?",
+              isPageHeading: true,
+              classes: "govuk-label--l"
+            },
+            id: "full-name",
+            value: data['full-name'],
+            name: "full-name",
+            classes: "govuk-!-width-two-thirds",
+            autocomplete: "name",
+            attributes: {
+              spellcheck: "false"
+            },
+            errorMessage: {
+              text: "Enter a name that is 160 characters or less and contains permitted characters"
+            }
+          }) }}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
